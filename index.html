@@ -4,98 +4,234 @@
 <head>
 <meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="description" content="Naïm Yousfi, interprète professionnel en français, anglais, arabe et kabyle. Interprétariat pour les institutions, les professionnels et les particuliers.">
-<title>Naïm Yousfi — Interprète professionnel</title>
+<meta name="theme-color" content="#123c35">
+<meta name="description" content="Interprétariat professionnel français, anglais, arabe et kabyle. Services institutionnels, juridiques et professionnels.">
+<title>Naim Yousfi | Interprétariat professionnel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f7f5f0;--ink:#20241f;--muted:#696d65;--accent:#9b7855;--line:#dedbd2}
+:root{--green:#123c35;--green2:#286458;--cream:#f6f5ef;--white:#fffefa;--muted:#687771;--line:#dfe6de;--gold:#e5ac79}
 *{box-sizing:border-box}
-body{margin:0;background:var(--bg);color:var(--ink);font-family:Arial,Helvetica,sans-serif;line-height:1.6}
-header{padding:22px 7%;display:flex;justify-content:space-between;align-items:center;border-bottom:1px solid var(--line)}
-.logo{font-size:19px;font-weight:700;letter-spacing:1px}
-nav{display:flex;gap:22px;align-items:center}
+html{scroll-behavior:smooth;scroll-padding-top:90px}
+body{margin:0;background:var(--cream);color:#19332e;font-family:"DM Sans",sans-serif}
 a{color:inherit;text-decoration:none}
-nav a{font-size:14px}
-.lang{border:1px solid var(--ink);background:transparent;padding:8px 13px;border-radius:3px;cursor:pointer}
-.hero{padding:100px 8% 90px;max-width:1200px;margin:auto}
-.eyebrow{text-transform:uppercase;letter-spacing:3px;color:var(--accent);font-size:12px;font-weight:bold}
-h1{font-family:Georgia,serif;font-weight:400;font-size:clamp(42px,7vw,78px);line-height:1.08;max-width:850px;margin:22px 0}
-h1 em{color:var(--accent);font-weight:400}
-.lead{font-size:18px;color:var(--muted);max-width:620px}
-.actions{display:flex;gap:12px;flex-wrap:wrap;margin-top:32px}
-.btn{padding:13px 20px;background:var(--ink);color:white;border:1px solid var(--ink);display:inline-block}
-.btn.secondary{background:transparent;color:var(--ink)}
-.section{padding:72px 8%;border-top:1px solid var(--line)}
-.inner{max-width:1050px;margin:auto}
-h2{font-family:Georgia,serif;font-weight:400;font-size:clamp(30px,4vw,44px);margin:0 0 20px}
-.grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:32px}
-.card{border:1px solid var(--line);padding:25px;min-height:180px}
-.card h3{font-size:18px;font-weight:600}
-.card p{color:var(--muted);font-size:15px}
-.languages{display:flex;gap:10px;flex-wrap:wrap;margin-top:24px}
-.languages span{border:1px solid var(--line);padding:9px 14px}
-.partners{display:grid;grid-template-columns:repeat(5,1fr);gap:12px;margin-top:28px}
-.partner{border:1px solid var(--line);padding:18px 8px;text-align:center;font-size:12px;color:var(--muted)}
-.contact{background:#eae6dd}
-footer{padding:25px 8%;display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap;color:var(--muted);font-size:13px}
-@media(max-width:700px){header{padding:18px 5%;flex-wrap:wrap;gap:15px}nav{gap:12px;flex-wrap:wrap}nav a{font-size:12px}.hero{padding:70px 6%}.section{padding:55px 6%}.grid{grid-template-columns:1fr}.partners{grid-template-columns:repeat(2,1fr)}}
+button{font:inherit;cursor:pointer}
+.wrap{width:min(1160px,calc(100% - 40px));margin:auto}
+header{height:84px;display:flex;align-items:center;justify-content:space-between;gap:18px}
+.brand{display:flex;align-items:center;gap:12px;font-weight:800;font-family:Manrope,sans-serif}
+.logo{display:grid;place-items:center;background:var(--green);color:white;width:46px;height:46px;border-radius:15px}
+.brand small{display:block;font-size:10px;letter-spacing:2px;color:var(--muted);margin-top:4px}
+nav{display:flex;gap:24px;font-size:13px;color:#52655d}
+nav a:hover{color:var(--green2)}
+.navright{display:flex;align-items:center;gap:10px}
+.lang,.cta,.btn{border-radius:100px;padding:12px 17px;font-weight:700;font-size:12px}
+.lang{border:1px solid var(--line);background:transparent;color:var(--green)}
+.cta,.btn{background:var(--green);color:white;border:1px solid var(--green);display:inline-flex;align-items:center;justify-content:center;gap:8px;transition:.2s}
+.cta:hover,.btn:hover{background:var(--green2);transform:translateY(-2px)}
+.hero{display:grid;grid-template-columns:1.1fr .9fr;align-items:center;gap:55px;padding:76px 0 72px;min-height:600px}
+.eyebrow{font-size:11px;text-transform:uppercase;letter-spacing:2px;color:var(--green2);font-weight:800}
+.eyebrow:before{content:"✳";color:var(--gold);margin-right:9px}
+h1,h2,h3{font-family:Manrope,sans-serif}
+h1{font-size:clamp(43px,6vw,74px);line-height:1.03;letter-spacing:-4px;margin:23px 0}
+h1 em{color:var(--green2);font-style:normal}
+.lead{font-size:16px;line-height:1.9;color:var(--muted);max-width:530px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn.light{background:transparent;color:var(--green);border-color:#cbd7ce}
+.note{font-size:12px;color:var(--muted);margin-top:25px}
+.art{position:relative;min-height:440px;border-radius:30px;padding:28px;background:linear-gradient(140deg,#e0e9dc,#b5d0c0);overflow:hidden}
+.circle{position:absolute;width:290px;height:290px;border:1px solid #ffffffaa;border-radius:50%;right:-70px;top:-60px}
+.circle:after{content:"";position:absolute;inset:35px;border:1px solid #ffffffaa;border-radius:50%}
+.arttag{display:inline-block;position:relative;background:#ffffffbb;padding:11px 15px;border-radius:30px;font-size:11px;font-weight:700}
+.poster{position:absolute;inset:95px 28px 28px;background:var(--green);color:white;border-radius:22px;padding:28px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden}
+.poster:after{content:"言";position:absolute;right:-12px;bottom:-75px;font-size:230px;color:#ffffff0b}
+.poster small{letter-spacing:2px;color:#d3e2d7;font-size:10px}
+.poster h2{font-size:clamp(29px,3.5vw,43px);line-height:1.15;letter-spacing:-2px;max-width:310px;z-index:1}
+.poster p{font-size:12px;color:#d3e2d7;z-index:1}
+.ticker{background:var(--green);color:white;overflow:hidden;padding:20px 0}
+.track{display:flex;width:max-content;animation:scroll 32s linear infinite}
+.ticker:hover .track{animation-play-state:paused}
+.trackgroup{display:flex;align-items:center;gap:25px;padding-right:25px;white-space:nowrap}
+.tag{border:1px solid #ffffff35;border-radius:100px;padding:11px 17px;font-size:12px;font-weight:700;color:#edf4ed}
+.tag b{color:var(--gold);margin-right:8px}
+@keyframes scroll{to{transform:translateX(-50%)}}
+section{padding:90px 0}
+.heading{display:flex;justify-content:space-between;align-items:end;gap:30px;margin-bottom:35px}
+.heading h2,.about h2{font-size:clamp(32px,4vw,48px);line-height:1.12;letter-spacing:-2px;margin:14px 0 0;max-width:600px}
+.heading p{max-width:390px;color:var(--muted);font-size:14px;line-height:1.8}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:17px}
+.card{padding:28px;border:1px solid var(--line);background:var(--white);border-radius:22px;transition:.25s}
+.card:hover{transform:translateY(-6px);box-shadow:0 20px 50px #153d3010}
+.symbol{display:grid;place-items:center;background:#e7eee6;color:var(--green);width:48px;height:48px;border-radius:15px;font-size:22px}
+.card h3{font-size:19px;margin:24px 0 12px}
+.card p,.about p,.step p{font-size:13px;line-height:1.9;color:var(--muted)}
+.about{background:#e9eee7}
+.aboutgrid{display:grid;grid-template-columns:.9fr 1.1fr;gap:65px;align-items:center}
+.quote{background:var(--green);color:white;padding:35px;border-radius:26px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between}
+.quote strong{font:700 30px/1.3 Manrope,sans-serif;letter-spacing:-1px}
+.quote small{color:#d5e3d8;letter-spacing:1px}
+.pills{display:flex;flex-wrap:wrap;gap:9px;margin-top:22px}
+.pill{padding:9px 13px;border:1px solid #cad8cc;border-radius:100px;font-size:11px;font-weight:700}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:25px}
+.step{border-top:1px solid var(--line);padding-top:22px}
+.step strong{font-size:12px;color:#ae7952}
+.step h3{font-size:18px}
+.contactbox{display:grid;grid-template-columns:1fr .85fr;gap:40px;align-items:center;background:var(--green);color:white;border-radius:30px;padding:clamp(28px,6vw,65px)}
+.contactbox h2{font-size:clamp(34px,5vw,54px);line-height:1.1;letter-spacing:-2px;margin:17px 0}
+.contactbox p{color:#d7e3da;line-height:1.8;font-size:14px}
+.contactlinks{display:grid;gap:12px}
+.contactlink{padding:18px;border:1px solid #ffffff38;background:#ffffff0b;border-radius:16px;display:flex;justify-content:space-between;align-items:center;gap:12px}
+.contactlink small{display:block;color:#d7e3da;font-size:10px;letter-spacing:1px;margin-bottom:6px}
+.contactlink strong{font-size:13px;overflow-wrap:anywhere}
+.contactlink b{font-size:22px;color:var(--gold)}
+footer{display:flex;justify-content:space-between;gap:20px;padding:32px 0 40px;color:var(--muted);font-size:11px}
+.reveal{opacity:0;transform:translateY(20px);transition:opacity .7s,transform .7s}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:800px){
+.wrap{width:calc(100% - 32px)}
+header{height:72px}
+nav{display:none}
+.cta{padding:11px 13px}
+.hero{grid-template-columns:1fr;gap:30px;padding:52px 0;min-height:auto}
+h1{letter-spacing:-2.5px}
+.art{min-height:390px}
+section{padding:65px 0}
+.heading{display:block}
+.heading p{margin-top:15px}
+.cards,.steps,.aboutgrid,.contactbox{grid-template-columns:1fr;gap:18px}
+.quote{min-height:250px}
+footer{flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.track{animation:none}
+.reveal{opacity:1;transform:none}
+*{transition:none!important}
+}
 </style>
 </head>
 <body>
-<header>
-  <a class="logo" href="#">NAÏM YOUSFI<span style="color:var(--accent)">.</span></a>
-  <nav>
-    <a href="#services" data-fr="Services" data-en="Services">Services</a>
-    <a href="#profil" data-fr="Profil" data-en="Profile">Profil</a>
-    <a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
-    <button class="lang" onclick="toggleLang()">EN</button>
-  </nav>
+<header class="wrap" id="top">
+<a class="brand" href="#top"><span class="logo">NY</span><span>NAIM YOUSFI<small>INTERPRÉTARIAT</small></span></a>
+<nav>
+<a href="#services" data-fr="Services" data-en="Services">Services</a>
+<a href="#approche" data-fr="Mon approche" data-en="My approach">Mon approche</a>
+<a href="#langues" data-fr="Langues" data-en="Languages">Langues</a>
+<a href="#contact" data-fr="Contact" data-en="Contact">Contact</a>
+</nav>
+<div class="navright">
+<button class="lang" id="langToggle">EN / FR</button>
+<a class="cta" href="#contact" data-fr="Me contacter ↗" data-en="Contact me ↗">Me contacter ↗</a>
+</div>
 </header>
+
 <main>
-<section class="hero">
-  <div class="eyebrow" data-fr="Interprétariat professionnel" data-en="Professional interpreting">Interprétariat professionnel</div>
-  <h1 data-fr="La précision des mots.<br><em>La confiance des échanges.</em>" data-en="Precision in every word.<br><em>Confidence in every exchange.</span>">La précision des mots.<br><em>La confiance des échanges.</em></h1>
-  <p class="lead" data-fr="Interprète en français, anglais, arabe et kabyle. Un accompagnement linguistique rigoureux, confidentiel et adapté à chaque situation." data-en="Interpreter in French, English, Arabic and Kabyle. Reliable, confidential language support tailored to every situation.">Interprète en français, anglais, arabe et kabyle. Un accompagnement linguistique rigoureux, confidentiel et adapté à chaque situation.</p>
-  <div class="actions">
-    <a class="btn" href="#contact" data-fr="Me contacter ↗" data-en="Get in touch ↗">Me contacter ↗</a>
-    <a class="btn secondary" href="#services" data-fr="Découvrir les services" data-en="Explore services">Découvrir les services</a>
-  </div>
-</section>
-<section class="section" id="services">
-<div class="inner">
-  <div class="eyebrow" data-fr="Expertise" data-en="Expertise">Expertise</div>
-  <h2 data-fr="Une communication sans frontières." data-en="Communication without borders.">Une communication sans frontières.</h2>
-  <div class="grid">
-    <article class="card"><h3 data-fr="Interprétariat institutionnel" data-en="Institutional interpreting">Interprétariat institutionnel</h3><p data-fr="Accompagnement linguistique dans les échanges administratifs et institutionnels, selon les missions confiées." data-en="Language support in administrative and institutional exchanges, according to the assignment.">Accompagnement linguistique dans les échanges administratifs et institutionnels, selon les missions confiées.</p></article>
-    <article class="card"><h3 data-fr="Interprétariat judiciaire" data-en="Legal interpreting">Interprétariat judiciaire</h3><p data-fr="Restitution fidèle des propos, neutralité et respect de la confidentialité dans le cadre des missions." data-en="Faithful interpretation, neutrality and confidentiality throughout assignments.">Restitution fidèle des propos, neutralité et respect de la confidentialité dans le cadre des missions.</p></article>
-    <article class="card"><h3 data-fr="Interprétariat professionnel" data-en="Professional interpreting">Interprétariat professionnel</h3><p data-fr="Faciliter les échanges entre professionnels et interlocuteurs de langues différentes." data-en="Helping professionals communicate across language barriers.">Faciliter les échanges entre professionnels et interlocuteurs de langues différentes.</p></article>
-  </div>
+<section class="wrap hero">
+<div class="reveal">
+<div class="eyebrow" data-fr="Interprétariat professionnel" data-en="Professional interpreting">Interprétariat professionnel</div>
+<h1 data-fr="Les langues rapprochent. <em>Je crée le lien.</em>" data-en="Languages connect us. <em>I bridge the gap.</em>">Les langues rapprochent. <em>Je crée le lien.</em></h1>
+<p class="lead" data-fr="Un accompagnement linguistique précis, humain et confidentiel pour vos échanges institutionnels, juridiques et professionnels." data-en="Accurate, human and confidential language support for institutional, legal and professional communication.">Un accompagnement linguistique précis, humain et confidentiel pour vos échanges institutionnels, juridiques et professionnels.</p>
+<div class="actions">
+<a class="btn" href="#contact" data-fr="Parlons de votre besoin ↗" data-en="Discuss your needs ↗">Parlons de votre besoin ↗</a>
+<a class="btn light" href="#services" data-fr="Découvrir les services" data-en="Explore services">Découvrir les services</a>
+</div>
+<p class="note" data-fr="Français · Anglais · Arabe · Kabyle" data-en="French · English · Arabic · Kabyle">Français · Anglais · Arabe · Kabyle</p>
+</div>
+<div class="art reveal">
+<div class="circle"></div>
+<div class="arttag" data-fr="La langue crée le lien" data-en="Language builds connection">La langue crée le lien</div>
+<div class="poster">
+<small>NAIM YOUSFI / LANGUAGE SERVICES</small>
+<h2 data-fr="Comprendre. Échanger. Avancer." data-en="Understand. Connect. Move forward.">Comprendre. Échanger. Avancer.</h2>
+<p data-fr="L’interprétation au service de l’humain." data-en="Interpreting that puts people first.">L’interprétation au service de l’humain.</p>
+</div>
 </div>
 </section>
-<section class="section" id="profil">
-<div class="inner">
-  <div class="eyebrow" data-fr="Profil" data-en="Profile">Profil</div>
-  <h2 data-fr="La langue comme lien humain." data-en="Language as a human connection.">La langue comme lien humain.</h2>
-  <p class="lead" data-fr="Mon approche repose sur la précision linguistique, l'écoute, la neutralité et l'adaptation au contexte. Chaque mission exige discrétion, préparation et respect des personnes." data-en="My approach is built on linguistic precision, attentive listening, neutrality and adapting to context. Every assignment calls for discretion, preparation and respect.">Mon approche repose sur la précision linguistique, l'écoute, la neutralité et l'adaptation au contexte. Chaque mission exige discrétion, préparation et respect des personnes.</p>
-  <div class="languages"><span>Français</span><span>English</span><span>العربية — Arabe</span><span>Kabyle — Tamaziɣt</span></div>
-  <div class="partners"><div class="partner">SERVICES PUBLICS</div><div class="partner">JUSTICE</div><div class="partner">SANTÉ</div><div class="partner">ADMINISTRATION</div><div class="partner">PROFESSIONNELS</div></div>
-  <p style="font-size:12px;color:var(--muted)">Domaines d’intervention indicatifs. Toute mission dépend du mandat et des qualifications applicables.</p>
+
+<div class="ticker" id="langues" aria-label="Langues et services">
+<div class="track">
+<div class="trackgroup">
+<span class="tag"><b>✳</b>FRANÇAIS</span><span class="tag"><b>✳</b>ENGLISH</span><span class="tag"><b>✳</b>العربية</span><span class="tag"><b>✳</b>TAQBAYLIT</span><span class="tag"><b>✳</b>INTERPRÉTARIAT</span><span class="tag"><b>✳</b>CONFIDENTIALITÉ</span><span class="tag"><b>✳</b>PRÉCISION</span>
+</div>
+<div class="trackgroup" aria-hidden="true">
+<span class="tag"><b>✳</b>FRANÇAIS</span><span class="tag"><b>✳</b>ENGLISH</span><span class="tag"><b>✳</b>العربية</span><span class="tag"><b>✳</b>TAQBAYLIT</span><span class="tag"><b>✳</b>INTERPRÉTARIAT</span><span class="tag"><b>✳</b>CONFIDENTIALITÉ</span><span class="tag"><b>✳</b>PRÉCISION</span>
+</div>
+</div>
+</div>
+
+<section class="wrap" id="services">
+<div class="heading reveal">
+<div><div class="eyebrow" data-fr="Ce que je propose" data-en="What I offer">Ce que je propose</div>
+<h2 data-fr="Une communication claire, dans chaque contexte." data-en="Clear communication in every setting.">Une communication claire, dans chaque contexte.</h2></div>
+<p data-fr="Une prestation adaptée au contexte, aux interlocuteurs et au niveau de précision attendu." data-en="A service tailored to the context, people involved and level of precision required.">Une prestation adaptée au contexte, aux interlocuteurs et au niveau de précision attendu.</p>
+</div>
+<div class="cards">
+<article class="card reveal"><div class="symbol">⌘</div><h3 data-fr="Institutionnel & social" data-en="Public & social services">Institutionnel & social</h3><p data-fr="Faciliter les échanges entre professionnels et usagers, avec neutralité, écoute et respect de la confidentialité." data-en="Supporting communication between professionals and service users with neutrality, care and confidentiality.">Faciliter les échanges entre professionnels et usagers, avec neutralité, écoute et respect de la confidentialité.</p></article>
+<article class="card reveal"><div class="symbol">§</div><h3 data-fr="Juridique & judiciaire" data-en="Legal & court settings">Juridique & judiciaire</h3><p data-fr="Restituer les propos avec fidélité et précision, en respectant le cadre et le rôle de chaque intervenant." data-en="Conveying statements accurately while respecting the setting and role of each participant.">Restituer les propos avec fidélité et précision, en respectant le cadre et le rôle de chaque intervenant.</p></article>
+<article class="card reveal"><div class="symbol">↗</div><h3 data-fr="Entreprise & professionnel" data-en="Business & professional">Entreprise & professionnel</h3><p data-fr="Accompagner réunions, entretiens et échanges professionnels pour rendre la communication plus fluide." data-en="Supporting meetings, interviews and professional conversations for smoother communication.">Accompagner réunions, entretiens et échanges professionnels pour rendre la communication plus fluide.</p></article>
 </div>
 </section>
-<section class="section contact" id="contact">
-<div class="inner">
-  <div class="eyebrow" data-fr="Prendre contact" data-en="Contact">Prendre contact</div>
-  <h2 data-fr="Parlons de votre mission." data-en="Let's discuss your assignment.">Parlons de votre mission.</h2>
-  <p class="lead" data-fr="Pour une demande de disponibilité ou d'information, contactez-moi par e-mail." data-en="For availability or further information, please contact me by email.">Pour une demande de disponibilité ou d'information, contactez-moi par e-mail.</p>
-  <div class="actions"><a class="btn" href="mailto:">Envoyer un e-mail ↗</a></div>
-  <p style="font-size:12px;color:var(--muted)">Le lien e-mail devra être complété avec votre adresse de contact avant publication.</p>
+
+<section class="about" id="approche">
+<div class="wrap aboutgrid">
+<div class="quote reveal"><div class="eyebrow" style="color:#e5b58d" data-fr="Mon engagement" data-en="My commitment">Mon engagement</div><strong data-fr="« Comprendre, ce n’est pas seulement entendre. C’est saisir le sens. »" data-en="“Understanding is more than hearing. It is grasping the meaning.”">« Comprendre, ce n’est pas seulement entendre. C’est saisir le sens. »</strong><small>NAIM YOUSFI · INTERPRÉTARIAT</small></div>
+<div class="reveal"><div class="eyebrow" data-fr="Une approche humaine" data-en="A human approach">Une approche humaine</div>
+<h2 data-fr="La précision des mots. Le respect des personnes." data-en="Precision in words. Respect for people.">La précision des mots. Le respect des personnes.</h2>
+<p data-fr="Chaque échange mérite une attention particulière. Mon approche repose sur l’écoute active, la fidélité au message, la neutralité et l’adaptation au contexte de la mission." data-en="Every conversation deserves care. My approach is built on active listening, faithful interpretation, neutrality and adapting to each assignment.">Chaque échange mérite une attention particulière. Mon approche repose sur l’écoute active, la fidélité au message, la neutralité et l’adaptation au contexte de la mission.</p>
+<p data-fr="Vous avez un besoin ponctuel ou régulier ? Contactez-moi pour présenter le contexte, les langues et les modalités souhaitées." data-en="Need interpreting for a one-off or recurring assignment? Get in touch to share the context, languages and preferred arrangements.">Vous avez un besoin ponctuel ou régulier ? Contactez-moi pour présenter le contexte, les langues et les modalités souhaitées.</p>
+<div class="pills"><span class="pill" data-fr="Confidentialité" data-en="Confidentiality">Confidentialité</span><span class="pill" data-fr="Neutralité" data-en="Neutrality">Neutralité</span><span class="pill" data-fr="Écoute active" data-en="Active listening">Écoute active</span><span class="pill" data-fr="Précision" data-en="Accuracy">Précision</span></div>
+</div>
+</div>
+</section>
+
+<section class="wrap">
+<div class="heading reveal"><div class="eyebrow" data-fr="Simple & efficace" data-en="Simple & efficient">Simple & efficace</div><h2 data-fr="De votre demande à la mission." data-en="From your request to the assignment.">De votre demande à la mission.</h2></div>
+<div class="steps">
+<div class="step reveal"><strong>01 / 03</strong><h3 data-fr="Vous présentez votre besoin" data-en="Tell me what you need">Vous présentez votre besoin</h3><p data-fr="Indiquez le contexte, les langues, la date et le lieu ou le format souhaité." data-en="Share the context, languages, date and location or format you need.">Indiquez le contexte, les langues, la date et le lieu ou le format souhaité.</p></div>
+<div class="step reveal"><strong>02 / 03</strong><h3 data-fr="Nous clarifions les modalités" data-en="We clarify the details">Nous clarifions les modalités</h3><p data-fr="Nous échangeons sur les attentes, la durée et les conditions de la prestation." data-en="We discuss expectations, duration and service arrangements.">Nous échangeons sur les attentes, la durée et les conditions de la prestation.</p></div>
+<div class="step reveal"><strong>03 / 03</strong><h3 data-fr="La mission est préparée" data-en="The assignment is prepared">La mission est préparée</h3><p data-fr="Les informations utiles sont confirmées pour préparer l’intervention." data-en="The relevant information is confirmed to prepare the assignment.">Les informations utiles sont confirmées pour préparer l’intervention.</p></div>
+</div>
+</section>
+
+<section class="wrap" id="contact">
+<div class="contactbox reveal">
+<div><div class="eyebrow" style="color:#e5b58d" data-fr="Parlons de votre projet" data-en="Let's talk about your assignment">Parlons de votre projet</div>
+<h2 data-fr="Besoin d’un interprète ? Commençons par échanger." data-en="Looking for an interpreter? Let's start a conversation.">Besoin d’un interprète ? Commençons par échanger.</h2>
+<p data-fr="Décrivez votre demande en quelques lignes. Je vous répondrai pour clarifier les prochaines étapes." data-en="Tell me a little about your request. I’ll get back to you to discuss the next steps.">Décrivez votre demande en quelques lignes. Je vous répondrai pour clarifier les prochaines étapes.</p></div>
+<div class="contactlinks">
+<a class="contactlink" href="mailto:naimyousfi76@gmail.com?subject=Demande%20d%27interpr%C3%A9tariat"><div><small>E-MAIL</small><strong>naimyousfi76@gmail.com</strong></div><b>↗</b></a>
+<a class="contactlink" href="https://wa.me/33765258156" target="_blank" rel="noopener"><div><small>WHATSAPP / TÉLÉPHONE</small><strong>07 65 25 81 56</strong></div><b>↗</b></a>
+</div>
 </div>
 </section>
 </main>
-<footer><span>© <span id="year"></span> Naïm Yousfi</span><span data-fr="Interprétariat professionnel · France" data-en="Professional interpreting · France">Interprétariat professionnel · France</span></footer>
+
+<footer class="wrap"><div><strong>NAIM YOUSFI · INTERPRÉTARIAT</strong><p data-fr="Des échanges plus clairs, des liens plus forts." data-en="Clearer conversations. Stronger connections.">Des échanges plus clairs, des liens plus forts.</p></div><div>© <span id="year"></span> Naim Yousfi · <a href="mailto:naimyousfi76@gmail.com">Contact</a></div></footer>
+
 <script>
+const toggle=document.getElementById('langToggle');
 let lang='fr';
-function toggleLang(){lang=lang==='fr'?'en':'fr';document.documentElement.lang=lang;document.querySelectorAll('[data-fr]').forEach(el=>{el.innerHTML=el.dataset[lang]});document.querySelector('.lang').textContent=lang==='fr'?'EN':'FR'}
+toggle.addEventListener('click',()=>{
+lang=lang==='fr'?'en':'fr';
+document.documentElement.lang=lang;
+document.querySelectorAll('[data-fr][data-en]').forEach(el=>{
+el.innerHTML=el.dataset[lang];
+});
+toggle.textContent=lang==='fr'?'EN / FR':'FR / EN';
+});
 document.getElementById('year').textContent=new Date().getFullYear();
+if('IntersectionObserver' in window){
+const observer=new IntersectionObserver(entries=>{
+entries.forEach(entry=>{
+if(entry.isIntersecting){
+entry.target.classList.add('visible');
+observer.unobserve(entry.target);
+}
+});
+},{threshold:.12});
+document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
+}else{
+document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));
+}
 </script>
 </body>
 </html>
