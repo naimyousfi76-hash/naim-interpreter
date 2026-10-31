@@ -1,205 +1,209 @@
 
-<!doctype html>
+<!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
+<meta charset="UTF-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101713">
-<meta name="description" content="Naim Yousfi — Interprète professionnel en français, arabe, kabyle et anglais.">
+<meta name="theme-color" content="#151b18">
 <title>Naim Yousfi — Interprète professionnel</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
 <style>
-:root{--bg:#f5f3ee;--ink:#18211b;--muted:#73786f;--green:#26392d;--lime:#c8d4a6;--line:rgba(24,33,27,.17);--serif:"Playfair Display",Georgia,serif;--sans:"DM Sans",Arial,sans-serif}
+:root{--bg:#f5f3ee;--dark:#151b18;--green:#c9d7b8;--muted:#777c74}
 *{box-sizing:border-box;margin:0;padding:0}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{background:var(--bg);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+html{scroll-behavior:smooth}
+body{font-family:Arial,Helvetica,sans-serif;background:var(--bg);color:var(--dark)}
 a{color:inherit;text-decoration:none}
-button{font:inherit}
-.wrap{width:min(1180px,90%);margin:auto}
-.topline{height:5px;background:var(--lime)}
-header{position:sticky;top:0;z-index:50;background:rgba(245,243,238,.93);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-.nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{font-weight:700;letter-spacing:-.04em;font-size:19px}
-.brand small{display:block;margin-top:5px;font-size:10px;font-weight:500;letter-spacing:.22em;color:var(--muted)}
-.navlinks{display:flex;align-items:center;gap:25px;font-size:13px}
-.navlinks a:hover{opacity:.55}
-.navcta,.button{display:inline-flex;align-items:center;justify-content:center;padding:14px 20px;background:var(--green);color:white;border:1px solid var(--green);font-size:12px;letter-spacing:.04em;transition:transform .2s}
-.navcta:hover,.button:hover{transform:translateY(-2px);background:#3b5140}
-.menubtn{display:none;background:transparent;border:1px solid var(--line);padding:11px 14px;font-size:12px}
-.hero{padding:75px 0 65px;min-height:660px;display:flex;align-items:center}
-.hero-grid{display:grid;grid-template-columns:1.02fr .98fr;gap:6%;align-items:center}
-.eyebrow{font-size:10px;letter-spacing:.22em;text-transform:uppercase;font-weight:700;color:var(--muted);display:flex;align-items:center;gap:12px}
-.eyebrow:before{content:"";width:28px;height:1px;background:currentColor}
-.hero h1{font-size:clamp(52px,7.2vw,94px);line-height:.99;letter-spacing:-.075em;font-weight:500;margin:27px 0}
-.hero h1 em,.section-head h2 em,.contact h2 em{font-family:var(--serif);font-weight:500}
-.hero-copy{max-width:480px;color:#60665e;font-size:15px;line-height:1.9}
-.hero-actions{display:flex;align-items:center;gap:24px;margin-top:30px;flex-wrap:wrap}
-.textlink{font-size:12px;border-bottom:1px solid var(--line);padding-bottom:5px}
-.hero-note{margin-top:45px;padding-top:18px;border-top:1px solid var(--line);font-size:10px;letter-spacing:.16em;color:var(--muted);text-transform:uppercase}
-.visual{position:relative;min-height:500px;background:var(--green);overflow:hidden;color:#f6f3eb}
-.visual:before{content:"";position:absolute;inset:0;background:radial-gradient(ellipse at 75% 20%,rgba(202,216,169,.24),transparent 38%),linear-gradient(150deg,transparent 45%,rgba(0,0,0,.3))}
-.visual-art{position:absolute;inset:8% 9%;border:1px solid rgba(255,255,255,.25);display:flex;align-items:center;justify-content:center;flex-direction:column;text-align:center}
-.visual-art:before,.visual-art:after{content:"";position:absolute;border:1px solid rgba(203,216,172,.5);border-radius:50%;width:240px;height:240px}
-.visual-art:after{width:300px;height:300px}
-.monogram{font-family:var(--serif);font-size:118px;line-height:1;z-index:1;color:var(--lime);letter-spacing:-.1em}
-.visual-label{z-index:1;font-size:9px;letter-spacing:.24em;margin-top:24px;text-transform:uppercase}
-.visual-index{position:absolute;bottom:24px;left:24px;font-size:10px;letter-spacing:.16em;color:rgba(255,255,255,.65)}
-.visual-side{position:absolute;right:24px;top:24px;writing-mode:vertical-rl;font-size:9px;letter-spacing:.2em;color:rgba(255,255,255,.65)}
-.marquee-wrap{background:var(--lime);padding:18px 0;overflow:hidden}
-.marquee-label{text-align:center;text-transform:uppercase;font-size:9px;letter-spacing:.2em;margin-bottom:15px;color:#394437}
-.marquee{overflow:hidden}
-.marquee-track{display:flex;width:max-content;align-items:center;animation:scroll 28s linear infinite}
-.marquee:hover .marquee-track{animation-play-state:paused}
-.logo-card{height:76px;width:220px;display:flex;align-items:center;justify-content:center;gap:12px;border-right:1px solid rgba(24,33,27,.18);padding:12px 24px;flex-shrink:0}
-.logo-symbol{width:38px;height:38px;border:1px solid rgba(24,33,27,.6);border-radius:50%;display:flex;align-items:center;justify-content:center;font-family:var(--serif);font-size:18px;font-weight:600}
-.logo-word{font-size:12px;line-height:1.25;font-weight:700;max-width:135px}
-.logo-word small{display:block;font-size:8px;font-weight:500;letter-spacing:.08em;margin-top:4px}
-.logo-card:nth-child(2n) .logo-symbol{border-radius:0;transform:rotate(45deg)}
-.logo-card:nth-child(2n) .logo-symbol span{transform:rotate(-45deg)}
-@keyframes scroll{to{transform:translateX(-50%)}}
-section.content-section{padding:100px 0}
-.section-head{display:grid;grid-template-columns:.7fr 1.3fr;gap:40px;margin-bottom:55px}
-.section-no{font-size:10px;letter-spacing:.2em;color:var(--muted);text-transform:uppercase}
-.section-head h2{font-size:clamp(36px,5vw,62px);line-height:1.07;letter-spacing:-.06em;font-weight:500;max-width:720px}
-.intro{color:var(--muted);line-height:1.9;max-width:560px;margin-top:22px;font-size:14px}
-.services{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line)}
-.service{padding:28px 24px 32px 0;border-bottom:1px solid var(--line);min-height:210px}
-.service+.service{padding-left:24px;border-left:1px solid var(--line)}
-.service-number{font-family:var(--serif);font-size:16px;color:#87917c}
-.service h3{font-size:19px;font-weight:600;margin:28px 0 12px;letter-spacing:-.03em}
-.service p{font-size:13px;line-height:1.8;color:var(--muted);max-width:290px}
-.language-section{background:var(--green);color:#f6f3eb}
-.language-section .section-no,.language-section .intro{color:#b9c1b4}
-.language-list{border-top:1px solid rgba(255,255,255,.25)}
-.language-row{display:grid;grid-template-columns:1fr 2fr auto;align-items:center;gap:20px;padding:23px 0;border-bottom:1px solid rgba(255,255,255,.25)}
-.language-row strong{font-size:clamp(21px,3vw,32px);font-weight:500;letter-spacing:-.04em}
-.language-row span{font-size:12px;color:#bdc6ba}
-.language-row b{font-size:10px;letter-spacing:.12em;color:var(--lime);font-weight:600}
-.references{background:#202820;color:#f6f3eb}
-.references .section-no,.references .intro{color:#aab2a6}
-.reference-disclaimer{margin-top:28px;font-size:11px;line-height:1.8;color:#aab2a6;max-width:850px}
-.contact{background:var(--lime);padding:95px 0}
-.contact-grid{display:grid;grid-template-columns:1fr .8fr;gap:50px;align-items:end}
-.contact h2{font-size:clamp(42px,6vw,76px);line-height:1;letter-spacing:-.07em;font-weight:500;margin:22px 0}
-.contact p{max-width:490px;font-size:14px;line-height:1.8;color:#4e5b4a}
-.contact-box{border-top:1px solid rgba(24,33,27,.3);padding-top:20px}
-.contact-box p{font-size:11px;text-transform:uppercase;letter-spacing:.15em;margin-bottom:18px}
-footer{background:#101713;color:#e8e9e1;padding:28px 0}
-.footer-inner{display:flex;justify-content:space-between;gap:20px;align-items:center;font-size:10px;letter-spacing:.1em;color:#aab2a6}
-.footer-inner strong{color:#fff;font-size:12px}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s ease,transform .7s ease}
-.reveal.visible{opacity:1;transform:none}
-@media(max-width:760px){
-.wrap{width:88%}.nav{min-height:74px}
-.navlinks{display:none;position:absolute;top:73px;left:0;right:0;background:var(--bg);padding:22px 6%;border-bottom:1px solid var(--line);flex-direction:column;align-items:flex-start;gap:22px}
-.navlinks.open{display:flex}.navcta{display:none}.menubtn{display:block}
-.hero{padding:48px 0 42px;min-height:0}.hero-grid{grid-template-columns:1fr;gap:38px}
-.hero h1{font-size:clamp(53px,14vw,76px);margin:22px 0}.hero-copy{font-size:14px}
-.visual{min-height:360px}.visual-art:before{width:190px;height:190px}.visual-art:after{width:240px;height:240px}
-.monogram{font-size:95px}.hero-note{margin-top:28px}
-.logo-card{width:190px;height:68px}.logo-symbol{width:32px;height:32px}.logo-word{font-size:11px}
-.section-head{grid-template-columns:1fr;gap:20px;margin-bottom:36px}
-.content-section{padding:70px 0!important}.services{grid-template-columns:1fr}
-.service,.service+.service{padding:24px 0;border-left:0;min-height:0}
-.service h3{margin:14px 0 8px}
-.language-row{grid-template-columns:1fr auto;gap:8px}
-.language-row span{grid-column:1}.language-row b{grid-column:2;grid-row:1/3}
-.contact{padding:72px 0}.contact-grid{grid-template-columns:1fr;gap:28px}
-.footer-inner{flex-direction:column;align-items:flex-start;line-height:1.8}
+.wrap{width:min(1180px,88%);margin:auto}
+header{position:sticky;top:0;z-index:10;background:#f5f3eef2;backdrop-filter:blur(12px);border-bottom:1px solid #ddd}
+nav{min-height:82px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{font-weight:800;letter-spacing:-1px;font-size:22px}
+.brand small{display:block;font-size:10px;letter-spacing:3px;font-weight:500;color:var(--muted);margin-top:6px}
+nav .links{display:flex;gap:24px;font-size:13px}
+nav .links a:hover{color:#64795a}
+.menu{display:none;background:none;border:1px solid #ccc;padding:12px;font-size:14px}
+.hero{background:var(--dark);color:white;padding:100px 0 80px}
+.eyebrow{text-transform:uppercase;letter-spacing:3px;font-size:11px;color:#b8c2b2;font-weight:bold}
+h1{font-size:clamp(44px,8vw,94px);line-height:.98;letter-spacing:-5px;max-width:950px;margin:32px 0}
+h1 em{font-family:Georgia,serif;font-weight:400;color:var(--green)}
+.intro{max-width:570px;font-size:18px;line-height:1.8;color:#c9cec8}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:32px}
+.btn{padding:15px 21px;display:inline-block;font-size:13px;font-weight:bold;border:1px solid #82917d}
+.btn.primary{background:var(--green);color:var(--dark);border-color:var(--green)}
+section{padding:90px 0}
+.section-head{display:grid;grid-template-columns:1fr 2fr;gap:30px;margin-bottom:45px}
+.label{font-size:11px;letter-spacing:3px;text-transform:uppercase;color:var(--muted);font-weight:bold}
+h2{font-size:clamp(34px,5vw,58px);letter-spacing:-2px;line-height:1.1;font-weight:500}
+h2 em{font-family:Georgia,serif}
+.copy{font-size:16px;color:#626960;line-height:1.9;max-width:650px;margin-top:20px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid #d4d5cc}
+.card{padding:30px 24px 35px 0;border-bottom:1px solid #d4d5cc}
+.card:not(:last-child){border-right:1px solid #d4d5cc;padding-right:25px}
+.card h3{font-size:21px;margin-bottom:13px;font-weight:500}
+.card p{font-size:14px;line-height:1.8;color:#6e746c}
+.languages{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.languages span{padding:14px 20px;border:1px solid #c9cdc4;border-radius:40px;font-size:13px}
+.references{background:#202722;color:white;overflow:hidden}
+.references h2{margin-top:24px}
+.references .copy{color:#b7bcb4}
+.logo-window{margin-top:55px;overflow:hidden;border-top:1px solid #62685f;border-bottom:1px solid #62685f;padding:25px 0}
+.logo-track{display:flex;width:max-content;align-items:center;animation:scroll 32s linear infinite}
+.logo-window:hover .logo-track{animation-play-state:paused}
+.logo-card{width:250px;height:130px;margin-right:18px;background:#fff;border-radius:8px;display:flex;flex-direction:column;align-items:center;justify-content:center;padding:18px;gap:10px;flex-shrink:0}
+.logo-card img{width:100%;height:75px;object-fit:contain}
+.logo-card span{font-size:11px;text-align:center;font-weight:bold;color:#222}
+@keyframes scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+.notice{font-size:12px;line-height:1.8;color:#b7bcb4;margin-top:22px}
+.contact{background:var(--green)}
+.contact-grid{display:grid;grid-template-columns:1fr 1fr;gap:40px;align-items:start}
+.contact h2{margin-top:22px}
+.contact p{line-height:1.8;color:#455044;margin-top:18px}
+.contact-link{display:inline-block;margin-top:25px;padding:16px 22px;background:var(--dark);color:white;font-size:13px;font-weight:bold}
+footer{padding:25px 0;background:var(--dark);color:#c8cdc5;font-size:12px}
+footer .wrap{display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap}
+@media(max-width:700px){
+ nav{min-height:75px}
+ .menu{display:block}
+ nav .links{display:none;position:absolute;top:75px;left:0;right:0;background:var(--bg);padding:25px 6%;flex-direction:column;border-bottom:1px solid #ddd}
+ nav .links.open{display:flex}
+ .hero{padding:75px 0 65px}
+ h1{letter-spacing:-2.5px}
+ section{padding:65px 0}
+ .section-head{grid-template-columns:1fr;gap:20px}
+ .cards{grid-template-columns:1fr}
+ .card,.card:not(:last-child){padding:24px 0;border-right:0;border-bottom:1px solid #d4d5cc}
+ .contact-grid{grid-template-columns:1fr}
+ .logo-card{width:210px;height:120px}
 }
-@media(prefers-reduced-motion:reduce){
-html{scroll-behavior:auto}.marquee-track{animation:none}.reveal{opacity:1;transform:none;transition:none}
-}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.logo-track{animation:none}}
 </style>
 </head>
 <body>
-<div class="topline"></div>
-<header><div class="wrap nav">
+<header>
+<div class="wrap">
+<nav>
 <a class="brand" href="#accueil">NAIM YOUSFI<small>INTERPRÈTE PROFESSIONNEL</small></a>
-<nav class="navlinks" id="navlinks" aria-label="Navigation">
-<a href="#apropos">À propos</a><a href="#expertises">Expertises</a><a href="#langues">Langues</a><a href="#references">Références</a><a href="#contact">Contact</a>
+<button class="menu" id="menuButton" aria-expanded="false">MENU +</button>
+<div class="links" id="navLinks">
+<a href="#apropos">À propos</a>
+<a href="#services">Expertises</a>
+<a href="#langues">Langues</a>
+<a href="#references">Références</a>
+<a href="#contact">Contact</a>
+</div>
 </nav>
-<a class="navcta" href="#contact">Échanger sur une mission ↗</a>
-<button class="menubtn" id="menubtn" aria-expanded="false" aria-controls="navlinks">MENU +</button>
-</div></header>
+</div>
+</header>
+
 <main>
-<section class="hero" id="accueil"><div class="wrap hero-grid"><div>
-<p class="eyebrow">Interprétation · Médiation linguistique</p>
-<h1>Les mots<br>justes, au<br><em>bon moment.</em></h1>
-<p class="hero-copy">Interprète professionnel, j’accompagne les échanges où la précision, la neutralité et la compréhension sont essentielles. Une présence attentive, une restitution fidèle et un cadre de confiance.</p>
-<div class="hero-actions"><a class="button" href="#contact">Parler d’une mission ↗</a><a class="textlink" href="#expertises">Découvrir mes expertises ↓</a></div>
-<div class="hero-note">Français · Arabe · Kabyle · Anglais</div>
-</div><div class="visual" aria-label="Identité visuelle Naim Yousfi">
-<div class="visual-side">INTERPRÉTATION PROFESSIONNELLE</div>
-<div class="visual-art"><div class="monogram">NY</div><div class="visual-label">Écouter · Comprendre · Transmettre</div></div>
-<div class="visual-index">01 — LANGUES & RELATIONS HUMAINES</div>
-</div></div></section>
-<div class="marquee-wrap">
-<div class="marquee-label">Environnements professionnels — références mentionnées selon les missions réalisées</div>
-<div class="marquee" aria-label="Références professionnelles en défilement"><div class="marquee-track">
-<div class="logo-card"><div class="logo-symbol"><span>O</span></div><div class="logo-word">OFII<small>INTÉGRATION & ACCUEIL</small></div></div>
-<div class="logo-card"><div class="logo-symbol"><span>J</span></div><div class="logo-word">MINISTÈRE DE LA JUSTICE<small>JUSTICE</small></div></div>
-<div class="logo-card"><div class="logo-symbol"><span>PN</span></div><div class="logo-word">POLICE NATIONALE<small>SÉCURITÉ PUBLIQUE</small></div></div>
-<div class="logo-card"><div class="logo-symbol"><span>AP</span></div><div class="logo-word">AP-HP<small>SANTÉ PUBLIQUE</small></div></div>
-<div class="logo-card"><div class="logo-symbol"><span>G</span></div><div class="logo-word">GENDARMERIE NATIONALE<small>SÉCURITÉ & TERRITOIRE</small></div></div>
-<div class="logo-card"><div class="logo-symbol"><span>O</span></div><div class="logo-word">OFII<small>INTÉGRATION & ACCUEIL</small></div></div>
-<div class="logo-card"><div class="logo-symbol"><span>J</span></div><div class="logo-word">MINISTÈRE DE LA JUSTICE<small>JUSTICE</small></div></div>
-<div class="logo-card"><div class="logo-symbol"><span>PN</span></div><div class="logo-word">POLICE NATIONALE<small>SÉCURITÉ PUBLIQUE</small></div></div>
-<div class="logo-card"><div class="logo-symbol"><span>AP</span></div><div class="logo-word">AP-HP<small>SANTÉ PUBLIQUE</small></div></div>
-<div class="logo-card"><div class="logo-symbol"><span>G</span></div><div class="logo-word">GENDARMERIE NATIONALE<small>SÉCURITÉ & TERRITOIRE</small></div></div>
-</div></div></div>
-<section class="content-section" id="apropos"><div class="wrap">
-<div class="section-head reveal"><p class="section-no">01 / Approche</p><div><h2>Faire passer le sens,<br><em>sans le déformer.</em></h2><p class="intro">L’interprétation ne consiste pas seulement à traduire des mots. Elle demande de l’écoute, une posture professionnelle et le respect de la parole de chacun.</p></div></div>
-<div class="services">
-<article class="service reveal"><span class="service-number">01</span><h3>Fidélité du message</h3><p>Restituer les propos avec précision, sans ajouter, omettre ou interpréter à la place des interlocuteurs.</p></article>
-<article class="service reveal"><span class="service-number">02</span><h3>Neutralité & discrétion</h3><p>Adopter une posture impartiale et respecter la confidentialité propre au cadre de chaque intervention.</p></article>
-<article class="service reveal"><span class="service-number">03</span><h3>Adaptation au contexte</h3><p>Prendre en compte le vocabulaire, le rythme et les enjeux de l’échange pour favoriser la compréhension.</p></article>
-</div></div></section>
-<section class="content-section language-section" id="langues"><div class="wrap">
-<div class="section-head reveal"><p class="section-no">02 / Langues</p><div><h2>La langue comme<br><em>pont entre les personnes.</em></h2><p class="intro">Une communication claire commence par une compréhension précise de la langue et du contexte.</p></div></div>
-<div class="language-list reveal">
-<div class="language-row"><strong>Français</strong><span>Langue de travail</span><b>FR</b></div>
-<div class="language-row"><strong>Arabe</strong><span>Interprétation linguistique</span><b>AR</b></div>
-<div class="language-row"><strong>Kabyle</strong><span>Interprétation linguistique</span><b>KAB</b></div>
-<div class="language-row"><strong>Anglais</strong><span>Communication multilingue</span><b>EN</b></div>
-</div></div></section>
-<section class="content-section" id="expertises"><div class="wrap">
-<div class="section-head reveal"><p class="section-no">03 / Expertises</p><div><h2>Au cœur des échanges<br><em>à fort enjeu.</em></h2><p class="intro">Des interventions qui demandent une écoute attentive, une restitution exacte et une adaptation au cadre professionnel.</p></div></div>
-<div class="services">
-<article class="service reveal"><span class="service-number">A</span><h3>Cadre institutionnel</h3><p>Échanges administratifs et institutionnels, dans le respect des consignes et du rôle de l’interprète.</p></article>
-<article class="service reveal"><span class="service-number">B</span><h3>Cadre judiciaire</h3><p>Préparation terminologique et restitution fidèle des propos dans le cadre de missions concernées.</p></article>
-<article class="service reveal"><span class="service-number">C</span><h3>Cadre médical & social</h3><p>Faciliter la compréhension mutuelle entre professionnels et personnes accompagnées.</p></article>
-</div></div></section>
-<section class="content-section references" id="references"><div class="wrap">
-<div class="section-head reveal"><p class="section-no">04 / Environnements</p><div><h2>Au service d’échanges<br><em>à fort enjeu.</em></h2><p class="intro">Les environnements cités reflètent des références professionnelles, selon les missions effectivement réalisées.</p></div></div>
-<p class="reference-disclaimer">Les noms d’organismes sont mentionnés à titre de références professionnelles, sous réserve de correspondre aux missions effectivement réalisées. Cette présentation ne signifie pas une affiliation, une accréditation ou un soutien officiel de ces organismes.</p>
-</div></section>
-<section class="contact" id="contact"><div class="wrap contact-grid">
-<div><p class="eyebrow">05 / Contact</p><h2>Votre prochaine<br><em>mission.</em></h2><p>Vous recherchez un interprète ou souhaitez échanger sur les modalités d’une intervention ? Contactez-moi via Instagram pour le moment.</p></div>
-<div class="contact-box"><p>Prendre contact</p><a class="button" href="https://www.instagram.com/naimyousfi/" target="_blank" rel="noopener">Écrire sur Instagram ↗</a></div>
-</div></section>
+<section class="hero" id="accueil">
+<div class="wrap">
+<p class="eyebrow">Interprétariat · France</p>
+<h1>Les mots justes.<br>La compréhension <em>avant tout.</em></h1>
+<p class="intro">Interprète professionnel, j'accompagne les échanges entre personnes et institutions avec rigueur, confidentialité et précision linguistique.</p>
+<div class="actions">
+<a class="btn primary" href="#contact">Discuter d'une mission ↗</a>
+<a class="btn" href="#services">Découvrir mes expertises ↓</a>
+</div>
+</div>
+</section>
+
+<section id="apropos">
+<div class="wrap">
+<div class="section-head">
+<p class="label">01 / À propos</p>
+<div>
+<h2>Faciliter l'échange.<br><em>Créer la compréhension.</em></h2>
+<p class="copy">Mon rôle est de restituer fidèlement le sens, le ton et l'intention de chaque interlocuteur. Chaque intervention exige neutralité, discrétion et respect du contexte.</p>
+</div>
+</div>
+</div>
+</section>
+
+<section id="services">
+<div class="wrap">
+<div class="section-head">
+<p class="label">02 / Expertises</p>
+<div>
+<h2>Une interprétation<br><em>adaptée au contexte.</em></h2>
+<p class="copy">Un accompagnement linguistique pensé pour des échanges où la précision et la qualité de communication comptent.</p>
+</div>
+</div>
+<div class="cards">
+<article class="card"><h3>Institutions</h3><p>Accompagnement linguistique dans les échanges institutionnels et administratifs, selon les missions confiées.</p></article>
+<article class="card"><h3>Justice</h3><p>Interprétation lors d'entretiens et de procédures, dans le respect de la neutralité et des obligations applicables.</p></article>
+<article class="card"><h3>Santé & social</h3><p>Faciliter le dialogue entre professionnels et personnes accompagnées, en veillant à la fidélité du message.</p></article>
+</div>
+</div>
+</section>
+
+<section id="langues">
+<div class="wrap">
+<div class="section-head">
+<p class="label">03 / Langues</p>
+<div>
+<h2>La langue ne doit<br><em>jamais être un obstacle.</em></h2>
+<p class="copy">Interventions selon la combinaison linguistique, le contexte et les besoins de la mission.</p>
+<div class="languages">
+<span>Français</span><span>Arabe</span><span>Kabyle</span><span>Anglais</span>
+</div>
+</div>
+</div>
+</div>
+</section>
+
+<section class="references" id="references">
+<div class="wrap">
+<p class="eyebrow">04 / Environnements professionnels</p>
+<h2>Au service d'échanges<br>à <em>fort enjeu.</em></h2>
+<p class="copy">Logos présentés à titre de repères institutionnels. Ils ne signifient pas nécessairement une affiliation ou une approbation officielle.</p>
+
+<div class="logo-window">
+<div class="logo-track">
+<div class="logo-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Logo_OFII.svg" alt="Logo OFII" onerror="this.style.display='none'"><span>OFII</span></div>
+<div class="logo-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Minist%C3%A8re_de_la_Justice.svg" alt="Logo Ministère de la Justice" onerror="this.style.display='none'"><span>MINISTÈRE DE LA JUSTICE</span></div>
+<div class="logo-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Police_Nationale_(France).svg" alt="Logo Police nationale" onerror="this.style.display='none'"><span>POLICE NATIONALE</span></div>
+<div class="logo-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/AP-HP_Logo.svg" alt="Logo AP-HP" onerror="this.style.display='none'"><span>AP-HP</span></div>
+<div class="logo-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gendarmerie_nationale_logo.svg" alt="Logo Gendarmerie nationale" onerror="this.style.display='none'"><span>GENDARMERIE NATIONALE</span></div>
+
+<div class="logo-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Logo_OFII.svg" alt="Logo OFII" onerror="this.style.display='none'"><span>OFII</span></div>
+<div class="logo-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Minist%C3%A8re_de_la_Justice.svg" alt="Logo Ministère de la Justice" onerror="this.style.display='none'"><span>MINISTÈRE DE LA JUSTICE</span></div>
+<div class="logo-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Police_Nationale_(France).svg" alt="Logo Police nationale" onerror="this.style.display='none'"><span>POLICE NATIONALE</span></div>
+<div class="logo-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/AP-HP_Logo.svg" alt="Logo AP-HP" onerror="this.style.display='none'"><span>AP-HP</span></div>
+<div class="logo-card"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gendarmerie_nationale_logo.svg" alt="Logo Gendarmerie nationale" onerror="this.style.display='none'"><span>GENDARMERIE NATIONALE</span></div>
+</div>
+</div>
+<p class="notice">Les références doivent correspondre à des missions réellement effectuées. L'utilisation de logos officiels peut être soumise à des conditions propres à chaque organisme.</p>
+</div>
+</section>
+
+<section class="contact" id="contact">
+<div class="wrap contact-grid">
+<div>
+<p class="label">05 / Contact</p>
+<h2>Parlons de<br><em>votre mission.</em></h2>
+</div>
+<div>
+<p>Vous recherchez un interprète ou souhaitez échanger sur une mission ? Contactez-moi pour préciser les langues, le contexte et les modalités d'intervention.</p>
+<a class="contact-link" href="https://www.instagram.com/naimyousfi/" target="_blank" rel="noopener">Me contacter sur Instagram ↗</a>
+</div>
+</div>
+</section>
 </main>
-<footer><div class="wrap footer-inner"><strong>NAIM YOUSFI</strong><span>INTERPRÈTE PROFESSIONNEL</span><span>© <span id="year"></span> — Tous droits réservés</span></div></footer>
+
+<footer><div class="wrap"><span>© 2026 Naim Yousfi</span><span>Interprétariat professionnel</span></div></footer>
+
 <script>
-const menuButton=document.getElementById('menubtn');
-const nav=document.getElementById('navlinks');
+const menuButton=document.getElementById('menuButton');
+const navLinks=document.getElementById('navLinks');
 menuButton.addEventListener('click',()=>{
-const open=nav.classList.toggle('open');
-menuButton.setAttribute('aria-expanded',String(open));
-menuButton.textContent=open?'FERMER −':'MENU +';
+ const open=navLinks.classList.toggle('open');
+ menuButton.setAttribute('aria-expanded',String(open));
+ menuButton.textContent=open?'FERMER −':'MENU +';
 });
-nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{
-nav.classList.remove('open');
-menuButton.setAttribute('aria-expanded','false');
-menuButton.textContent='MENU +';
+navLinks.querySelectorAll('a').forEach(link=>link.addEventListener('click',()=>{
+ navLinks.classList.remove('open');
+ menuButton.setAttribute('aria-expanded','false');
+ menuButton.textContent='MENU +';
 }));
-document.getElementById('year').textContent=new Date().getFullYear();
-const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{
-if(entry.isIntersecting){entry.target.classList.add('visible');observer.unobserve(entry.target);}
-}),{threshold:.12});
-document.querySelectorAll('.reveal').forEach(el=>observer.observe(el));
 </script>
 </body>
 </html>
