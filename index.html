@@ -1,257 +1,216 @@
 
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<meta name="theme-color" content="#101e32">
-<meta name="description" content="Naïm Yousfi, interprète professionnel en français, arabe, kabyle et anglais. Interprétariat pour les missions professionnelles, institutionnelles et judiciaires.">
-<title>Naïm Yousfi — Interprétariat professionnel</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link href="https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="theme-color" content="#fff">
+<meta name="description" content="Naïm Yousfi, interprète professionnel en français, arabe, kabyle et anglais.">
+<title>Naïm Yousfi — Interprète professionnel</title>
 <style>
-:root{--navy:#101e32;--navy2:#192d49;--red:#d64a57;--cream:#f7f8fa;--white:#fff;--ink:#172337;--muted:#66758a;--line:#e1e6ed}
+:root{--ink:#17243a;--blue:#284f91;--muted:#697589;--line:#e5e9ef;--pale:#f4f7fb;--serif:Georgia,'Times New Roman',serif;--sans:Arial,Helvetica,sans-serif}
 *{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:90px}
-body{margin:0;font-family:"DM Sans",sans-serif;background:var(--cream);color:var(--ink);line-height:1.7}
-a{text-decoration:none;color:inherit}
-button,a{-webkit-tap-highlight-color:transparent}
-.container{width:min(1160px,calc(100% - 42px));margin:auto}
-header{position:sticky;top:0;z-index:50;background:rgba(16,30,50,.96);backdrop-filter:blur(15px);color:white;border-bottom:1px solid #ffffff18}
-.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.logo{font-family:Manrope,sans-serif;font-size:17px;font-weight:800;letter-spacing:1.3px}
-.logo span{color:#ff8992}
-.nav-links{display:flex;align-items:center;gap:29px;font-size:14px}
-.nav-links a:not(.nav-button){color:#d9e1ec;transition:color .2s}
-.nav-links a:hover{color:#ff9aa2}
-.nav-button,.button{display:inline-flex;align-items:center;justify-content:center;gap:9px;padding:13px 19px;border-radius:7px;font-size:14px;font-weight:700;transition:transform .2s,background .2s}
-.nav-button,.primary{background:var(--red);color:white}
-.nav-button:hover,.primary:hover{background:#b93443;transform:translateY(-2px)}
-.menu-toggle{display:none;background:none;color:white;border:1px solid #ffffff40;border-radius:7px;padding:9px 12px;font-size:22px}
-.hero{position:relative;overflow:hidden;color:white;background:radial-gradient(ellipse at 85% 15%,#34516f 0,transparent 35%),linear-gradient(125deg,#101e32,#192f4d 65%,#213e5a)}
-.hero:before{content:"";position:absolute;width:500px;height:500px;border:1px solid #ffffff12;border-radius:50%;right:-190px;bottom:-300px;box-shadow:0 0 0 60px #ffffff05,0 0 0 120px #ffffff04}
-.hero-grid{position:relative;display:grid;grid-template-columns:1.3fr .7fr;gap:70px;align-items:center;padding:105px 0 112px}
-.eyebrow{display:flex;align-items:center;gap:10px;text-transform:uppercase;letter-spacing:2px;font-size:11px;font-weight:700;color:#ffabb1}
-.eyebrow:before{content:"";height:2px;width:28px;background:var(--red)}
-h1,h2,h3{font-family:Manrope,sans-serif}
-h1{font-size:clamp(42px,6vw,75px);letter-spacing:-3.5px;line-height:1.08;margin:23px 0}
-h1 span{color:#ff939c}
-.hero-copy{max-width:630px;color:#d7e0ea;font-size:17px;line-height:1.9}
-.hero-actions{display:flex;gap:13px;flex-wrap:wrap;margin-top:30px}
-.button{padding:15px 21px}
-.secondary{border:1px solid #ffffff60;color:white}
-.secondary:hover{background:#ffffff12}
-.hero-note{border:1px solid #ffffff25;background:#ffffff0b;border-radius:14px;padding:30px;box-shadow:0 25px 70px #0002}
-.note-label{color:#ffabb1;font-size:11px;letter-spacing:1.8px;text-transform:uppercase;font-weight:700}
-.hero-note h2{font-size:29px;line-height:1.25;margin:12px 0}
-.hero-note p{font-size:14px;color:#d4deea}
-.rule{height:1px;background:#ffffff24;margin:24px 0}
-.lang-pills{display:flex;gap:8px;flex-wrap:wrap;margin-top:17px}
-.lang-pills span{border:1px solid #ffffff35;border-radius:50px;padding:6px 11px;font-size:12px}
-.trust-strip{background:white;border-bottom:1px solid var(--line)}
-.trust-inner{display:grid;grid-template-columns:repeat(3,1fr);padding:23px 0;gap:20px}
-.trust-item{display:flex;align-items:center;justify-content:center;gap:12px;color:var(--navy);font-size:13px;font-weight:700;text-align:center}
-.trust-icon{display:grid;place-items:center;width:35px;height:35px;background:#fbe9eb;color:var(--red);border-radius:9px;font-size:17px}
-section.section{padding:90px 0}
-.section-top{max-width:720px;margin-bottom:38px}
-.overline{font-size:11px;font-weight:800;letter-spacing:2px;text-transform:uppercase;color:var(--red)}
-h2.section-title{font-size:clamp(30px,4vw,46px);letter-spacing:-1.6px;line-height:1.2;color:var(--navy);margin:12px 0}
-.section-intro{color:var(--muted);font-size:16px;max-width:650px}
-.service-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.service-card{padding:29px;background:white;border:1px solid var(--line);border-radius:12px;transition:transform .25s,box-shadow .25s}
-.service-card:hover{transform:translateY(-5px);box-shadow:0 16px 35px #1529420d}
-.service-icon{width:47px;height:47px;border-radius:11px;background:#fbe9eb;color:var(--red);display:grid;place-items:center;font-size:21px;margin-bottom:21px}
-.service-card h3{font-size:18px;color:var(--navy);margin:0 0 10px}
-.service-card p{font-size:14px;color:var(--muted);margin:0}
-.link-more{display:inline-block;margin-top:18px;color:var(--red);font-size:13px;font-weight:700}
-.about{background:white;border-block:1px solid var(--line)}
-.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:center}
-.about-panel{padding:35px;border-radius:14px;background:var(--navy);color:white;position:relative;overflow:hidden}
-.about-panel:after{content:"";position:absolute;width:210px;height:210px;border:1px solid #ffffff15;border-radius:50%;right:-75px;top:-80px;box-shadow:0 0 0 35px #ffffff05}
-.about-panel h3{font-size:25px;margin:0 0 13px;position:relative;z-index:1}
-.about-panel p{color:#d3deea;font-size:14px;position:relative;z-index:1}
-.quality-list{list-style:none;margin:25px 0 0;padding:0;display:grid;gap:13px}
-.quality-list li{display:flex;gap:12px;align-items:flex-start;font-size:14px}
-.tick{width:22px;height:22px;flex:0 0 22px;display:grid;place-items:center;border-radius:50%;background:#e6f5ec;color:#20734a;font-size:12px;font-weight:800}
-.languages-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:30px}
-.language-card{background:white;border:1px solid var(--line);border-radius:10px;padding:22px 12px;text-align:center}
-.language-card strong{display:block;font-family:Manrope,sans-serif;color:var(--navy);font-size:16px}
-.language-card span{font-size:12px;color:var(--muted)}
-.process-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:20px}
-.process{padding:26px;border-top:3px solid var(--red);background:white;border-radius:0 0 10px 10px}
-.process-number{font-size:11px;color:var(--red);font-weight:800;letter-spacing:1.5px}
-.process h3{font-size:18px;color:var(--navy);margin:10px 0}
-.process p{font-size:14px;color:var(--muted);margin:0}
-.experience{background:#edf1f6}
-.experience-box{display:grid;grid-template-columns:.8fr 1.2fr;gap:40px;align-items:start}
-.experience-box h2{margin-top:10px}
-.experience-copy{color:var(--muted);font-size:15px}
-.experience-tags{display:flex;flex-wrap:wrap;gap:10px;margin-top:22px}
-.experience-tags span{background:white;border:1px solid #d9e1ea;padding:9px 13px;border-radius:7px;color:var(--navy);font-size:13px;font-weight:600}
-.contact{background:var(--navy);color:white}
-.contact .section-title{color:white!important}
-.contact .section-intro{color:#d2deea}
-.contact-box{display:flex;align-items:center;justify-content:space-between;gap:25px;border:1px solid #ffffff2c;background:#ffffff09;border-radius:13px;padding:30px}
-.contact-box h3{font-size:23px;margin:0 0 4px}
-.contact-box p{font-size:14px;color:#d2deea;margin:0}
-.contact-details{margin-top:20px;color:#d2deea;font-size:13px}
-footer{background:#0a1524;color:#aebdcb;padding:23px 0;font-size:12px}
-.footer-inner{display:flex;align-items:center;justify-content:space-between;gap:15px;flex-wrap:wrap}
-footer a{color:#fff}
-.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s ease,transform .65s ease}
-.reveal.visible{opacity:1;transform:translateY(0)}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.reveal{opacity:1;transform:none;transition:none}*{transition:none!important}}
-@media(max-width:800px){
-.container{width:calc(100% - 34px)}
-.nav{height:68px}
-.menu-toggle{display:block}
-.nav-links{display:none;position:absolute;top:68px;left:0;right:0;padding:18px 22px 24px;background:var(--navy);border-top:1px solid #ffffff20;flex-direction:column;align-items:stretch;gap:0}
-.nav-links.open{display:flex}
-.nav-links a{padding:12px 0}
-.nav-links .nav-button{text-align:center;margin-top:8px}
-.hero-grid{grid-template-columns:1fr;gap:30px;padding:68px 0 72px}
-h1{font-size:clamp(42px,12vw,62px);letter-spacing:-2.4px}
-.hero-copy{font-size:15px}
-.hero-note{max-width:500px}
-.trust-inner{grid-template-columns:1fr;gap:14px;padding:20px 0}
-.trust-item{justify-content:flex-start;text-align:left}
-section.section{padding:66px 0}
-.service-grid,.process-grid{grid-template-columns:1fr}
-.about-grid,.experience-box{grid-template-columns:1fr;gap:28px}
-.languages-grid{grid-template-columns:repeat(2,1fr)}
-.contact-box{align-items:flex-start;flex-direction:column;padding:24px}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{margin:0;color:var(--ink);font-family:var(--sans);line-height:1.6}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.wrap{width:min(1120px,calc(100% - 42px));margin:auto}
+.topline{height:4px;background:var(--blue)}
+header{position:sticky;top:0;z-index:10;background:#ffffffed;backdrop-filter:blur(12px);border-bottom:1px solid var(--line)}
+.nav{height:78px;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.mark{border:1px solid var(--blue);border-radius:50%;width:43px;height:43px;display:grid;place-items:center;color:var(--blue);font:24px var(--serif)}
+.brand strong{font-size:12px;letter-spacing:.16em;text-transform:uppercase}
+.brand small{display:block;font-size:10px;letter-spacing:.2em;color:var(--muted);margin-top:2px}
+.links{display:flex;align-items:center;gap:25px;font-size:12px}
+.links a:hover{color:var(--blue)}
+.navcta,.btn{display:inline-flex;align-items:center;justify-content:center;gap:14px;border:1px solid var(--blue);padding:14px 18px;color:var(--blue);font-size:11px;font-weight:bold;letter-spacing:.04em;transition:.2s}
+.navcta:hover,.btn:hover{background:var(--blue);color:white;transform:translateY(-2px)}
+.menu{display:none;background:none;border:0;font-size:26px;color:var(--ink)}
+.hero{min-height:590px;padding:70px 0 55px;display:grid;grid-template-columns:1.08fr .92fr;gap:6%;align-items:center}
+.eyebrow,.kicker{color:var(--blue);font-size:10px;letter-spacing:.2em;text-transform:uppercase;font-weight:bold}
+.eyebrow:before{content:'';display:inline-block;width:28px;height:1px;background:var(--blue);vertical-align:middle;margin-right:12px}
+h1{font:normal clamp(52px,7.2vw,88px)/.99 var(--serif);letter-spacing:-.055em;margin:25px 0}
+h1 em{color:var(--blue)}
+.intro{font-size:15px;line-height:1.9;color:var(--muted);max-width:490px}
+.actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:28px}
+.btn.primary{background:var(--blue);color:white}
+.btn.primary:hover{background:#183a70}
+.art{min-height:410px;position:relative;display:grid;place-items:center;background:var(--pale);overflow:hidden}
+.art:before,.art:after{content:'';position:absolute;width:340px;height:340px;border:1px solid #d4dfef;border-radius:50%}
+.art:after{width:245px;height:245px}
+.poster{z-index:1;width:190px;height:245px;background:linear-gradient(145deg,#2c578f,#142d50);box-shadow:20px 20px 0 #d8e3f1;transform:rotate(3deg);display:flex;flex-direction:column;align-items:center;justify-content:center;color:#fff}
+.poster b{font:84px/.9 var(--serif);letter-spacing:-.09em}
+.poster i{height:1px;width:42px;background:#dce8f7;margin:18px}
+.poster small{font-size:8px;letter-spacing:.22em}
+.note{position:absolute;bottom:24px;left:15px;background:white;padding:13px 17px;box-shadow:0 8px 25px #152a4510;font:17px var(--serif);z-index:2}
+.note small{display:block;color:var(--muted);font:9px var(--sans);letter-spacing:.14em;text-transform:uppercase;margin-top:4px}
+.languages{border-block:1px solid var(--line);padding:20px 0}
+.langrow{display:flex;justify-content:space-between;gap:20px;align-items:center;flex-wrap:wrap}
+.langlabel{font-size:9px;color:var(--muted);letter-spacing:.17em;text-transform:uppercase}
+.langlist{display:flex;gap:25px;flex-wrap:wrap;font:19px var(--serif)}
+.langlist span:before{content:'•';font:12px var(--sans);color:var(--blue);margin-right:9px}
+section{padding:88px 0}
+.head{display:flex;align-items:end;justify-content:space-between;gap:30px;margin-bottom:35px}
+.head h2,.about h2,.contact h2{font:normal clamp(38px,5vw,58px)/1.08 var(--serif);letter-spacing:-.04em;margin:12px 0 0}
+.desc{max-width:360px;color:var(--muted);font-size:13px;line-height:1.9;margin:0}
+.services{background:#f8f9fb}
+.cards{display:grid;grid-template-columns:repeat(4,1fr);gap:12px}
+.card{min-height:260px;padding:23px;border:1px solid var(--line);background:white;text-align:left;color:inherit;cursor:pointer;display:flex;flex-direction:column;transition:.25s}
+.card:hover,.card:focus-visible{transform:translateY(-5px);border-color:#a9bfdd;box-shadow:0 15px 30px #17243a0c;outline:0}
+.num{font:15px var(--serif);color:#8291a6}
+.ico{font-size:25px;color:var(--blue);margin:28px 0 12px}
+.card h3{font:normal 23px var(--serif);margin:0 0 9px}
+.card p{font-size:12px;color:var(--muted);line-height:1.8;margin:0}
+.more{margin-top:auto;padding-top:20px;font-size:9px;letter-spacing:.13em;text-transform:uppercase;color:var(--blue)}
+.aboutgrid{display:grid;grid-template-columns:.8fr 1.2fr;gap:9%;align-items:center}
+.aboutart{min-height:350px;display:grid;place-items:center;background:var(--pale);position:relative;overflow:hidden}
+.aboutart span{font:230px var(--serif);color:#dce6f2}
+.aboutart small{position:absolute;bottom:18px;left:18px;background:#fff;padding:12px;font-size:9px;letter-spacing:.12em;text-transform:uppercase}
+.about p{color:var(--muted);font-size:13px;line-height:2}
+.about .lead{font:24px/1.55 var(--serif);color:var(--ink)}
+.pills{display:flex;gap:8px;flex-wrap:wrap;margin:22px 0}
+.pill{border:1px solid var(--line);padding:8px 11px;font-size:10px;color:#4e5c70}
+.refs{background:var(--pale)}
+.refgrid{display:grid;grid-template-columns:1fr 1fr;gap:35px;align-items:center}
+.ofii{background:#fff;border:1px solid var(--line);min-height:260px;display:grid;place-items:center;padding:28px}
+.ofii img{width:min(100%,313px);height:auto;object-fit:contain}
+.refcopy h3{font:normal 31px var(--serif);margin:0 0 12px}
+.refcopy p{font-size:13px;color:var(--muted);line-height:1.9}
+.chips{display:flex;gap:9px;flex-wrap:wrap}
+.chip{padding:9px 12px;background:white;border:1px solid #d9e0e9;font-size:10px}
+.disclaimer{font-size:10px!important;border-left:2px solid #b6c9e2;padding-left:12px}
+.contact{background:var(--ink);color:white}
+.contactgrid{display:flex;justify-content:space-between;align-items:center;gap:30px}
+.contact .kicker{color:#b6cde9}
+.contact p{color:#c7d0dd;font-size:13px;max-width:520px}
+.contact .btn{background:#fff;color:var(--ink);border-color:#fff;white-space:nowrap}
+.contact .btn:hover{background:#dce8f6}
+footer{background:#101b2b;color:#b8c2d0;padding:22px 0;font-size:10px}
+.foot{display:flex;justify-content:space-between;gap:18px;flex-wrap:wrap}
+.footlinks{display:flex;gap:18px}
+.reveal{opacity:0;transform:translateY(16px);transition:.65s}
+.reveal.show{opacity:1;transform:none}
+.backdrop{display:none;position:fixed;inset:0;z-index:30;background:#0c1a2bb8;padding:20px;align-items:center;justify-content:center}
+.backdrop.open{display:flex}
+.modal{position:relative;background:white;max-width:480px;width:100%;padding:32px}
+.close{position:absolute;right:14px;top:8px;border:0;background:none;font-size:27px;cursor:pointer}
+.modal h3{font:32px var(--serif);margin:12px 0}
+.modal p{font-size:13px;line-height:1.9;color:var(--muted)}
+@media(max-width:850px){
+.hero{grid-template-columns:1fr .8fr;gap:4%}
+.links{gap:13px}
+.cards{grid-template-columns:repeat(2,1fr)}
+.head{align-items:start;flex-direction:column}
+.aboutgrid{gap:5%}
+}
+@media(max-width:650px){
+.wrap{width:calc(100% - 36px)}
+.nav{height:70px}
+.menu{display:block}
+.links{display:none;position:absolute;top:70px;left:0;right:0;padding:20px;background:white;border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}
+.links.open{display:flex}
+.links a{padding:13px 0}
+.navcta{display:none}
+.hero{display:flex;flex-direction:column;align-items:stretch;padding:58px 0 40px;gap:35px}
+.hero h1{font-size:clamp(52px,13vw,76px)}
+.art{min-height:320px}
+.poster{height:210px;width:160px}
+.poster b{font-size:70px}
+.note{bottom:15px}
+.langrow{align-items:flex-start;flex-direction:column}
+.langlist{gap:13px}
+.langlist span{font-size:17px}
+section{padding:65px 0}
+.cards{grid-template-columns:1fr 1fr;gap:9px}
+.card{padding:17px;min-height:245px}
+.card h3{font-size:21px}
+.aboutgrid,.refgrid{grid-template-columns:1fr;gap:28px}
+.aboutart{min-height:260px}
+.aboutart span{font-size:180px}
+.contactgrid{align-items:flex-start;flex-direction:column}
+.contact .btn{white-space:normal}
+.ofii{min-height:220px}
+.foot{flex-direction:column}
+}
+@media(max-width:390px){
+.cards{grid-template-columns:1fr}
+.card{min-height:210px}
+.actions .btn{width:100%}
+}
+@media(prefers-reduced-motion:reduce){
+html{scroll-behavior:auto}
+.reveal{opacity:1;transform:none;transition:none}
+*{transition:none!important}
 }
 </style>
 </head>
 <body>
+<div class="topline"></div>
 <header>
-<div class="container nav">
-<a class="logo" href="#accueil">NAÏM <span>YOUSFI</span></a>
-<button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-<nav class="nav-links" id="navLinks">
-<a href="#services">Services</a>
-<a href="#apropos">À propos</a>
-<a href="#langues">Langues</a>
-<a href="#experience">Expérience</a>
-<a class="nav-button" href="#contact">Parler d’une mission ↗</a>
-</nav>
+<div class="wrap nav">
+<a class="brand" href="#accueil" aria-label="Accueil"><span class="mark">NY</span><span><strong>Naïm Yousfi</strong><small>Interprète professionnel</small></span></a>
+<button class="menu" id="menu" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+<nav class="links" id="links"><a href="#expertises">Expertises</a><a href="#apropos">À propos</a><a href="#references">Références</a><a href="#contact">Contact</a></nav>
+<a class="navcta" href="#contact">Parlons de votre mission ↗</a>
 </div>
 </header>
-<main>
-<section class="hero" id="accueil">
-<div class="container hero-grid">
+<main id="accueil">
+<div class="wrap hero">
 <div>
-<div class="eyebrow">Interprétariat professionnel</div>
-<h1>La précision des mots.<br><span>La confiance en plus.</span></h1>
-<p class="hero-copy">Faciliter la compréhension, rapprocher les interlocuteurs et transmettre chaque message avec fidélité. Des services d’interprétariat en français, arabe, kabyle et anglais.</p>
-<div class="hero-actions">
-<a class="button primary" href="#contact">Organiser une mission <span>↗</span></a>
-<a class="button secondary" href="#services">Découvrir les services</a>
+<div class="eyebrow">Interprétariat · France</div>
+<h1>La précision<br>des mots.<br><em>Le sens du lien.</em></h1>
+<p class="intro">Interprète en français, arabe, kabyle et anglais, j’accompagne les échanges où chaque mot compte — avec rigueur, neutralité et discrétion.</p>
+<div class="actions"><a class="btn primary" href="#contact">Parlons de votre mission <span>↗</span></a><a class="btn" href="#expertises">Découvrir mes expertises <span>↓</span></a></div>
 </div>
+<div class="art" aria-label="Monogramme Naïm Yousfi"><div class="poster"><b>NY</b><i></i><small>Interprétariat</small></div><div class="note">La justesse du dialogue<small>Langues · Écoute · Neutralité</small></div></div>
 </div>
-<aside class="hero-note">
-<div class="note-label">Votre interlocuteur linguistique</div>
-<h2>Des échanges plus clairs. Une communication plus juste.</h2>
-<p>Une approche rigoureuse fondée sur l’écoute, la neutralité, la confidentialité et la préparation de chaque intervention.</p>
-<div class="rule"></div>
-<strong>Langues de travail</strong>
-<div class="lang-pills"><span>Français</span><span>Arabe</span><span>Kabyle</span><span>Anglais</span></div>
-</aside>
-</div>
-</section>
-<div class="trust-strip">
-<div class="container trust-inner">
-<div class="trust-item"><span class="trust-icon">✓</span> Fidélité des propos</div>
-<div class="trust-item"><span class="trust-icon">◎</span> Neutralité professionnelle</div>
-<div class="trust-item"><span class="trust-icon">◆</span> Préparation et ponctualité</div>
-</div>
-</div>
-<section class="section" id="services">
-<div class="container">
-<div class="section-top reveal">
-<div class="overline">Prestations</div>
-<h2 class="section-title">Un service adapté à chaque contexte</h2>
-<p class="section-intro">Une communication de qualité commence par la compréhension du besoin, du cadre de la mission et des personnes concernées.</p>
-</div>
-<div class="service-grid">
-<article class="service-card reveal"><div class="service-icon">↔</div><h3>Interprétariat consécutif</h3><p>Restitution structurée et fidèle des propos, avec une attention particulière portée au sens, au ton et aux nuances du discours.</p><a class="link-more" href="#contact">Parler de votre besoin ↗</a></article>
-<article class="service-card reveal"><div class="service-icon">◉</div><h3>Entretiens et rendez-vous</h3><p>Facilitation des échanges lors d’entretiens, de démarches administratives et de rendez-vous professionnels ou sociaux.</p><a class="link-more" href="#contact">Parler de votre besoin ↗</a></article>
-<article class="service-card reveal"><div class="service-icon">§</div><h3>Environnements institutionnels</h3><p>Préparation terminologique et posture adaptée aux contextes institutionnels et judiciaires, selon le cadre et les exigences de la mission.</p><a class="link-more" href="#contact">Parler de votre besoin ↗</a></article>
+<div class="languages"><div class="wrap langrow"><div class="langlabel">Langues de travail</div><div class="langlist"><span>Français</span><span>العربية</span><span>Kabyle</span><span>English</span></div></div></div>
+<section class="services" id="expertises">
+<div class="wrap">
+<div class="head"><div><div class="kicker">Domaines d’intervention</div><h2>Une parole juste,<br>dans chaque contexte.</h2></div><p class="desc">Une approche professionnelle adaptée aux enjeux, au vocabulaire et au cadre de chaque échange.</p></div>
+<div class="cards">
+<button class="card reveal" data-title="Interprétariat judiciaire" data-copy="Interprétation fidèle et rigoureuse des échanges dans le cadre judiciaire, avec une attention particulière à la précision terminologique, à la neutralité et au respect de la parole de chacun."><span class="num">01 / 04</span><span class="ico">⚖</span><h3>Judiciaire</h3><p>Précision, neutralité et respect du cadre de l’audience.</p><span class="more">En savoir plus ↗</span></button>
+<button class="card reveal" data-title="Interprétariat institutionnel" data-copy="Accompagnement linguistique des échanges institutionnels et entretiens, pour faciliter la compréhension mutuelle sans modifier le sens des propos."><span class="num">02 / 04</span><span class="ico">⌂</span><h3>Institutionnel</h3><p>Des échanges clairs dans un cadre administratif.</p><span class="more">En savoir plus ↗</span></button>
+<button class="card reveal" data-title="Interprétariat médical" data-copy="Interprétation attentive dans les échanges liés à la santé, avec discrétion et fidélité aux propos des interlocuteurs."><span class="num">03 / 04</span><span class="ico">＋</span><h3>Médical</h3><p>Écoute et clarté pour des échanges sensibles.</p><span class="more">En savoir plus ↗</span></button>
+<button class="card reveal" data-title="Entretiens et réunions" data-copy="Interprétation lors d’entretiens, de rendez-vous et de réunions professionnelles, en tenant compte du contexte et des besoins linguistiques."><span class="num">04 / 04</span><span class="ico">↗</span><h3>Entretiens</h3><p>Un dialogue fluide entre les personnes.</p><span class="more">En savoir plus ↗</span></button>
 </div>
 </div>
 </section>
-<section class="section about" id="apropos">
-<div class="container about-grid">
-<div class="reveal">
-<div class="overline">Approche professionnelle</div>
-<h2 class="section-title">La rigueur au service de la compréhension</h2>
-<p class="section-intro">Interpréter ne consiste pas seulement à traduire des mots. Il s’agit de transmettre un message avec précision, sans ajout ni omission, tout en respectant le cadre de l’échange.</p>
-<ul class="quality-list">
-<li><span class="tick">✓</span><span><strong>Fidélité</strong> — restituer le message sans le déformer.</span></li>
-<li><span class="tick">✓</span><span><strong>Neutralité</strong> — respecter chaque interlocuteur et rester impartial.</span></li>
-<li><span class="tick">✓</span><span><strong>Confidentialité</strong> — préserver la discrétion des échanges.</span></li>
-<li><span class="tick">✓</span><span><strong>Préparation</strong> — clarifier le contexte et les besoins en amont.</span></li>
-</ul>
-</div>
-<aside class="about-panel reveal">
-<h3>Une mission, un cadre, une exigence.</h3>
-<p>Chaque intervention est abordée avec sérieux : identification des langues, compréhension du contexte, préparation utile et attention portée à la qualité de la restitution.</p>
-<p>Les modalités sont précisées avec le donneur d’ordre avant l’intervention afin de favoriser un déroulement clair et professionnel.</p>
-</aside>
+<section id="apropos" class="about">
+<div class="wrap aboutgrid">
+<div class="aboutart reveal"><span>NY</span><small>Écoute · Neutralité · Confidentialité</small></div>
+<div class="reveal"><div class="kicker">À propos</div><h2>Faire passer le sens,<br>sans le déformer.</h2><p class="lead">Interpréter, ce n’est pas seulement traduire des mots. C’est permettre à chacun de comprendre et d’être compris.</p><p>Mon approche repose sur la préparation, la précision du vocabulaire, la neutralité et le respect de la confidentialité. Chaque intervention est abordée selon son contexte et ses exigences.</p><div class="pills"><span class="pill">Français</span><span class="pill">Arabe</span><span class="pill">Kabyle</span><span class="pill">Anglais</span><span class="pill">Neutralité</span><span class="pill">Discrétion</span></div><a class="btn" href="#contact">Échanger sur une mission ↗</a></div>
 </div>
 </section>
-<section class="section" id="langues">
-<div class="container">
-<div class="section-top reveal">
-<div class="overline">Langues de travail</div>
-<h2 class="section-title">Quatre langues, une priorité : se comprendre</h2>
-<p class="section-intro">La langue et la variété linguistique nécessaires sont confirmées avant chaque mission afin de vérifier l’adéquation avec le besoin.</p>
-</div>
-<div class="languages-grid reveal">
-<div class="language-card"><strong>Français</strong><span>Langue de travail</span></div>
-<div class="language-card"><strong>العربية</strong><span>Arabe</span></div>
-<div class="language-card"><strong>Kabyle</strong><span>Langue amazighe</span></div>
-<div class="language-card"><strong>English</strong><span>Anglais</span></div>
+<section class="refs" id="references">
+<div class="wrap">
+<div class="head"><div><div class="kicker">Parcours professionnel</div><h2>Expérience et références.</h2></div><p class="desc">Une expérience en interprétariat dans des contextes institutionnels et professionnels.</p></div>
+<div class="refgrid">
+<div class="ofii reveal"><img src="data:image/jpeg;base64,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z1A4GDS5gFPgj0ibMMM1DmBod9agdAyu5QgvsTOq3h2ytaX+6FADBOZiCpbxBAUr9PEVYN1xNP7bHMpKEaMqEIdjiH4Mq5/9V//aAAwDAQACAAMAAAAQ888888888888888888888888888888888888888888888404088wOAw888888888U7KBqNiAgm+I88888888IaksFv6oucfr88888884+As0z4Bg10+i88888888SkeSUlmgrOXD888888840Jme3QPJOq8j8888888siRw+izzxgTgD88888888DKAwLPCNDDDP88888884tzko+aKxwcCj88888885gcHl9YLCo8AC8888888sxMPpfH8dbHmt88888844kzg0AIwAAEAUw88888Dslo+GYIppDICI488888888QzxXYqCo8888888888888888888888888888888888888888888888888888888888888888888/8QAIREBAAICAgICAwAAAAAAAAAAAQARITEQMEFRYXFAUGD/2gAIAQMBAT8Q/aLtK7GPgiXALQMJMMBhl7SMV5QwGSPUyuJvIpgMxIlXWOFV4KGEyymD31MdsBlw7miyrnpEViIblPQvqY7wgwvByYaEdStL8yxBQb9xFHqVCw0McHpAFxAtNCLVo7EaLG9yq/vqTgwBwBqJSmDUENxdpgqGUcRu+mtbiM0DxT5nyxSiIUz5ZZVz5ZpOl6oYqEhJSzBklM2BRI5w8BThodDqa4aE2Z4x8LBQGb+TbNXS1wCqhroIJqWMSotxQQ8jLxcWQlhXVR+CllcdpqE+/PpDCNp9+JXiVb6RZNGCGWqCgoLEtBDv+D//xAAhEQEBAQACAwACAwEAAAAAAAABABEhMRAwQVFhIEBQYP/aAAgBAgEBPxD/AFBH2bMYZYaTpMxqky5MhxcHwbp6vtA3YOVgwLpwQ6aRDTz4znPIdenjjwO7UbgF0y4/hOnpOiR3E+ZsAnpPJZsul3jk9Py+twBLdEcsmJwwIk9dvNmLDGBuS49OvFsttwhixixAOvSC8EJ8uXTwJ8v0QWpG7P0Qly/R6pBs9z7MoVdF0zcbTglDhoJZ4rRJV6DuefDunwX3BgktaXV5eq7vSeQy70hqXM2lndnXHhUfFxRCXIZjLp+fVz/RWO+HXJ5r+bD8sX43fZ5WNjerM63jwdielA62NJCZY2TJZbeLMlMz/g/wD/xAArEAEAAgEDAwMFAAMBAQEAAAABABEhMUFREGFxgZHwQKGxwdEg4fEwcGD/2gAIAQEAAT8Q/wDrdl1ef8QVEhq7hJrGaRgqNQD0s+kOxsIN4QIBdr3Q8a2kaywVw2lztAQFi1dokoWrEjTDdiTNVvRmHBoUQOK4iMW4O7U7WFw0b6MRalS2L6JyVsJTeaK74mOSsK3t0l3pcJqN6lBMbTHZTKI0A/RryY6tga16MvSLLWxescbiKuoG8tWwFAaxK0DQ8QziqtN6w+7rNUeHS3QcVjby/VyynK+ws3VcTL74xv3H7qEmwVGdBG5AhF0JxMSQMYjuXQ/4lslNNNMo92m5jvM21ZgS/GYECqq3a/xKUrStvo7UDgNgxfgINbl5IgqpdsR3I47JEQKTCQ3oGkitHmUU5i7St5zu+n+D24VuomnuRVK6uZm9Kc+IzG6sFOiI71MkU3RNsdNEqWDkUQ0jI2C3w0favohsaQeTB94sZao3Sr/MNLkdAZ0Fv2Y+olcqaDRguITkQm3bcjnBnhZD2ZUnQdn8gHKhK6tNdHNApNSahXm+Nm3r0FG25bo3gqGkIq9lNBQr4PTvIJNIqhTb9W/39EgTro8H+4VwHewX92dmw9KWspp5gBNPwTWIFj3hjDl6DU6JVW7+7oyjj+8oDXJ8dPK9MJel5CWitNXv07Hk11gDVgHDh+K+iRxMH3fao1Fa44pz+ZtD90YoalIkNCmVx0UrUCula0scQgYq2IlYKJR2z0KI+bLUpgR2gUhTQaeUNpw10AqAar0LuJVuiuhIWncNvavolzXT0MCYh7zl9vzNAwn0ZhmrqREtaeiQOocS7zVXtxP1ABN46HQM9nS+C6i8K/1Ca2XFVV1Y6OV3SfeVHhRFQpq4WTQjviGk44+YMo6MXXxPsfRoqifcA9/9Ruzgrdiv7GG7QobEosL3TowO2U1zTKXxtqTIOHEETY+VX+4zhQi7qfsl/asegH+4Vr2pfeILOx3lSNbdO/DAgsVSw6ckVByaJDEujZVK2RH536G4u5cn+q+iq6tEd1glh18PuPTX2iGa/wDRgANS3KwVBqr8ytEBkrSWWYuoRSimo4JnzUlMujhm95Vv0IAxkK+1ks/P7zoAbe2CNTYcU2eY4ta1mXgJZIVlP3FpMCLNlY2vD4BDWmBm5VH8xFHDB3MP5Pb6JL2Ao0dHsZhpnz2AjNNZrFC7Kx+pUynNBJi2l35gtWusxxi9yCSGLLrHaO3odI5ofcm7U5IaWLpbi/6iqNqo6wrO5RAF3SxGFiUy3m7Vcri0ohtdO8tJgiwafGYIqyey0/UE8A5Io1HqXlL/ACfRGYHRYVbb9Y0G1AUX2IrUmpVKwaqrCf2VnFheiMxcAYEUPmWTAHsxSVFbK1g9RzDb4hrEt+ngpqyn6NpQMwG3d5cHiIIqhXaAEqaBgOULOY0iHaqfec/3ZYGoBHybrNNSzsjbS7OJRgGxGhtFoQbaX6EeCCdK2n/9GbGmjnwEa0w/DR/Znv5DvAIAc1/Z/sOqs5cY9N/TrZwutupjs/8AA4qYVSLhjNd9u0UjTbV2hr69GOz6DFoYzNdXGpaGzc6sMUSNnhpxZf0Jopgptyo/o7RawNGYSxyTe4F6coqH5LR0bzXJExtaKRls4Dmvk79MvuKMqsJLwQrLfAuF/wDPASPRUb2OTWLB3UAFJZwx3cbCqVefboZV5mWgNB9oAFGCAKAnDCdDRVdVT9+gpexpa5aIfQ3FseENP76xxdUD1gt0AeAroTgKKSf8LlqNq6g53HtCJLEsZ85xDQn3SAvGuxNW3VfeUWm5iJR/YvpJ3K0/PT5Pd0+f5dfieCbz4nd+hfXyD2hpBZun6UNOm0FVfJ6Pqpd9k+c4hoR4/YlnI29pnl1lGvtmfLcHX5Pd0+f5dfmeCbz4nd+hDQQRgg5b9GpZn8xg2CadNoRGlP3gI1Sg5Z/xmSp85xDQ6AACENlZG4lYELMIfzr8Hu6fP8uvzPBN58Tu/RZiK6fAPr+Yyo5IG4P7r0RALq+wRVKWuVhCol3+eP50QI6H4GGhEBu/+IIqvP8AbohAdL/d1RRv0Turn+X6IX5aBYku7GbaHh39Yw0fRo78zR+XbXtKkKa36ATnrqP/ACg+TrQB0EYRNhZWvefJv1O9/bCbjiCcCEXFXnqHXNIt2htBUbKYFz5J+o7DsoB5KlBUACUu2ZXJTsTh8RcxFAAnyb9R0XKntBJQqdHCn0aEpBOGZbz81gFAHAf4VKlf41KldalSvoBEsROZZySyWXVlyzZlnMs6WRQ1aly4I6NyzmWc9Lly5ZLgG8mNZd6S5ZyRQLUJcv8A9HYi4rq1Yru/UutQwd8BsNXp2j0TSKmXb325YSFQI5+UcPttXr2Vd+mkuyzht8LY/wBQymDVO7mm+N+CUXGkVsQ2AdtdIhoMFzgOt6b03lERDwJbw6PpGdsaKWt84yr0hvoOScpXJQu+sZGsxTM5fEypNOTcP5hDiD7SoBlL/cUwWxYyuu7f6glhZoBI2QIDqOPX8RrWHHyC9AUfICBdiHphEf8AWpQ/kxWRczoMbHfKXqUY1ADD5vVgsAyqVW/grvGxslSrsAHSxAPtYZKmPERq2JplZl4W/wBRfSbdoUReoaO07NVHQNdtzz/6IhIUiWMvpmoAe0XAoUQrSLBBGjWSeg/FfvFydqgQBAWq2ssBKKr2b8zFxvDEWSuLSsLGbQBYBSvMTUBdaNYGUCcDTjxDJ3oFESAXqBfvBTiQBQ2vmCgKZoXAaCrWGK8RTU1rBnzLPJFNhxxMoVasaneKKAtWhrHkxtE9USEgGFbcRYIOg1pO+IFYfMODmQBIsWDqw0gQA6kNfor/ALqUou1ArwMrsBuo62awjFjYUSczZigI6cs8dpVG8GZqZx4hxmHt00D3hTtUlhT3Rz8xnS1C8o4fAwqqtDNRu9ZsOhGRQ7Ku8yqHpTi+x00ls+c0i3xJd858WyijwOR3gLyadQqnz3jV7EnVa0y5x6R8JLNYQprkp8RICRu2n1LPqHVLY2MDBVkfGsekoKFeg1mHndCN2M8wlZSm6ojDWDd3zGKSmvLUmwNsrTVY9IAIU27Ci/SCRKkWDiPK8dTVqdiD3KVnb7MEdYsKM2w1FmO7YN1WKsprQQ4s2hSaZFDqrPdiZ0AGUc//AFX/2Q==" alt="Logo de l’Office français de l’immigration et de l’intégration (OFII)" loading="lazy"></div>
+<div class="refcopy reveal"><h3>Expérience auprès de l’OFII</h3><p>Une expérience en interprétariat en lien avec l’Office français de l’immigration et de l’intégration, dans le respect des exigences de compréhension et de neutralité propres aux échanges institutionnels.</p><div class="chips"><span class="chip">Interprétariat institutionnel</span><span class="chip">Entretiens professionnels</span><span class="chip">Missions linguistiques</span></div><p class="disclaimer">Les références décrivent une expérience professionnelle. Les noms et logos d’organismes ne signifient ni affiliation actuelle, ni agrément, ni partenariat officiel.</p></div>
 </div>
 </div>
 </section>
-<section class="section experience" id="experience">
-<div class="container experience-box">
-<div class="reveal">
-<div class="overline">Domaines d’intervention</div>
-<h2 class="section-title">S’adapter au contexte et à ses exigences</h2>
-</div>
-<div class="reveal">
-<p class="experience-copy">Une mission peut nécessiter une terminologie précise, une préparation spécifique et une compréhension des règles de communication propres à son environnement. Le cadre, les langues, la durée et les modalités sont clarifiés en amont.</p>
-<div class="experience-tags"><span>Services publics</span><span>Entretiens</span><span>Accompagnement social</span><span>Contexte judiciaire</span><span>Rendez-vous professionnels</span></div>
-<p class="experience-copy">Les logos d’organismes ne sont pas utilisés ici comme preuve d’un partenariat ou d’une accréditation. Les références professionnelles pourront être ajoutées séparément, de manière exacte et vérifiable.</p>
-</div>
-</div>
-</section>
-<section class="section contact" id="contact">
-<div class="container">
-<div class="section-top reveal">
-<div class="overline">Contact professionnel</div>
-<h2 class="section-title">Parlons de votre prochaine mission.</h2>
-<p class="section-intro">Pour une demande, indiquez les langues requises, la date, le lieu ou le format à distance, la durée estimée et le contexte général de l’intervention.</p>
-</div>
-<div class="contact-box reveal">
-<div><h3>Naïm Yousfi</h3><p>Interprétariat professionnel · Français · Arabe · Kabyle · Anglais</p></div>
-<a class="button primary" href="https://www.instagram.com/naimyousfi/" target="_blank" rel="noopener noreferrer">Me contacter sur Instagram ↗</a>
-</div>
-<p class="contact-details">Pour des raisons de confidentialité, ne transmettez pas de données personnelles ou de documents sensibles dans un premier message public.</p>
-</div>
+<section class="contact" id="contact">
+<div class="wrap contactgrid"><div><div class="kicker">Une mission à organiser ?</div><h2>Faisons en sorte<br>de bien nous comprendre.</h2><p>Présentez-moi votre besoin, les langues concernées et le contexte de l’intervention. Je pourrai vous répondre sur les modalités à envisager.</p></div><a class="btn" href="https://www.instagram.com/naimyousfi/" target="_blank" rel="noopener noreferrer">Me contacter sur Instagram ↗</a></div>
 </section>
 </main>
-<footer><div class="container footer-inner"><span>© <span id="year"></span> Naïm Yousfi. Tous droits réservés.</span><a href="#accueil">Retour en haut ↑</a><span>Interprétariat professionnel · France</span></div></footer>
+<footer><div class="wrap foot"><div>© <span id="year"></span> Naïm Yousfi · Interprète professionnel</div><div class="footlinks"><a href="#accueil">Retour en haut ↑</a><a href="https://www.instagram.com/naimyousfi/" target="_blank" rel="noopener noreferrer">Instagram ↗</a></div></div></footer>
+<div class="backdrop" id="backdrop" role="dialog" aria-modal="true" aria-labelledby="modalTitle"><div class="modal"><button class="close" id="close" aria-label="Fermer">×</button><div class="kicker">Domaine d’intervention</div><h3 id="modalTitle"></h3><p id="modalCopy"></p><a class="btn primary" href="#contact" id="modalContact">Échanger sur une mission ↗</a></div></div>
 <script>
-document.getElementById("year").textContent=new Date().getFullYear();
-const menuToggle=document.getElementById("menuToggle");
-const navLinks=document.getElementById("navLinks");
-menuToggle.addEventListener("click",()=>{const open=navLinks.classList.toggle("open");menuToggle.setAttribute("aria-expanded",String(open));menuToggle.textContent=open?"✕":"☰";});
-navLinks.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{navLinks.classList.remove("open");menuToggle.setAttribute("aria-expanded","false");menuToggle.textContent="☰";}));
-const observer=new IntersectionObserver(entries=>entries.forEach(entry=>{if(entry.isIntersecting){entry.target.classList.add("visible");observer.unobserve(entry.target);}}),{threshold:.12});
-document.querySelectorAll(".reveal").forEach(el=>observer.observe(el));
+const menu=document.getElementById('menu'),links=document.getElementById('links');
+menu.addEventListener('click',()=>{const open=links.classList.toggle('open');menu.setAttribute('aria-expanded',String(open));menu.textContent=open?'×':'☰'});
+links.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{links.classList.remove('open');menu.textContent='☰';menu.setAttribute('aria-expanded','false')}));
+document.getElementById('year').textContent=new Date().getFullYear();
+if('IntersectionObserver'in window){const io=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('show');io.unobserve(e.target)}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>io.observe(el))}else document.querySelectorAll('.reveal').forEach(el=>el.classList.add('show'));
+const back=document.getElementById('backdrop'),mt=document.getElementById('modalTitle'),mc=document.getElementById('modalCopy');
+document.querySelectorAll('.card').forEach(c=>c.addEventListener('click',()=>{mt.textContent=c.dataset.title;mc.textContent=c.dataset.copy;back.classList.add('open');document.body.style.overflow='hidden'}));
+function closeModal(){back.classList.remove('open');document.body.style.overflow=''}
+document.getElementById('close').addEventListener('click',closeModal);
+back.addEventListener('click',e=>{if(e.target===back)closeModal()});
+document.addEventListener('keydown',e=>{if(e.key==='Escape')closeModal()});
+document.getElementById('modalContact').addEventListener('click',closeModal);
 </script>
 </body>
 </html>
