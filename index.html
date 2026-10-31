@@ -268,6 +268,16 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; }
   .reference-track {
     animation: none;
   }
+}.reference-item img {
+  width: 180px;
+  height: 75px;
+  object-fit: contain;
+  display: block;
+  margin: auto;
+}
+
+.reference-item {
+  flex: 0 0 240px;
 }
 </style>
 </head>
@@ -445,7 +455,10 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; }
     </p>
 <div class="reference-list reveal">
   <div class="reference-track">
-    <div class="reference-item">OFII</div>
+<div class="reference-item">
+  <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Logo_OFII.svg"
+       alt="Logo OFII" loading="lazy">
+</div>
     <div class="reference-item">Ministère de la Justice</div>
     <div class="reference-item">Police nationale</div>
     <div class="reference-item">AP-HP</div>
