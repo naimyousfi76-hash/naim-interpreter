@@ -1,143 +1,400 @@
 
-<section class="refs" id="references">
-  <style>
-    #references .institution-grid {
-      display: grid;
-      grid-template-columns: repeat(3, minmax(0, 1fr));
-      gap: 18px;
-      margin-top: 35px;
-    }
-    #references .institution {
-      min-height: 190px;
-      padding: 25px 18px;
-      background: #fff;
-      border: 1px solid #e3e8ef;
-      display: flex;
-      flex-direction: column;
-      align-items: center;
-      justify-content: center;
-      gap: 18px;
-      text-align: center;
-      transition: transform .25s, box-shadow .25s, border-color .25s;
-    }
-    #references .institution:hover {
-      transform: translateY(-5px);
-      border-color: #9bb5d8;
-      box-shadow: 0 14px 35px #17243a12;
-    }
-    #references .institution img {
-      display: block;
-      width: 100%;
-      max-width: 190px;
-      height: 82px;
-      object-fit: contain;
-    }
-    #references .ofii-wordmark {
-      color: #164b91;
-      font-family: Georgia, serif;
-      font-weight: bold;
-      font-size: 48px;
-      line-height: 1;
-      letter-spacing: 3px;
-    }
-    #references .ofii-caption {
-      font-size: 8px;
-      line-height: 1.5;
-      letter-spacing: .08em;
-      color: #164b91;
-    }
-    #references .institution strong {
-      font-size: 12px;
-      letter-spacing: .04em;
-    }
-    #references .reference-note {
-      margin-top: 25px;
-      font-size: 11px;
-      line-height: 1.8;
-      color: #697589;
-    }
-    @media(max-width:650px) {
-      #references .institution-grid {
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-        gap: 10px;
-      }
-      #references .institution {
-        min-height: 160px;
-        padding: 16px 10px;
-      }
-      #references .institution img {
-        max-width: 145px;
-        height: 68px;
-      }
-      #references .ofii-wordmark {
-        font-size: 39px;
-      }
-    }
-  </style>
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#ffffff">
+<title>Naïm Yousfi — Interprète professionnel</title>
+<meta name="description" content="Naïm Yousfi, interprète professionnel. Interprétariat en contexte institutionnel, judiciaire, médical et professionnel.">
+<style>
+:root{
+  --navy:#17253d;
+  --blue:#315b9b;
+  --muted:#6b7890;
+  --pale:#f3f6fb;
+  --line:#dce3ed;
+  --white:#fff;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:95px}
+body{
+  margin:0;background:var(--white);color:var(--navy);
+  font-family:Arial,Helvetica,sans-serif;line-height:1.7;
+}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+.container{width:min(1160px,90%);margin:auto}
+header{
+  height:96px;position:sticky;top:0;z-index:20;
+  background:rgba(255,255,255,.96);backdrop-filter:blur(12px);
+  border-bottom:1px solid var(--line);
+}
+.nav{height:100%;display:flex;align-items:center;justify-content:space-between;gap:20px}
+.brand{display:flex;align-items:center;gap:15px}
+.monogram{
+  width:65px;height:65px;border:1.5px solid var(--blue);
+  border-radius:50%;display:grid;place-items:center;
+  font:34px Georgia,serif;color:var(--blue);flex-shrink:0;
+}
+.brand-name{font-weight:700;letter-spacing:3px;font-size:17px}
+.brand-sub{color:var(--muted);letter-spacing:3px;font-size:12px}
+.nav-links{display:flex;align-items:center;gap:25px;font-size:13px}
+.nav-links a:hover{color:var(--blue)}
+.menu-btn{display:none;border:0;background:none;color:var(--navy);font-size:30px;cursor:pointer}
+.hero{
+  background:linear-gradient(135deg,#fff 45%,#f2f6fc);
+  padding:105px 0 95px;overflow:hidden;
+}
+.eyebrow{font-size:12px;letter-spacing:3px;text-transform:uppercase;color:var(--blue);font-weight:700}
+h1,h2,h3{margin-top:0}
+h1,h2,.serif{font-family:Georgia,"Times New Roman",serif;font-weight:400}
+h1{font-size:clamp(45px,7vw,84px);line-height:1.06;letter-spacing:-2.5px;max-width:900px;margin:22px 0}
+h1 em{font-weight:400;color:var(--blue)}
+.hero p{max-width:650px;font-size:18px;color:var(--muted);margin:25px 0 32px}
+.actions{display:flex;gap:13px;flex-wrap:wrap}
+.btn{
+  display:inline-flex;align-items:center;justify-content:center;
+  padding:13px 21px;border:1px solid var(--navy);min-height:48px;
+  font-size:13px;transition:.2s;cursor:pointer;
+}
+.btn.primary{background:var(--navy);color:white}
+.btn:hover{transform:translateY(-2px);background:var(--blue);color:white;border-color:var(--blue)}
+.section{padding:90px 0}
+.section.soft{background:var(--pale)}
+.section-head{max-width:720px;margin-bottom:40px}
+h2{font-size:clamp(35px,5vw,55px);line-height:1.15;letter-spacing:-1px;margin:12px 0 18px}
+.lead{color:var(--muted);font-size:17px;max-width:740px}
+.cards{display:grid;grid-template-columns:repeat(3,1fr);gap:18px}
+.card{
+  background:#fff;border:1px solid var(--line);padding:27px;
+  min-height:210px;transition:transform .25s,border-color .25s,box-shadow .25s;
+}
+.card:hover{transform:translateY(-5px);border-color:#9aafd0;box-shadow:0 12px 30px #17253d0b}
+.card .number{font:28px Georgia,serif;color:var(--blue)}
+.card h3{font-size:17px;margin:17px 0 8px}
+.card p{font-size:14px;color:var(--muted);margin-bottom:0}
+.about-grid{display:grid;grid-template-columns:.85fr 1.15fr;gap:55px;align-items:center}
+.about-panel{
+  min-height:300px;background:var(--navy);color:white;padding:35px;
+  display:flex;flex-direction:column;justify-content:space-between;
+}
+.about-panel .big{font:clamp(48px,7vw,75px) Georgia,serif;line-height:1.05}
+.about-panel p{color:#d5deed}
+.about-copy p{color:var(--muted)}
+.reference-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:16px}
+.reference{
+  min-height:190px;background:#fff;border:1px solid var(--line);
+  padding:23px;display:flex;flex-direction:column;align-items:center;
+  justify-content:center;text-align:center;gap:16px;
+  transition:.2s;
+}
+.reference:hover{border-color:#9aafd0;transform:translateY(-3px)}
+.logo{
+  width:100%;height:65px;display:flex;align-items:center;justify-content:center;
+  color:var(--navy);
+}
+.logo svg{width:100%;height:65px;max-width:220px;overflow:visible}
+.ref-title{font-size:14px;font-weight:700}
+.ref-note{font-size:12px;color:var(--muted)}
+.notice{font-size:12px;color:var(--muted);margin-top:20px}
+.contact-box{
+  background:var(--navy);color:white;padding:clamp(28px,6vw,65px);
+  display:grid;grid-template-columns:1fr auto;gap:25px;align-items:center;
+}
+.contact-box p{color:#d5deed;max-width:600px}
+.contact-box .btn{border-color:white;color:white;white-space:nowrap}
+.contact-box .btn:hover{background:white;color:var(--navy)}
+footer{padding:28px 0;border-top:1px solid var(--line);font-size:12px;color:var(--muted)}
+.footer-inner{display:flex;justify-content:space-between;gap:15px;flex-wrap:wrap}
+.reveal{opacity:0;transform:translateY(18px);transition:opacity .65s,transform .65s}
+.reveal.visible{opacity:1;transform:none}
+@media(max-width:800px){
+  header{height:88px}
+  .monogram{width:55px;height:55px;font-size:29px}
+  .brand{gap:11px}
+  .brand-name{font-size:14px;letter-spacing:2px}
+  .brand-sub{font-size:10px;letter-spacing:2px}
+  .menu-btn{display:block}
+  .nav-links{
+    display:none;position:absolute;top:88px;left:0;right:0;background:white;
+    padding:20px 5% 25px;border-bottom:1px solid var(--line);
+    flex-direction:column;align-items:flex-start;gap:16px;
+  }
+  .nav-links.open{display:flex}
+  .hero{padding:75px 0 70px}
+  .section{padding:68px 0}
+  .cards{grid-template-columns:1fr}
+  .card{min-height:0}
+  .about-grid{grid-template-columns:1fr;gap:25px}
+  .about-panel{min-height:240px}
+  .reference-grid{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}
+  .reference{padding:14px 8px;min-height:160px}
+  .logo{height:54px}
+  .logo svg{height:54px}
+  .contact-box{grid-template-columns:1fr}
+  h1{letter-spacing:-1.5px}
+}
+@media(prefers-reduced-motion:reduce){
+  html{scroll-behavior:auto}
+  *,*::before,*::after{transition:none!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
+</head>
+<body>
 
-  <div class="wrap">
-    <div class="head">
-      <div>
-        <div class="kicker">Parcours professionnel</div>
-        <h2>Institutions &amp;<br>environnements d’intervention.</h2>
-      </div>
-      <p class="desc">
-        Des missions d’interprétariat au service de la compréhension,
-        de la précision et de la neutralité.
+<header>
+  <div class="container nav">
+    <a class="brand" href="#accueil" aria-label="Accueil — Naïm Yousfi">
+      <span class="monogram">NY</span>
+      <span>
+        <span class="brand-name">NAÏM YOUSFI</span><br>
+        <span class="brand-sub">Interprète professionnel</span>
+      </span>
+    </a>
+    <button class="menu-btn" id="menuBtn" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+      <a href="#services">Services</a>
+      <a href="#apropos">À propos</a>
+      <a href="#references">Références</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
+
+<main>
+<section class="hero" id="accueil">
+  <div class="container">
+    <div class="eyebrow">Interprétariat · Français · Arabe · Kabyle · Anglais</div>
+    <h1>La précision des mots.<br><em>Le sens du lien.</em></h1>
+    <p>
+      Interprète professionnel, j’accompagne les échanges entre personnes
+      et professionnels dans des contextes institutionnels, judiciaires,
+      médicaux et administratifs, avec neutralité, rigueur et discrétion.
+    </p>
+    <div class="actions">
+      <a class="btn primary" href="#contact">Me contacter ↗</a>
+      <a class="btn" href="#references">Découvrir mon expérience</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="services">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Domaines d’intervention</div>
+      <h2>Des échanges précis.<br>Un cadre adapté.</h2>
+      <p class="lead">Une interprétation fidèle du message, dans le respect du contexte, des interlocuteurs et de la confidentialité.</p>
+    </div>
+    <div class="cards">
+      <article class="card reveal">
+        <div class="number">01</div>
+        <h3>Institutions & administrations</h3>
+        <p>Accompagnement linguistique lors d’entretiens, de démarches et d’échanges institutionnels.</p>
+      </article>
+      <article class="card reveal">
+        <div class="number">02</div>
+        <h3>Justice & sécurité</h3>
+        <p>Interprétariat dans des contextes judiciaires ou de sécurité, avec fidélité et impartialité.</p>
+      </article>
+      <article class="card reveal">
+        <div class="number">03</div>
+        <h3>Santé & milieu professionnel</h3>
+        <p>Faciliter la compréhension entre professionnels et personnes accompagnées.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="section soft" id="apropos">
+  <div class="container about-grid">
+    <div class="about-panel reveal">
+      <div class="eyebrow" style="color:#b7cbed">Ma démarche</div>
+      <div class="big">Comprendre.<br>Transmettre.<br>Respecter.</div>
+      <p>La langue comme passerelle entre les personnes.</p>
+    </div>
+    <div class="about-copy reveal">
+      <div class="eyebrow">À propos</div>
+      <h2>La langue au service de la compréhension.</h2>
+      <p>
+        Mon approche repose sur l’exactitude de la restitution, l’écoute
+        active et le respect de chaque interlocuteur. En interprétariat,
+        chaque nuance compte : le sens, le registre, le contexte et
+        l’intention du message.
       </p>
+      <p>
+        J’interviens notamment en français, arabe, kabyle et anglais,
+        selon la combinaison linguistique et les besoins de la mission.
+      </p>
+      <a class="btn" href="#contact">Échanger sur une mission</a>
+    </div>
+  </div>
+</section>
+
+<section class="section" id="references">
+  <div class="container">
+    <div class="section-head reveal">
+      <div class="eyebrow">Parcours professionnel</div>
+      <h2>Expérience et références.</h2>
+      <p class="lead">Une expérience en interprétariat dans des contextes institutionnels et professionnels.</p>
     </div>
 
-    <div class="institution-grid">
+    <div class="reference-grid">
 
-      <div class="institution">
-        <div>
-          <div class="ofii-wordmark">OFII</div>
-          <div class="ofii-caption">
-            OFFICE FRANÇAIS DE L’IMMIGRATION<br>
-            ET DE L’INTÉGRATION
-          </div>
+      <!-- OFII : identité typographique stylisée intégrée au fichier -->
+      <article class="reference reveal">
+        <div class="logo" aria-label="OFII, identité typographique stylisée">
+          <svg viewBox="0 0 220 65" role="img" aria-label="OFII">
+            <rect x="3" y="5" width="210" height="55" rx="3" fill="#fff" stroke="#dce3ed"/>
+            <text x="110" y="43" text-anchor="middle" font-family="Arial,sans-serif" font-weight="800" font-size="34" letter-spacing="3" fill="#315b9b">OFII</text>
+          </svg>
         </div>
-        <strong>OFII</strong>
-      </div>
+        <div class="ref-title">Office français de l’immigration et de l’intégration</div>
+        <div class="ref-note">Expérience professionnelle déclarée</div>
+      </article>
 
-      <div class="institution">
-        <img
-          src="https://commons.wikimedia.org/wiki/Special:FilePath/Minist%C3%A8re_de_la_Justice.svg"
-          alt="Logo du ministère de la Justice"
-          loading="lazy">
-        <strong>Ministère de la Justice</strong>
-      </div>
+      <!-- Ministère de la Justice : représentation graphique stylisée -->
+      <article class="reference reveal">
+        <div class="logo" aria-label="Ministère de la Justice, représentation stylisée">
+          <svg viewBox="0 0 220 65" role="img" aria-label="Ministère de la Justice">
+            <g transform="translate(5 7)">
+              <rect width="48" height="48" fill="#17253d" rx="2"/>
+              <path d="M12 13H36M24 10V37M14 18L7 31H21ZM34 18L27 31H41ZM13 39H35" fill="none" stroke="#fff" stroke-width="2"/>
+            </g>
+            <text x="62" y="28" font-size="12" font-weight="700" fill="#17253d">MINISTÈRE</text>
+            <text x="62" y="43" font-size="12" font-weight="700" fill="#17253d">DE LA JUSTICE</text>
+          </svg>
+        </div>
+        <div class="ref-title">Ministère de la Justice</div>
+        <div class="ref-note">Expérience professionnelle déclarée</div>
+      </article>
 
-      <div class="institution">
-        <img
-          src="https://commons.wikimedia.org/wiki/Special:FilePath/Police_Nationale_%28France%29.svg"
-          alt="Logo de la Police nationale"
-          loading="lazy">
-        <strong>Police nationale</strong>
-      </div>
+      <!-- Police nationale : représentation graphique stylisée -->
+      <article class="reference reveal">
+        <div class="logo" aria-label="Police nationale, représentation stylisée">
+          <svg viewBox="0 0 220 65" role="img" aria-label="Police nationale">
+            <circle cx="34" cy="32" r="25" fill="#17253d"/>
+            <circle cx="34" cy="32" r="19" fill="none" stroke="#fff" stroke-width="1.5"/>
+            <path d="M34 16L39 27L51 28L42 36L45 48L34 42L23 48L26 36L17 28L29 27Z" fill="#fff"/>
+            <text x="68" y="29" font-size="15" font-weight="800" fill="#17253d">POLICE</text>
+            <text x="68" y="45" font-size="15" font-weight="800" fill="#315b9b">NATIONALE</text>
+          </svg>
+        </div>
+        <div class="ref-title">Police nationale</div>
+        <div class="ref-note">Expérience professionnelle déclarée</div>
+      </article>
 
-      <div class="institution">
-        <img
-          src="https://commons.wikimedia.org/wiki/Special:FilePath/AP-HP_Logo.svg"
-          alt="Logo de l’AP-HP"
-          loading="lazy">
-        <strong>AP-HP</strong>
-      </div>
+      <!-- AP-HP : représentation typographique stylisée -->
+      <article class="reference reveal">
+        <div class="logo" aria-label="AP-HP, représentation typographique stylisée">
+          <svg viewBox="0 0 220 65" role="img" aria-label="AP-HP">
+            <path d="M12 48L29 12L46 48M19 34H39" fill="none" stroke="#315b9b" stroke-width="4" stroke-linecap="round"/>
+            <text x="56" y="36" font-family="Arial,sans-serif" font-size="28" font-weight="800" fill="#315b9b">AP-HP</text>
+            <text x="58" y="51" font-size="8" letter-spacing="1.2" fill="#6b7890">HÔPITAUX DE PARIS</text>
+          </svg>
+        </div>
+        <div class="ref-title">Assistance publique – Hôpitaux de Paris</div>
+        <div class="ref-note">Expérience professionnelle déclarée</div>
+      </article>
 
-      <div class="institution">
-        <img
-          src="https://commons.wikimedia.org/wiki/Special:FilePath/GD_logo.svg"
-          alt="Logo de la Gendarmerie nationale"
-          loading="lazy">
-        <strong>Gendarmerie nationale</strong>
-      </div>
+      <!-- Gendarmerie : représentation graphique stylisée -->
+      <article class="reference reveal">
+        <div class="logo" aria-label="Gendarmerie nationale, représentation stylisée">
+          <svg viewBox="0 0 220 65" role="img" aria-label="Gendarmerie nationale">
+            <path d="M32 5L52 17V35Q50 47 32 57Q14 47 12 35V17Z" fill="#17253d"/>
+            <path d="M32 12L44 20V34Q42 42 32 49Q22 42 20 34V20Z" fill="none" stroke="#fff" stroke-width="1.5"/>
+            <path d="M32 19L35 28L44 28L37 34L40 43L32 37L24 43L27 34L20 28L29 28Z" fill="#fff"/>
+            <text x="62" y="28" font-size="13" font-weight="700" fill="#17253d">GENDARMERIE</text>
+            <text x="62" y="44" font-size="13" font-weight="700" fill="#315b9b">NATIONALE</text>
+          </svg>
+        </div>
+        <div class="ref-title">Gendarmerie nationale</div>
+        <div class="ref-note">Expérience professionnelle déclarée</div>
+      </article>
+
+      <article class="reference reveal">
+        <div class="logo" aria-hidden="true">
+          <svg viewBox="0 0 220 65">
+            <circle cx="110" cy="32" r="25" fill="none" stroke="#315b9b" stroke-width="1.5"/>
+            <path d="M95 32H125M110 17V47" stroke="#315b9b" stroke-width="1.5"/>
+            <circle cx="110" cy="32" r="9" fill="#315b9b"/>
+          </svg>
+        </div>
+        <div class="ref-title">Interprétariat & médiation linguistique</div>
+        <div class="ref-note">Neutralité · Rigueur · Confidentialité</div>
+      </article>
 
     </div>
-
-    <p class="reference-note">
-      Références liées à mon parcours professionnel. Les logos sont
-      présentés à titre informatif et ne signifient pas une affiliation
-      actuelle, un agrément ou un partenariat officiel.
+    <p class="notice">
+      Les représentations graphiques ci-dessus sont des créations stylisées
+      intégrées à cette page, et non les logos officiels exacts. Les noms
+      des organismes servent à décrire le parcours professionnel déclaré.
+      Leur présence ne signifie pas qu’ils approuvent ce site ni qu’un
+      partenariat officiel est en cours.
     </p>
   </div>
 </section>
+
+<section class="section soft" id="contact">
+  <div class="container">
+    <div class="contact-box reveal">
+      <div>
+        <div class="eyebrow" style="color:#b7cbed">Contact professionnel</div>
+        <h2>Parlons de votre mission.</h2>
+        <p>
+          Pour une demande d’interprétariat, une disponibilité ou une
+          collaboration, vous pouvez me contacter par e-mail.
+        </p>
+      </div>
+      <a class="btn" href="mailto:contact@naimyousfi.fr?subject=Demande%20de%20mission%20d%27interpr%C3%A9tariat">Envoyer un e-mail ↗</a>
+    </div>
+    <p class="notice">Remplace l’adresse e-mail du bouton par ton adresse professionnelle si nécessaire.</p>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Naïm Yousfi — Interprète professionnel</span>
+    <a href="#accueil">Retour en haut ↑</a>
+  </div>
+</footer>
+
+<script>
+const menuBtn = document.getElementById('menuBtn');
+const navLinks = document.getElementById('navLinks');
+
+menuBtn.addEventListener('click', () => {
+  const isOpen = navLinks.classList.toggle('open');
+  menuBtn.setAttribute('aria-expanded', String(isOpen));
+  menuBtn.textContent = isOpen ? '×' : '☰';
+});
+
+navLinks.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    navLinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    menuBtn.textContent = '☰';
+  });
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const revealItems = document.querySelectorAll('.reveal');
+if ('IntersectionObserver' in window) {
+  const observer = new IntersectionObserver(entries => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('visible');
+        observer.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.12 });
+  revealItems.forEach(item => observer.observe(item));
+} else {
+  revealItems.forEach(item => item.classList.add('visible'));
+}
+</script>
+</body>
+</html>
