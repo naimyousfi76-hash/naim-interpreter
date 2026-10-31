@@ -230,6 +230,45 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; }
   .reference-item { padding: 20px 8px; font-size: 11px; }
   .footer-inner { flex-direction: column; }
 }
+
+.reference-list {
+  overflow: hidden;
+  width: 100%;
+}
+
+.reference-track {
+  display: flex;
+  width: max-content;
+  animation: logo-scroll 22s linear infinite;
+}
+
+.reference-item {
+  flex: 0 0 240px;
+  min-height: 110px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 20px;
+  border-right: 1px solid rgba(25, 26, 23, .2);
+  font-size: 17px;
+  font-weight: 600;
+  text-align: center;
+}
+
+.reference-list:hover .reference-track {
+  animation-play-state: paused;
+}
+
+@keyframes logo-scroll {
+  from { transform: translateX(0); }
+  to { transform: translateX(-50%); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reference-track {
+    animation: none;
+  }
+}
 </style>
 </head>
 
@@ -404,13 +443,20 @@ footer { border-top: 1px solid var(--line); padding: 25px 0; }
       Expériences et missions auprès d'acteurs institutionnels et professionnels,
       selon les interventions réalisées.
     </p>
-    <div class="reference-list reveal">
-      <div class="reference-item">OFII</div>
-      <div class="reference-item">Ministère de la Justice</div>
-      <div class="reference-item">Police nationale</div>
-      <div class="reference-item">AP-HP</div>
-      <div class="reference-item">Gendarmerie nationale</div>
-    </div>
+<div class="reference-list reveal">
+  <div class="reference-track">
+    <div class="reference-item">OFII</div>
+    <div class="reference-item">Ministère de la Justice</div>
+    <div class="reference-item">Police nationale</div>
+    <div class="reference-item">AP-HP</div>
+    <div class="reference-item">Gendarmerie nationale</div>
+    <div class="reference-item">OFII</div>
+    <div class="reference-item">Ministère de la Justice</div>
+    <div class="reference-item">Police nationale</div>
+    <div class="reference-item">AP-HP</div>
+    <div class="reference-item">Gendarmerie nationale</div>
+  </div>
+</div>
     <p class="reference-note reveal">
       Les noms sont mentionnés à titre de références professionnelles, sous réserve
       de correspondre aux missions effectivement réalisées. Cette présentation ne signifie
