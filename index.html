@@ -2,1335 +2,604 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1.0">
-  <meta name="theme-color" content="#f6f4ef">
-  <meta name="description" content="Naim Yousfi, interprète professionnel en français, arabe, kabyle et anglais. Interprétariat, accompagnement linguistique et missions professionnelles.">
-  <title>Naim Yousfi — Interprète & médiateur linguistique</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #f6f4ef;
-      --paper: #fffefa;
-      --ink: #20251f;
-      --muted: #777a70;
-      --line: #deded4;
-      --accent: #a64f37;
-      --dark: #202820;
-      --light: #eeede5;
-      --serif: Georgia, "Times New Roman", serif;
-      --sans: "DM Sans", sans-serif;
-      --display: "Manrope", sans-serif;
-      --mono: "DM Mono", monospace;
-      --width: 1180px;
-    }
-
-    * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 90px;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--ink);
-      font-family: var(--sans);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    body.menu-open { overflow: hidden; }
-
-    a { color: inherit; text-decoration: none; }
-
-    button, a { -webkit-tap-highlight-color: transparent; }
-
-    button { font: inherit; }
-
-    ::selection {
-      background: var(--accent);
-      color: white;
-    }
-
-    .container {
-      width: min(var(--width), calc(100% - 64px));
-      margin-inline: auto;
-    }
-
-    .eyebrow {
-      display: flex;
-      align-items: center;
-      gap: 11px;
-      color: var(--muted);
-      font: 11px var(--mono);
-      text-transform: uppercase;
-      letter-spacing: .13em;
-    }
-
-    .eyebrow::before {
-      content: "";
-      width: 23px;
-      height: 1px;
-      background: var(--accent);
-    }
-
-    .topbar {
-      position: sticky;
-      top: 0;
-      z-index: 50;
-      background: rgba(246,244,239,.92);
-      backdrop-filter: blur(18px);
-      border-bottom: 1px solid rgba(32,37,31,.10);
-    }
-
-    .nav {
-      height: 78px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 12px;
-      flex-shrink: 0;
-    }
-
-    .brand-mark {
-      width: 39px;
-      height: 39px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--ink);
-      font: 17px var(--serif);
-      letter-spacing: -.08em;
-    }
-
-    .brand-name {
-      display: block;
-      font: 700 13px var(--display);
-      letter-spacing: .025em;
-    }
-
-    .brand-role {
-      display: block;
-      margin-top: 3px;
-      color: var(--muted);
-      font: 9px var(--mono);
-      text-transform: uppercase;
-      letter-spacing: .09em;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 29px;
-    }
-
-    .nav-links a {
-      font-size: 12px;
-      color: #51564e;
-      transition: color .2s;
-    }
-
-    .nav-links a:hover { color: var(--accent); }
-
-    .nav-contact {
-      padding: 13px 17px;
-      background: var(--ink);
-      color: white !important;
-      transition: background .2s;
-    }
-
-    .nav-contact:hover { background: var(--accent); }
-
-    .menu-toggle {
-      display: none;
-      border: 1px solid var(--line);
-      background: transparent;
-      width: 43px;
-      height: 43px;
-      cursor: pointer;
-      font-size: 20px;
-    }
-
-    /* HERO */
-
-    .hero {
-      position: relative;
-      overflow: hidden;
-      padding: 95px 0 68px;
-    }
-
-    .hero::after {
-      content: "NY";
-      position: absolute;
-      z-index: -1;
-      top: 35px;
-      right: -30px;
-      color: rgba(32,40,32,.035);
-      font: 800 clamp(240px, 37vw, 510px)/1 var(--display);
-      letter-spacing: -.13em;
-      pointer-events: none;
-    }
-
-    .hero-grid {
-      display: grid;
-      grid-template-columns: minmax(0, 1fr) 310px;
-      align-items: end;
-      gap: 65px;
-    }
-
-    .hero h1 {
-      max-width: 850px;
-      margin: 31px 0 25px;
-      font: 500 clamp(53px, 8vw, 105px)/.99 var(--display);
-      letter-spacing: -.085em;
-    }
-
-    .hero h1 em {
-      color: var(--accent);
-      font: italic 400 1.02em/.98 var(--serif);
-      letter-spacing: -.075em;
-    }
-
-    .hero-description {
-      max-width: 495px;
-      margin: 0;
-      color: #676b61;
-      font-size: 15px;
-      line-height: 1.9;
-    }
-
-    .hero-actions {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-      margin-top: 34px;
-    }
-
-    .btn {
-      display: inline-flex;
-      min-height: 50px;
-      align-items: center;
-      justify-content: center;
-      gap: 15px;
-      padding: 0 20px;
-      border: 1px solid var(--ink);
-      font-size: 12px;
-      font-weight: 600;
-      transition: transform .2s, background .2s, color .2s;
-      cursor: pointer;
-    }
-
-    .btn:hover { transform: translateY(-2px); }
-
-    .btn-dark {
-      background: var(--ink);
-      color: white;
-    }
-
-    .btn-dark:hover { background: var(--accent); border-color: var(--accent); }
-
-    .btn-outline { background: transparent; }
-
-    .btn-outline:hover { background: var(--paper); }
-
-    .btn-arrow {
-      font-size: 17px;
-      font-weight: 400;
-    }
-
-    .hero-card {
-      position: relative;
-      min-height: 325px;
-      display: flex;
-      flex-direction: column;
-      justify-content: space-between;
-      padding: 25px;
-      background: var(--dark);
-      color: #f8f5ed;
-      overflow: hidden;
-    }
-
-    .hero-card::before {
-      content: "";
-      position: absolute;
-      width: 210px;
-      height: 210px;
-      border: 1px solid rgba(255,255,255,.15);
-      border-radius: 50%;
-      right: -55px;
-      top: 65px;
-    }
-
-    .hero-card::after {
-      content: "";
-      position: absolute;
-      width: 150px;
-      height: 150px;
-      border: 1px solid rgba(255,255,255,.13);
-      border-radius: 50%;
-      right: -25px;
-      top: 95px;
-    }
-
-    .card-index {
-      color: #c7c7b9;
-      font: 10px var(--mono);
-      letter-spacing: .13em;
-    }
-
-    .card-symbol {
-      position: relative;
-      z-index: 1;
-      font: 100px/.9 var(--serif);
-      letter-spacing: -.1em;
-      color: #f3eee2;
-    }
-
-    .card-caption {
-      position: relative;
-      z-index: 1;
-      max-width: 220px;
-      font: 25px/1.25 var(--serif);
-    }
-
-    .card-caption span { color: #d9a38d; font-style: italic; }
-
-    .hero-card-bottom {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 10px;
-      padding-top: 20px;
-      margin-top: 25px;
-      border-top: 1px solid rgba(255,255,255,.18);
-      color: #d0d1c7;
-      font: 9px var(--mono);
-      letter-spacing: .08em;
-      text-transform: uppercase;
-    }
-
-    .availability {
-      display: flex;
-      align-items: center;
-      gap: 8px;
-    }
-
-    .availability-dot {
-      width: 7px;
-      height: 7px;
-      border-radius: 50%;
-      background: #a8c79a;
-    }
-
-    /* LANGUAGES STRIP */
-
-    .language-strip {
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      background: rgba(255,254,250,.5);
-    }
-
-    .language-strip-inner {
-      min-height: 95px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-    }
-
-    .strip-label {
-      max-width: 135px;
-      color: var(--muted);
-      font: 10px/1.7 var(--mono);
-      text-transform: uppercase;
-      letter-spacing: .08em;
-    }
-
-    .language-list {
-      display: flex;
-      flex-wrap: wrap;
-      justify-content: flex-end;
-      gap: 9px;
-    }
-
-    .language-pill {
-      padding: 12px 16px;
-      border: 1px solid var(--line);
-      font: 11px var(--mono);
-      background: var(--paper);
-    }
-
-    /* SECTION BASE */
-
-    section.content-section { padding: 110px 0; }
-
-    .section-heading {
-      display: grid;
-      grid-template-columns: 1fr 1.3fr;
-      align-items: start;
-      gap: 50px;
-      margin-bottom: 55px;
-    }
-
-    .section-heading h2 {
-      max-width: 690px;
-      margin: 0;
-      font: 500 clamp(39px, 5vw, 67px)/1.08 var(--display);
-      letter-spacing: -.07em;
-    }
-
-    .section-heading h2 em {
-      color: var(--accent);
-      font-family: var(--serif);
-      font-weight: 400;
-    }
-
-    .section-intro {
-      max-width: 460px;
-      padding-top: 28px;
-      color: #6e7168;
-      font-size: 14px;
-      line-height: 1.95;
-    }
-
-    /* ABOUT */
-
-    .about-grid {
-      display: grid;
-      grid-template-columns: .85fr 1.15fr;
-      gap: 80px;
-      align-items: start;
-    }
-
-    .about-aside {
-      padding: 29px;
-      background: var(--light);
-      border: 1px solid #e3e1d8;
-    }
-
-    .about-aside .big-number {
-      display: block;
-      font: 74px/.95 var(--serif);
-      letter-spacing: -.08em;
-      color: var(--accent);
-    }
-
-    .about-aside h3 {
-      margin: 20px 0 10px;
-      font: 500 24px var(--display);
-      letter-spacing: -.04em;
-    }
-
-    .about-aside p {
-      margin: 0;
-      color: #666a60;
-      font-size: 13px;
-      line-height: 1.8;
-    }
-
-    .about-main h3 {
-      margin: 0 0 20px;
-      font: 500 29px/1.35 var(--display);
-      letter-spacing: -.045em;
-    }
-
-    .about-main p {
-      color: #686b62;
-      font-size: 14px;
-      line-height: 2;
-    }
-
-    .about-note {
-      display: flex;
-      gap: 15px;
-      align-items: flex-start;
-      margin-top: 29px;
-      padding-top: 24px;
-      border-top: 1px solid var(--line);
-    }
-
-    .about-note-symbol {
-      flex: 0 0 37px;
-      width: 37px;
-      height: 37px;
-      display: grid;
-      place-items: center;
-      border: 1px solid var(--line);
-      font: 20px var(--serif);
-      color: var(--accent);
-    }
-
-    .about-note p {
-      margin: 0;
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    /* EXPERTISE */
-
-    .expertise {
-      background: var(--dark);
-      color: #f5f2e9;
-    }
-
-    .expertise .eyebrow { color: #c2c5b8; }
-
-    .expertise .section-heading h2 em { color: #d5a08b; }
-
-    .expertise .section-intro { color: #bfc2b7; }
-
-    .expertise-list { border-top: 1px solid rgba(255,255,255,.2); }
-
-    .expertise-item {
-      display: grid;
-      grid-template-columns: 60px 1fr 1fr 30px;
-      align-items: center;
-      gap: 24px;
-      padding: 27px 0;
-      border-bottom: 1px solid rgba(255,255,255,.2);
-      transition: padding .2s;
-    }
-
-    .expertise-item:hover { padding-left: 8px; padding-right: 8px; }
-
-    .expertise-num {
-      color: #c9a493;
-      font: 11px var(--mono);
-    }
-
-    .expertise-item h3 {
-      margin: 0;
-      font: 500 24px var(--display);
-      letter-spacing: -.045em;
-    }
-
-    .expertise-item p {
-      max-width: 370px;
-      margin: 0;
-      color: #bfc2b7;
-      font-size: 12px;
-      line-height: 1.8;
-    }
-
-    .expertise-arrow {
-      color: #d5a08b;
-      font-size: 21px;
-      text-align: right;
-    }
-
-    /* PRINCIPLES */
-
-    .principles-grid {
-      display: grid;
-      grid-template-columns: repeat(3, 1fr);
-      border: 1px solid var(--line);
-    }
-
-    .principle {
-      min-height: 220px;
-      padding: 27px;
-      border-right: 1px solid var(--line);
-    }
-
-    .principle:last-child { border-right: 0; }
-
-    .principle-number {
-      font: 10px var(--mono);
-      color: var(--accent);
-    }
-
-    .principle h3 {
-      margin: 36px 0 13px;
-      font: 500 23px var(--display);
-      letter-spacing: -.05em;
-    }
-
-    .principle p {
-      margin: 0;
-      color: #6d7067;
-      font-size: 12px;
-      line-height: 1.9;
-    }
-
-    /* INSTITUTIONS MARQUEE */
-
-    .references {
-      padding: 50px 0 44px;
-      border-top: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-      overflow: hidden;
-    }
-
-    .references-heading {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 25px;
-      margin-bottom: 31px;
-    }
-
-    .references-heading p {
-      margin: 0;
-      color: var(--muted);
-      font: 10px var(--mono);
-      text-transform: uppercase;
-      letter-spacing: .09em;
-    }
-
-    .marquee {
-      overflow: hidden;
-      -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-      mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent);
-    }
-
-    .marquee-track {
-      display: flex;
-      width: max-content;
-      align-items: center;
-      animation: marquee 30s linear infinite;
-    }
-
-    .marquee:hover .marquee-track { animation-play-state: paused; }
-
-    .marquee-group {
-      display: flex;
-      align-items: center;
-      gap: 52px;
-      padding-right: 52px;
-    }
-
-    .reference-word {
-      white-space: nowrap;
-      color: #77796f;
-      font: 600 15px var(--display);
-      letter-spacing: -.025em;
-    }
-
-    .reference-word small {
-      display: block;
-      margin-top: 5px;
-      color: #a0a196;
-      font: 9px var(--mono);
-      text-transform: uppercase;
-      letter-spacing: .1em;
-    }
-
-    .reference-disclaimer {
-      margin: 23px 0 0;
-      color: #898b82;
-      font-size: 10px;
-      line-height: 1.8;
-      text-align: center;
-    }
-
-    @keyframes marquee {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    /* CONTACT */
-
-    .contact {
-      position: relative;
-      overflow: hidden;
-      padding: 105px 0 80px;
-      background: #eae7de;
-    }
-
-    .contact::after {
-      content: "CONTACT";
-      position: absolute;
-      z-index: 0;
-      right: -25px;
-      bottom: -45px;
-      color: rgba(32,37,31,.045);
-      font: 800 clamp(90px, 18vw, 225px)/1 var(--display);
-      letter-spacing: -.1em;
-      pointer-events: none;
-    }
-
-    .contact-grid {
-      position: relative;
-      z-index: 1;
-      display: grid;
-      grid-template-columns: 1.1fr .9fr;
-      gap: 70px;
-    }
-
-    .contact h2 {
-      max-width: 660px;
-      margin: 25px 0;
-      font: 500 clamp(47px, 7vw, 82px)/1.02 var(--display);
-      letter-spacing: -.08em;
-    }
-
-    .contact h2 em {
-      color: var(--accent);
-      font: italic 400 1em var(--serif);
-    }
-
-    .contact-description {
-      max-width: 425px;
-      color: #6d7067;
-      font-size: 14px;
-      line-height: 1.9;
-    }
-
-    .contact-details {
-      align-self: end;
-      padding-top: 20px;
-    }
-
-    .contact-label {
-      margin: 0 0 12px;
-      color: #77796f;
-      font: 10px var(--mono);
-      text-transform: uppercase;
-      letter-spacing: .12em;
-    }
-
-    .email-line {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 12px;
-      padding: 18px 0;
-      border-top: 1px solid #cfcec4;
-      border-bottom: 1px solid #cfcec4;
-    }
-
-    .email-address {
-      overflow-wrap: anywhere;
-      font: 500 clamp(15px, 2vw, 20px) var(--display);
-      letter-spacing: -.04em;
-    }
-
-    .copy-email {
-      flex-shrink: 0;
-      padding: 10px 12px;
-      background: transparent;
-      border: 1px solid #c6c5bb;
-      color: var(--ink);
-      cursor: pointer;
-      font: 10px var(--mono);
-      transition: background .2s, color .2s;
-    }
-
-    .copy-email:hover {
-      background: var(--ink);
-      color: white;
-    }
-
-    .copy-status {
-      min-height: 20px;
-      margin-top: 8px;
-      color: var(--accent);
-      font-size: 11px;
-    }
-
-    .contact-socials {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 10px;
-      margin-top: 18px;
-    }
-
-    .social-link {
-      display: inline-flex;
-      align-items: center;
-      gap: 9px;
-      padding: 13px 15px;
-      border: 1px solid #cfcec4;
-      font-size: 11px;
-      transition: background .2s;
-    }
-
-    .social-link:hover { background: var(--paper); }
-
-    .contact-footnote {
-      margin-top: 30px;
-      color: #77796f;
-      font-size: 11px;
-      line-height: 1.8;
-    }
-
-    /* FOOTER */
-
-    footer {
-      padding: 24px 0;
-      background: var(--dark);
-      color: #efede4;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      align-items: center;
-      gap: 20px;
-    }
-
-    .footer-brand {
-      font: 600 12px var(--display);
-    }
-
-    .footer-copy {
-      color: #b9bcb0;
-      font: 9px var(--mono);
-      letter-spacing: .03em;
-    }
-
-    .back-top {
-      color: #e2b5a2;
-      font: 10px var(--mono);
-      text-transform: uppercase;
-    }
-
-    /* ANIMATIONS */
-
-    .reveal {
-      opacity: 0;
-      transform: translateY(18px);
-      transition: opacity .7s ease, transform .7s ease;
-    }
-
-    .reveal.visible {
-      opacity: 1;
-      transform: translateY(0);
-    }
-
-    :focus-visible {
-      outline: 2px solid var(--accent);
-      outline-offset: 4px;
-    }
-
-    /* MOBILE */
-
-    @media (max-width: 850px) {
-      .container { width: min(100% - 40px, var(--width)); }
-
-      .nav { height: 70px; }
-
-      .nav-links {
-        display: none;
-        position: fixed;
-        inset: 70px 0 0;
-        z-index: 60;
-        padding: 35px 25px;
-        background: var(--bg);
-        align-items: stretch;
-        flex-direction: column;
-        gap: 0;
-      }
-
-      .nav-links.open { display: flex; }
-
-      .nav-links a {
-        padding: 19px 0;
-        border-bottom: 1px solid var(--line);
-        font-size: 18px;
-      }
-
-      .nav-links .nav-contact {
-        margin-top: 22px;
-        padding: 17px;
-        text-align: center;
-        border: 0;
-      }
-
-      .menu-toggle { display: block; }
-
-      .hero { padding: 68px 0 52px; }
-
-      .hero-grid {
-        grid-template-columns: 1fr;
-        gap: 38px;
-      }
-
-      .hero h1 { font-size: clamp(55px, 12vw, 92px); }
-
-      .hero-card {
-        min-height: 255px;
-      }
-
-      .card-symbol { font-size: 75px; }
-
-      .language-strip-inner {
-        align-items: flex-start;
-        flex-direction: column;
-        padding: 24px 0;
-        gap: 17px;
-      }
-
-      .language-list { justify-content: flex-start; }
-
-      section.content-section { padding: 78px 0; }
-
-      .section-heading {
-        grid-template-columns: 1fr;
-        gap: 15px;
-        margin-bottom: 36px;
-      }
-
-      .section-intro { padding-top: 0; }
-
-      .about-grid {
-        grid-template-columns: 1fr;
-        gap: 28px;
-      }
-
-      .about-aside { order: 2; }
-
-      .expertise-item {
-        grid-template-columns: 32px 1fr 20px;
-        gap: 12px;
-      }
-
-      .expertise-item h3 { font-size: 20px; }
-
-      .expertise-item p { grid-column: 2 / 3; }
-
-      .expertise-arrow { grid-column: 3; grid-row: 1; }
-
-      .principles-grid { grid-template-columns: 1fr; }
-
-      .principle {
-        min-height: auto;
-        padding: 24px;
-        border-right: 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .principle:last-child { border-bottom: 0; }
-
-      .principle h3 { margin-top: 22px; }
-
-      .references-heading {
-        align-items: flex-start;
-        flex-direction: column;
-        gap: 10px;
-      }
-
-      .marquee-group { gap: 35px; padding-right: 35px; }
-
-      .contact { padding: 75px 0 60px; }
-
-      .contact-grid {
-        grid-template-columns: 1fr;
-        gap: 35px;
-      }
-
-      .contact-details { max-width: 540px; }
-
-      .footer-inner { flex-wrap: wrap; }
-    }
-
-    @media (max-width: 420px) {
-      .container { width: calc(100% - 32px); }
-
-      .hero h1 { font-size: 52px; }
-
-      .hero-actions { flex-direction: column; align-items: stretch; }
-
-      .btn { width: 100%; }
-
-      .email-line { align-items: flex-start; flex-direction: column; }
-
-      .copy-email { align-self: flex-start; }
-
-      .footer-inner { align-items: flex-start; flex-direction: column; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      *, *::before, *::after {
-        scroll-behavior: auto !important;
-        animation-duration: .01ms !important;
-        animation-iteration-count: 1 !important;
-        transition-duration: .01ms !important;
-      }
-
-      .reveal { opacity: 1; transform: none; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#11120f">
+<meta name="description" content="Naim Yousfi — Interprète professionnel en français, arabe, kabyle et anglais.">
+<title>Naim Yousfi — Interpreter & Language Specialist</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&display=swap" rel="stylesheet">
+
+<style>
+:root{
+  --bg:#11120f;
+  --panel:#191a16;
+  --white:#f5f4ed;
+  --muted:#a5a69a;
+  --line:#34352e;
+  --orange:#ff633e;
+  --lime:#d7ff64;
+  --font:"Manrope",sans-serif;
+  --mono:"DM Mono",monospace;
+}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:85px}
+body{margin:0;background:var(--bg);color:var(--white);font-family:var(--font);-webkit-font-smoothing:antialiased}
+body.menu-open{overflow:hidden}
+a{color:inherit;text-decoration:none}
+button{font:inherit}
+button,a{-webkit-tap-highlight-color:transparent}
+::selection{background:var(--lime);color:var(--bg)}
+.container{width:min(1200px,calc(100% - 56px));margin:auto}
+.mono{font-family:var(--mono)}
+.muted{color:var(--muted)}
+.accent{color:var(--orange)}
+.eyebrow{display:flex;align-items:center;gap:10px;font:10px var(--mono);letter-spacing:.12em;text-transform:uppercase;color:var(--muted)}
+.eyebrow:before{content:"";width:22px;height:2px;background:var(--orange)}
+.topbar{position:sticky;top:0;z-index:50;background:rgba(17,18,15,.88);backdrop-filter:blur(18px);border-bottom:1px solid var(--line)}
+.nav{height:76px;display:flex;justify-content:space-between;align-items:center;gap:20px}
+.brand{display:flex;align-items:center;gap:12px}
+.brand-mark{display:grid;place-items:center;width:40px;height:40px;background:var(--lime);color:var(--bg);font-weight:800;font-size:15px;letter-spacing:-2px}
+.brand strong{display:block;font-size:12px;letter-spacing:.08em}
+.brand small{display:block;margin-top:4px;color:var(--muted);font:9px var(--mono);letter-spacing:.08em}
+.nav-links{display:flex;align-items:center;gap:27px}
+.nav-links a{font-size:11px;color:#c7c7bc;transition:color .2s}
+.nav-links a:hover{color:var(--lime)}
+.nav-links .nav-cta{padding:13px 16px;background:var(--lime);color:var(--bg);font-weight:800}
+.menu-toggle{display:none;width:43px;height:43px;border:1px solid var(--line);background:transparent;color:white;font-size:21px}
+
+/* HERO */
+.hero{position:relative;overflow:hidden;padding:100px 0 85px}
+.hero:after{content:"NY";position:absolute;z-index:0;right:-25px;top:30px;font-size:clamp(200px,36vw,470px);line-height:1;font-weight:800;letter-spacing:-.13em;color:rgba(255,255,255,.025);pointer-events:none}
+.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1.35fr .65fr;gap:65px;align-items:center}
+.hero h1{margin:28px 0;font-size:clamp(58px,9.5vw,116px);line-height:.91;letter-spacing:-.095em;font-weight:700}
+.hero h1 .line{display:block}
+.hero h1 .outline{color:transparent;-webkit-text-stroke:1px var(--white)}
+.hero h1 .highlight{color:var(--orange)}
+.hero-description{max-width:510px;color:#b4b5aa;font-size:14px;line-height:1.95}
+.hero-actions{display:flex;flex-wrap:wrap;gap:12px;margin-top:30px}
+.btn{display:inline-flex;align-items:center;justify-content:center;gap:15px;min-height:51px;padding:0 19px;font-size:11px;font-weight:800;border:1px solid transparent;transition:transform .2s,background .2s}
+.btn:hover{transform:translateY(-3px)}
+.btn-lime{background:var(--lime);color:var(--bg)}
+.btn-lime:hover{background:white}
+.btn-ghost{border-color:#55564c;color:var(--white)}
+.btn-ghost:hover{border-color:var(--lime);color:var(--lime)}
+.btn .arrow{font-size:17px}
+.hero-visual{position:relative;min-height:430px;display:flex;align-items:center;justify-content:center}
+.orbit{position:absolute;width:min(360px,90%);aspect-ratio:1;border:1px solid #44463b;border-radius:50%;animation:spin 28s linear infinite}
+.orbit:before,.orbit:after{content:"";position:absolute;border:1px solid #34362d;border-radius:50%}
+.orbit:before{inset:28px}
+.orbit:after{inset:65px}
+.orbit-dot{position:absolute;top:38px;left:56px;width:12px;height:12px;border-radius:50%;background:var(--orange);box-shadow:0 0 24px #ff633e77}
+.visual-center{position:relative;z-index:2;width:205px;height:255px;display:flex;flex-direction:column;justify-content:space-between;padding:22px;background:var(--lime);color:var(--bg);transform:rotate(4deg);box-shadow:15px 15px 0 var(--orange)}
+.visual-top{font:10px var(--mono);letter-spacing:.1em}
+.visual-letters{font-size:82px;line-height:.9;letter-spacing:-.12em;font-weight:800}
+.visual-bottom{font:10px/1.6 var(--mono)}
+.visual-tag{position:absolute;z-index:3;right:0;bottom:42px;padding:13px 15px;background:var(--panel);border:1px solid var(--line);font:10px var(--mono);letter-spacing:.04em}
+.visual-tag span{color:var(--lime)}
+.hero-bottom{display:flex;justify-content:space-between;align-items:center;gap:20px;margin-top:62px;padding-top:21px;border-top:1px solid var(--line);font:10px var(--mono);color:var(--muted);text-transform:uppercase;letter-spacing:.08em}
+.status{display:flex;align-items:center;gap:9px}
+.status:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime)}
+
+/* LANGUAGES */
+.language-band{background:var(--lime);color:var(--bg);padding:21px 0}
+.language-inner{display:flex;justify-content:space-between;align-items:center;gap:20px}
+.language-label{font:10px var(--mono);letter-spacing:.08em;text-transform:uppercase}
+.languages{display:flex;flex-wrap:wrap;gap:10px}
+.language-pill{padding:9px 13px;border:1px solid rgba(17,18,15,.3);font:10px var(--mono)}
+.language-pill b{font-weight:500}
+
+/* SHARED SECTIONS */
+.section{padding:110px 0}
+.section-head{display:grid;grid-template-columns:.65fr 1.35fr;gap:55px;margin-bottom:55px}
+.section-head h2{margin:0;font-size:clamp(40px,6vw,72px);line-height:1.02;letter-spacing:-.075em}
+.section-head h2 em{color:var(--orange);font-style:normal}
+.section-intro{max-width:500px;margin:23px 0 0;color:var(--muted);font-size:13px;line-height:1.9}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:65px}
+.about-card{min-height:300px;padding:28px;background:var(--panel);border:1px solid var(--line);display:flex;flex-direction:column;justify-content:space-between}
+.about-card .number{font-size:clamp(65px,10vw,105px);font-weight:800;letter-spacing:-.1em;line-height:1;color:var(--lime)}
+.about-card h3{max-width:250px;font-size:24px;line-height:1.2;letter-spacing:-.06em}
+.about-card p{margin:0;color:var(--muted);font:10px/1.8 var(--mono)}
+.about-copy h3{font-size:27px;line-height:1.4;letter-spacing:-.05em;margin:0 0 20px}
+.about-copy p{font-size:13px;line-height:2;color:#b6b7ac}
+.about-quote{margin-top:27px;padding:20px;border-left:2px solid var(--orange);background:#1a1b16;color:#e4e3d9;font-size:14px;line-height:1.8}
+
+/* EXPERTISE */
+.expertise{background:#e8e7df;color:#171813}
+.expertise .eyebrow{color:#66685e}
+.expertise .section-intro{color:#62645a}
+.expertise .section-head h2 em{color:#c9482a}
+.expertise-list{border-top:1px solid #c7c7bc}
+.expertise-item{display:grid;grid-template-columns:45px 1fr 1fr 25px;gap:20px;align-items:center;padding:27px 0;border-bottom:1px solid #c7c7bc;transition:padding .25s}
+.expertise-item:hover{padding-left:10px;padding-right:10px}
+.expertise-num{font:10px var(--mono);color:#b9472b}
+.expertise-item h3{font-size:21px;letter-spacing:-.05em;margin:0}
+.expertise-item p{font-size:11px;line-height:1.8;color:#63655c;margin:0}
+.expertise-arrow{font-size:21px;text-align:right}
+
+/* APPROACH */
+.principles{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.principle{min-height:225px;padding:25px;border:1px solid var(--line);background:var(--panel);transition:transform .25s,border-color .25s}
+.principle:hover{transform:translateY(-5px);border-color:var(--lime)}
+.principle .index{font:10px var(--mono);color:var(--orange)}
+.principle h3{margin:39px 0 12px;font-size:23px;letter-spacing:-.05em}
+.principle p{margin:0;color:var(--muted);font-size:12px;line-height:1.9}
+
+/* REAL LOGO CAROUSEL */
+.logo-section{padding:55px 0 50px;background:#f5f4ed;color:#171813;overflow:hidden}
+.logo-heading{display:flex;justify-content:space-between;gap:20px;align-items:end;margin-bottom:28px}
+.logo-heading h2{margin:0;font-size:clamp(22px,3.5vw,36px);letter-spacing:-.06em}
+.logo-heading p{margin:0;color:#696b61;font:10px var(--mono);text-align:right}
+.logo-window{overflow:hidden;position:relative;-webkit-mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent);mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}
+.logo-track{display:flex;width:max-content;align-items:center;animation:logoScroll 32s linear infinite}
+.logo-window:hover .logo-track{animation-play-state:paused}
+.logo-set{display:flex;align-items:center;gap:22px;padding-right:22px}
+.logo-card{width:220px;height:112px;display:flex;flex-direction:column;justify-content:center;align-items:center;gap:10px;background:#fff;border:1px solid #deded4;padding:16px 22px;flex-shrink:0}
+.logo-card img{width:100%;height:52px;object-fit:contain;filter:grayscale(1);transition:filter .25s,transform .25s}
+.logo-card:hover img{filter:grayscale(0);transform:scale(1.04)}
+.logo-card span{font:9px var(--mono);color:#5c5e55;text-align:center}
+.logo-card a{display:flex;align-items:center;justify-content:center;width:100%}
+.logo-disclaimer{max-width:850px;margin:24px auto 0;text-align:center;font-size:10px;line-height:1.8;color:#66685f}
+.logo-disclaimer a{text-decoration:underline;text-underline-offset:3px}
+@keyframes logoScroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* CONTACT */
+.contact{padding:105px 0;background:var(--orange);color:#151510;overflow:hidden}
+.contact-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:70px;align-items:end}
+.contact .eyebrow{color:#3c251f}
+.contact .eyebrow:before{background:#171813}
+.contact h2{margin:25px 0;font-size:clamp(48px,8vw,92px);line-height:.96;letter-spacing:-.09em}
+.contact h2 span{color:var(--white)}
+.contact-copy{max-width:420px;font-size:13px;line-height:1.9;color:#402d26}
+.contact-box{padding:25px;background:rgba(255,255,255,.12);border:1px solid rgba(20,20,15,.22)}
+.contact-label{font:10px var(--mono);text-transform:uppercase;letter-spacing:.1em;color:#49332b}
+.email-row{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:18px 0;border-top:1px solid rgba(20,20,15,.25);border-bottom:1px solid rgba(20,20,15,.25)}
+.email-link{font-size:clamp(14px,2vw,19px);font-weight:800;overflow-wrap:anywhere;letter-spacing:-.04em}
+.copy-btn{flex-shrink:0;background:var(--bg);color:white;border:0;padding:12px;font:9px var(--mono);cursor:pointer}
+.copy-status{min-height:18px;margin:8px 0 0;font-size:11px}
+.socials{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}
+.social-link{padding:12px 15px;border:1px solid rgba(20,20,15,.35);font-size:11px;font-weight:700}
+.social-link:hover{background:rgba(255,255,255,.2)}
+.contact-small{font-size:10px;line-height:1.8;color:#49332b;margin-top:25px}
+
+/* FOOTER */
+footer{padding:24px 0;background:#0b0c0a}
+.footer-row{display:flex;align-items:center;justify-content:space-between;gap:20px}
+.footer-name{font-size:11px;font-weight:800;letter-spacing:.08em}
+.footer-info{font:9px var(--mono);color:var(--muted)}
+.back-top{font:10px var(--mono);color:var(--lime)}
+
+/* REVEAL */
+.reveal{opacity:0;transform:translateY(22px);transition:opacity .7s ease,transform .7s ease}
+.reveal.visible{opacity:1;transform:translateY(0)}
+:focus-visible{outline:2px solid var(--orange);outline-offset:4px}
+
+@media(max-width:850px){
+  .container{width:calc(100% - 38px)}
+  .nav{height:68px}
+  .menu-toggle{display:block}
+  .nav-links{display:none;position:fixed;inset:68px 0 0;background:var(--bg);padding:25px 24px;align-items:stretch;flex-direction:column;gap:0}
+  .nav-links.open{display:flex}
+  .nav-links a{padding:18px 0;border-bottom:1px solid var(--line);font-size:16px}
+  .nav-links .nav-cta{margin-top:18px;padding:17px;text-align:center;border:0}
+  .hero{padding:70px 0 55px}
+  .hero-grid{grid-template-columns:1fr;gap:25px}
+  .hero h1{font-size:clamp(57px,13vw,100px)}
+  .hero-visual{min-height:340px}
+  .visual-center{width:175px;height:220px}
+  .visual-letters{font-size:70px}
+  .hero-bottom{margin-top:35px}
+  .language-inner{align-items:flex-start;flex-direction:column}
+  .languages{gap:7px}
+  .section{padding:78px 0}
+  .section-head{grid-template-columns:1fr;gap:17px;margin-bottom:35px}
+  .section-intro{margin-top:15px}
+  .about-grid{grid-template-columns:1fr;gap:25px}
+  .about-card{min-height:250px}
+  .expertise-item{grid-template-columns:30px 1fr 20px;gap:12px}
+  .expertise-item p{grid-column:2;grid-row:2}
+  .expertise-arrow{grid-column:3;grid-row:1}
+  .principles{grid-template-columns:1fr}
+  .principle{min-height:180px}
+  .principle h3{margin-top:25px}
+  .logo-heading{align-items:flex-start;flex-direction:column}
+  .logo-heading p{text-align:left}
+  .contact{padding:75px 0}
+  .contact-grid{grid-template-columns:1fr;gap:32px}
+}
+@media(max-width:420px){
+  .container{width:calc(100% - 30px)}
+  .hero h1{font-size:55px}
+  .hero-actions{flex-direction:column;align-items:stretch}
+  .btn{width:100%}
+  .hero-bottom{align-items:flex-start;flex-direction:column}
+  .email-row{align-items:flex-start;flex-direction:column}
+  .footer-row{align-items:flex-start;flex-direction:column}
+}
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{scroll-behavior:auto!important;animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important}
+  .reveal{opacity:1;transform:none}
+}
+</style>
 </head>
 
 <body id="top">
+<header class="topbar">
+  <div class="container nav">
+    <a class="brand" href="#top" aria-label="Accueil Naim Yousfi">
+      <span class="brand-mark">NY.</span>
+      <span><strong>NAIM YOUSFI</strong><small>INTERPRETER · LANGUAGE SPECIALIST</small></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
+    <nav class="nav-links" id="navLinks" aria-label="Navigation">
+      <a href="#about">À propos</a>
+      <a href="#expertise">Expertises</a>
+      <a href="#languages">Langues</a>
+      <a href="#references">Références visuelles</a>
+      <a href="#contact" class="nav-cta">Parlons de votre mission ↗</a>
+    </nav>
+  </div>
+</header>
 
-  <header class="topbar">
-    <div class="container nav">
-      <a class="brand" href="#top" aria-label="Naim Yousfi, accueil">
-        <span class="brand-mark">NY.</span>
-        <span>
-          <span class="brand-name">NAIM YOUSFI</span>
-          <span class="brand-role">Interprète professionnel</span>
-        </span>
-      </a>
-
-      <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false">☰</button>
-
-      <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
-        <a href="#apropos">À propos</a>
-        <a href="#langues">Langues</a>
-        <a href="#expertises">Expertises</a>
-        <a href="#approche">Mon approche</a>
-        <a href="#contact" class="nav-contact">Me contacter ↗</a>
-      </nav>
-    </div>
-  </header>
-
-  <main>
-    <section class="hero">
-      <div class="container hero-grid">
+<main>
+  <section class="hero">
+    <div class="container">
+      <div class="hero-grid">
         <div class="reveal">
-          <div class="eyebrow">Interprétariat · Communication · Langues</div>
-
+          <div class="eyebrow">Interprétariat · Communication · Multilinguisme</div>
           <h1>
-            Les langues<br>
-            créent des<br>
-            <em>passerelles.</em>
+            <span class="line">Words</span>
+            <span class="line outline">connect</span>
+            <span class="line highlight">worlds<span style="color:var(--white)">.</span></span>
           </h1>
-
           <p class="hero-description">
-            Je suis Naim Yousfi, interprète en français, arabe, kabyle et anglais.
-            J'accompagne les échanges où comprendre chaque mot, chaque nuance et
-            chaque intention fait toute la différence.
+            Naim Yousfi — interprète en français, arabe, kabyle et anglais.
+            Je facilite la compréhension entre les personnes, avec une attention
+            particulière à la précision, au contexte et aux nuances de chaque échange.
           </p>
-
           <div class="hero-actions">
-            <a class="btn btn-dark" href="#contact">
-              Discutons de votre mission <span class="btn-arrow">↗</span>
-            </a>
-            <a class="btn btn-outline" href="#apropos">
-              Découvrir mon parcours <span class="btn-arrow">↓</span>
-            </a>
+            <a class="btn btn-lime" href="#contact">Travaillons ensemble <span class="arrow">↗</span></a>
+            <a class="btn btn-ghost" href="#about">Découvrir mon parcours <span class="arrow">↓</span></a>
           </div>
         </div>
 
-        <aside class="hero-card reveal" aria-label="Présentation">
-          <div class="card-index">PROFIL / 001</div>
-          <div>
-            <div class="card-symbol">NY.</div>
-            <div class="card-caption">
-              Comprendre.<br>
-              Transmettre.<br>
-              <span>Relier.</span>
-            </div>
+        <div class="hero-visual reveal" aria-label="Identité visuelle Naim Yousfi">
+          <div class="orbit"><span class="orbit-dot"></span></div>
+          <div class="visual-center">
+            <div class="visual-top">LANGUAGE / CULTURE</div>
+            <div class="visual-letters">NY<span style="color:var(--orange)">.</span></div>
+            <div class="visual-bottom">FRANÇAIS<br>ARABE · KABYLE<br>ENGLISH</div>
           </div>
-          <div class="hero-card-bottom">
-            <span>Interprétariat multilingue</span>
-            <span>France</span>
-          </div>
-        </aside>
+          <div class="visual-tag">INTERPRETING <span>↗</span> FR / AR / KAB / EN</div>
+        </div>
       </div>
-    </section>
+      <div class="hero-bottom">
+        <span>Portfolio professionnel · France</span>
+        <span class="status">Ouvert aux demandes de mission</span>
+      </div>
+    </div>
+  </section>
 
-    <div class="language-strip" id="langues">
-      <div class="container language-strip-inner">
-        <div class="strip-label">Mes langues de travail</div>
-        <div class="language-list">
-          <span class="language-pill">FR · Français</span>
-          <span class="language-pill">AR · Arabe</span>
-          <span class="language-pill">KAB · Kabyle</span>
-          <span class="language-pill">EN · Anglais</span>
+  <section class="language-band" id="languages">
+    <div class="container language-inner">
+      <div class="language-label">Language toolkit / 04</div>
+      <div class="languages">
+        <span class="language-pill"><b>FR</b> — Français</span>
+        <span class="language-pill"><b>AR</b> — Arabe</span>
+        <span class="language-pill"><b>KAB</b> — Kabyle</span>
+        <span class="language-pill"><b>EN</b> — English</span>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="about">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">01 / À propos</div>
+        <div>
+          <h2>More than words.<br><em>Meaning first.</em></h2>
+          <p class="section-intro">
+            L'interprétariat ne consiste pas simplement à passer d'une langue à une autre.
+            Il s'agit de transmettre un message avec fidélité, de comprendre le contexte
+            et de permettre à chaque interlocuteur de se faire entendre.
+          </p>
+        </div>
+      </div>
+
+      <div class="about-grid">
+        <div class="about-card reveal">
+          <div class="number">NY.</div>
+          <div>
+            <h3>Clarté. Nuance. Confiance.</h3>
+            <p>UNE COMMUNICATION QUI RAPPROCHE LES PERSONNES.</p>
+          </div>
+        </div>
+        <div class="about-copy reveal">
+          <h3>Un parcours au croisement des langues et des environnements professionnels.</h3>
+          <p>
+            Mon expérience dans l'interprétariat comprend des missions dans des contextes
+            institutionnels, ainsi qu'une expérience liée à l'OFII. J'ai également développé
+            un intérêt marqué pour la qualité de l'interprétation et la précision des échanges.
+          </p>
+          <p>
+            Chaque intervention demande de l'écoute, de la neutralité, de la discrétion
+            et une bonne compréhension du cadre. Mon objectif est de transmettre les propos
+            de manière fidèle, sans en altérer le sens ni l'intention.
+          </p>
+          <div class="about-quote">
+            « Bien interpréter, c'est préserver le sens — même lorsque les langues sont différentes. »
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section class="section expertise" id="expertise">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">02 / Expertises</div>
+        <div>
+          <h2>Different contexts.<br><em>One standard.</em></h2>
+          <p class="section-intro">
+            Une méthode adaptée aux interlocuteurs, au cadre de la mission
+            et au niveau de précision requis.
+          </p>
+        </div>
+      </div>
+
+      <div class="expertise-list">
+        <article class="expertise-item reveal">
+          <span class="expertise-num">01</span>
+          <h3>Interprétariat institutionnel</h3>
+          <p>Faciliter les échanges entre professionnels et usagers avec clarté, neutralité et précision.</p>
+          <span class="expertise-arrow">↗</span>
+        </article>
+        <article class="expertise-item reveal">
+          <span class="expertise-num">02</span>
+          <h3>Interprétariat judiciaire</h3>
+          <p>Une attention rigoureuse au vocabulaire, au déroulement de l'audience et à la fidélité des propos.</p>
+          <span class="expertise-arrow">↗</span>
+        </article>
+        <article class="expertise-item reveal">
+          <span class="expertise-num">03</span>
+          <h3>Accompagnement linguistique</h3>
+          <p>Rendre les échanges accessibles et permettre à chacun de comprendre et de se faire comprendre.</p>
+          <span class="expertise-arrow">↗</span>
+        </article>
+        <article class="expertise-item reveal">
+          <span class="expertise-num">04</span>
+          <h3>Communication multilingue</h3>
+          <p>Prendre en compte les nuances linguistiques et culturelles dans les échanges professionnels.</p>
+          <span class="expertise-arrow">↗</span>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section" id="approach">
+    <div class="container">
+      <div class="section-head reveal">
+        <div class="eyebrow">03 / Ma méthode</div>
+        <div>
+          <h2>Trust is built<br>in the <em>details.</em></h2>
+          <p class="section-intro">
+            Trois principes structurent mon approche de chaque mission.
+          </p>
+        </div>
+      </div>
+      <div class="principles">
+        <article class="principle reveal">
+          <div class="index">PRINCIPLE / 01</div>
+          <h3>Fidélité</h3>
+          <p>Restituer le message avec exactitude, sans ajout ni omission, en préservant le sens et les nuances.</p>
+        </article>
+        <article class="principle reveal">
+          <div class="index">PRINCIPLE / 02</div>
+          <h3>Confidentialité</h3>
+          <p>Traiter les échanges avec discrétion et respecter les exigences propres au cadre de chaque mission.</p>
+        </article>
+        <article class="principle reveal">
+          <div class="index">PRINCIPLE / 03</div>
+          <h3>Professionnalisme</h3>
+          <p>Préparer chaque intervention, rester attentif au contexte et communiquer avec respect.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <!-- REAL LOGOS: each image links to its source page on Wikimedia Commons -->
+  <section class="logo-section" id="references">
+    <div class="container">
+      <div class="logo-heading">
+        <div>
+          <div class="eyebrow" style="color:#65675d">04 / Sources vérifiables</div>
+          <h2 style="margin-top:13px">Environnements d'intervention</h2>
+        </div>
+        <p>Logos authentiques · Sources ouvertes ↗</p>
+      </div>
+    </div>
+
+    <div class="logo-window">
+      <div class="logo-track">
+        <div class="logo-set">
+          <div class="logo-card">
+            <a href="https://commons.wikimedia.org/wiki/File:Police_Nationale_(France).svg" target="_blank" rel="noopener noreferrer" aria-label="Source du logo Police nationale">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Police_Nationale_(France).svg" alt="Logo Police nationale" loading="lazy">
+            </a>
+            <span>POLICE NATIONALE · SOURCE ↗</span>
+          </div>
+          <div class="logo-card">
+            <a href="https://commons.wikimedia.org/wiki/File:Gendarmerie_nationale_logo.svg" target="_blank" rel="noopener noreferrer" aria-label="Source du logo Gendarmerie nationale">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gendarmerie_nationale_logo.svg" alt="Logo Gendarmerie nationale" loading="lazy">
+            </a>
+            <span>GENDARMERIE · SOURCE ↗</span>
+          </div>
+          <div class="logo-card">
+            <a href="https://commons.wikimedia.org/wiki/Category:SVG_logos_of_organizations_of_France" target="_blank" rel="noopener noreferrer" aria-label="Source Wikimedia des logos d'organismes français">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Minist%C3%A8re_de_la_Justice.svg" alt="Logo Ministère de la Justice" loading="lazy">
+            </a>
+            <span>MINISTÈRE DE LA JUSTICE · SOURCE ↗</span>
+          </div>
+          <div class="logo-card">
+            <a href="https://commons.wikimedia.org/wiki/File:AP-HP_Logo.svg" target="_blank" rel="noopener noreferrer" aria-label="Source du logo AP-HP">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/AP-HP_Logo.svg" alt="Logo AP-HP" loading="lazy">
+            </a>
+            <span>AP-HP · SOURCE ↗</span>
+          </div>
+        </div>
+
+        <!-- Duplicate group creates seamless continuous movement -->
+        <div class="logo-set" aria-hidden="true">
+          <div class="logo-card">
+            <a href="https://commons.wikimedia.org/wiki/File:Police_Nationale_(France).svg" tabindex="-1">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Police_Nationale_(France).svg" alt="" loading="lazy">
+            </a>
+            <span>POLICE NATIONALE</span>
+          </div>
+          <div class="logo-card">
+            <a href="https://commons.wikimedia.org/wiki/File:Gendarmerie_nationale_logo.svg" tabindex="-1">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gendarmerie_nationale_logo.svg" alt="" loading="lazy">
+            </a>
+            <span>GENDARMERIE</span>
+          </div>
+          <div class="logo-card">
+            <a href="https://commons.wikimedia.org/wiki/Category:SVG_logos_of_organizations_of_France" tabindex="-1">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Minist%C3%A8re_de_la_Justice.svg" alt="" loading="lazy">
+            </a>
+            <span>MINISTÈRE DE LA JUSTICE</span>
+          </div>
+          <div class="logo-card">
+            <a href="https://commons.wikimedia.org/wiki/File:AP-HP_Logo.svg" tabindex="-1">
+              <img src="https://commons.wikimedia.org/wiki/Special:FilePath/AP-HP_Logo.svg" alt="" loading="lazy">
+            </a>
+            <span>AP-HP</span>
+          </div>
         </div>
       </div>
     </div>
 
-    <section class="content-section" id="apropos">
-      <div class="container">
-        <div class="section-heading reveal">
-          <div class="eyebrow">01 / À propos</div>
-          <div>
-            <h2>Au-delà des mots,<br>il y a <em>le sens.</em></h2>
-            <p class="section-intro">
-              Une communication réussie ne consiste pas seulement à traduire.
-              Elle exige de l'écoute, de la précision, de la discrétion et une
-              compréhension du contexte dans lequel les personnes échangent.
-            </p>
-          </div>
-        </div>
+    <div class="container">
+      <p class="logo-disclaimer">
+        Ces logos sont présentés uniquement à titre illustratif pour évoquer des environnements
+        professionnels possibles. Leur présence ne signifie pas que ces organismes sont mes clients,
+        partenaires, employeurs ou qu'ils approuvent ce portfolio. Les logos demeurent la propriété
+        de leurs titulaires. Sources : Wikimedia Commons — 
+        <a href="https://commons.wikimedia.org/wiki/File:Police_Nationale_(France).svg" target="_blank" rel="noopener noreferrer">Police nationale</a>,
+        <a href="https://commons.wikimedia.org/wiki/File:Gendarmerie_nationale_logo.svg" target="_blank" rel="noopener noreferrer">Gendarmerie nationale</a>,
+        <a href="https://commons.wikimedia.org/wiki/Category:SVG_logos_of_organizations_of_France" target="_blank" rel="noopener noreferrer">Ministère de la Justice</a> et
+        <a href="https://commons.wikimedia.org/wiki/File:AP-HP_Logo.svg" target="_blank" rel="noopener noreferrer">AP-HP</a>.
+      </p>
+    </div>
+  </section>
 
-        <div class="about-grid">
-          <aside class="about-aside reveal">
-            <span class="big-number">04</span>
-            <h3>Langues. Une même exigence.</h3>
-            <p>
-              Français, arabe, kabyle et anglais : des compétences linguistiques
-              au service d'une communication claire et fidèle.
-            </p>
-          </aside>
-
-          <div class="about-main reveal">
-            <h3>Un parcours tourné vers l'humain, la précision et la communication.</h3>
-            <p>
-              Mon expérience dans l'interprétariat m'a permis d'évoluer dans
-              des environnements professionnels où la qualité de la communication
-              est essentielle. J'ai notamment travaillé dans le contexte de
-              l'OFII et développé une approche attentive aux besoins des
-              interlocuteurs et aux exigences de chaque mission.
-            </p>
-            <p>
-              Je porte une attention particulière à la fidélité du message,
-              à la neutralité, à la confidentialité et au respect de chaque
-              personne. Mon objectif : faciliter la compréhension sans
-              dénaturer la parole de ceux que j'accompagne.
-            </p>
-
-            <div class="about-note">
-              <div class="about-note-symbol">“</div>
-              <p>
-                La qualité d'une interprétation se mesure aussi à ce qui ne se
-                perd pas : le sens, le ton, les nuances et l'intention.
-              </p>
-            </div>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section expertise" id="expertises">
-      <div class="container">
-        <div class="section-heading reveal">
-          <div class="eyebrow">02 / Expertises</div>
-          <div>
-            <h2>La bonne parole,<br>au bon <em>contexte.</em></h2>
-            <p class="section-intro">
-              Une approche adaptée au cadre de chaque intervention, à ses
-              interlocuteurs et au niveau de précision attendu.
-            </p>
-          </div>
-        </div>
-
-        <div class="expertise-list">
-          <article class="expertise-item reveal">
-            <span class="expertise-num">01</span>
-            <h3>Interprétariat institutionnel</h3>
-            <p>Faciliter les échanges entre professionnels et usagers dans un cadre structuré, avec neutralité et précision.</p>
-            <span class="expertise-arrow">↗</span>
-          </article>
-
-          <article class="expertise-item reveal">
-            <span class="expertise-num">02</span>
-            <h3>Interprétariat judiciaire</h3>
-            <p>Une attention rigoureuse à la fidélité des propos, au vocabulaire employé et au cadre de l'intervention.</p>
-            <span class="expertise-arrow">↗</span>
-          </article>
-
-          <article class="expertise-item reveal">
-            <span class="expertise-num">03</span>
-            <h3>Accompagnement linguistique</h3>
-            <p>Rendre les échanges plus accessibles et permettre à chacun de comprendre et de se faire comprendre.</p>
-            <span class="expertise-arrow">↗</span>
-          </article>
-
-          <article class="expertise-item reveal">
-            <span class="expertise-num">04</span>
-            <h3>Communication multilingue</h3>
-            <p>Accompagner des échanges professionnels en tenant compte des nuances linguistiques et culturelles.</p>
-            <span class="expertise-arrow">↗</span>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section" id="approche">
-      <div class="container">
-        <div class="section-heading reveal">
-          <div class="eyebrow">03 / Mon approche</div>
-          <div>
-            <h2>La confiance se construit<br>dans <em>chaque détail.</em></h2>
-            <p class="section-intro">
-              Trois principes guident ma manière de travailler et d'aborder
-              chaque intervention.
-            </p>
-          </div>
-        </div>
-
-        <div class="principles-grid">
-          <article class="principle reveal">
-            <span class="principle-number">PRINCIPE / 01</span>
-            <h3>Fidélité</h3>
-            <p>Restituer le message avec exactitude, sans ajout ni omission, en préservant le sens des propos.</p>
-          </article>
-
-          <article class="principle reveal">
-            <span class="principle-number">PRINCIPE / 02</span>
-            <h3>Confidentialité</h3>
-            <p>Traiter les échanges avec discrétion et respecter les exigences propres à chaque mission.</p>
-          </article>
-
-          <article class="principle reveal">
-            <span class="principle-number">PRINCIPE / 03</span>
-            <h3>Professionnalisme</h3>
-            <p>Préparer chaque intervention, rester attentif au contexte et communiquer avec clarté et respect.</p>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="references" aria-label="Environnements professionnels">
-      <div class="container">
-        <div class="references-heading">
-          <p>Des environnements professionnels variés</p>
-          <p>Précision · Écoute · Engagement</p>
-        </div>
-      </div>
-
-      <div class="marquee" aria-label="Secteurs et institutions">
-        <div class="marquee-track">
-          <div class="marquee-group">
-            <div class="reference-word">OFII<small>Intégration</small></div>
-            <div class="reference-word">Justice<small>Cadre judiciaire</small></div>
-            <div class="reference-word">Services publics<small>Institutions</small></div>
-            <div class="reference-word">Santé<small>Communication</small></div>
-            <div class="reference-word">Accompagnement<small>Accès aux services</small></div>
-            <div class="reference-word">Interprétariat<small>Multilingue</small></div>
-          </div>
-          <div class="marquee-group" aria-hidden="true">
-            <div class="reference-word">OFII<small>Intégration</small></div>
-            <div class="reference-word">Justice<small>Cadre judiciaire</small></div>
-            <div class="reference-word">Services publics<small>Institutions</small></div>
-            <div class="reference-word">Santé<small>Communication</small></div>
-            <div class="reference-word">Accompagnement<small>Accès aux services</small></div>
-            <div class="reference-word">Interprétariat<small>Multilingue</small></div>
-          </div>
-        </div>
-      </div>
-
-      <div class="container">
-        <p class="reference-disclaimer">
-          Les noms de secteurs et d'organismes évoquent des environnements professionnels.
-          Ils ne constituent pas une déclaration de partenariat, d'agrément ou de soutien officiel.
+  <section class="contact" id="contact">
+    <div class="container contact-grid">
+      <div class="reveal">
+        <div class="eyebrow">05 / Contact</div>
+        <h2>Let's make<br>it <span>clear.</span></h2>
+        <p class="contact-copy">
+          Vous avez une mission d'interprétariat ou une proposition de collaboration ?
+          Envoyez-moi les informations disponibles : contexte, langues, date et lieu.
+          Je vous répondrai par e-mail.
         </p>
-      </div>
-    </section>
-
-    <section class="contact" id="contact">
-      <div class="container contact-grid">
-        <div class="reveal">
-          <div class="eyebrow">04 / Contact</div>
-          <h2>Parlons de votre<br><em>prochaine mission.</em></h2>
-          <p class="contact-description">
-            Vous recherchez un interprète ou souhaitez échanger au sujet d'une
-            collaboration ? Écrivez-moi en précisant le contexte, les langues
-            concernées et la date souhaitée.
-          </p>
-          <div class="hero-actions">
-            <a class="btn btn-dark" href="mailto:naimyousfi.pro@gmail.com?subject=Demande%20de%20mission%20d%27interpr%C3%A9tariat">
-              Envoyer un e-mail <span class="btn-arrow">↗</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="contact-details reveal">
-          <p class="contact-label">Adresse e-mail professionnelle</p>
-          <div class="email-line">
-            <a class="email-address" href="mailto:naimyousfi.pro@gmail.com">naimyousfi.pro@gmail.com</a>
-            <button class="copy-email" id="copyEmail" type="button">COPIER ↗</button>
-          </div>
-          <p class="copy-status" id="copyStatus" aria-live="polite"></p>
-
-          <p class="contact-label" style="margin-top:30px;">Retrouvez-moi également</p>
-          <div class="contact-socials">
-            <a class="social-link" href="https://www.instagram.com/naimyousfi/" target="_blank" rel="noopener noreferrer">
-              Instagram <span>↗</span>
-            </a>
-            <a class="social-link" href="mailto:naimyousfi.pro@gmail.com">
-              E-mail <span>↗</span>
-            </a>
-          </div>
-
-          <p class="contact-footnote">
-            Pour faciliter notre échange, merci d'indiquer le type de mission,
-            la combinaison linguistique et les informations pratiques disponibles.
-          </p>
+        <div class="hero-actions">
+          <a class="btn btn-lime" href="mailto:naimyousfi.pro@gmail.com?subject=Demande%20de%20mission%20d%27interpr%C3%A9tariat">
+            Envoyer un e-mail <span class="arrow">↗</span>
+          </a>
         </div>
       </div>
-    </section>
-  </main>
 
-  <footer>
-    <div class="container footer-inner">
-      <div class="footer-brand">NAIM YOUSFI <span style="color:#d5a08b;">.</span></div>
-      <div class="footer-copy">INTERPRÈTE · FR / AR / KAB / EN</div>
-      <a class="back-top" href="#top">Retour en haut ↑</a>
+      <div class="contact-box reveal">
+        <p class="contact-label">E-mail professionnel</p>
+        <div class="email-row">
+          <a class="email-link" href="mailto:naimyousfi.pro@gmail.com">naimyousfi.pro@gmail.com</a>
+          <button class="copy-btn" id="copyEmail" type="button">COPIER ↗</button>
+        </div>
+        <p class="copy-status" id="copyStatus" aria-live="polite"></p>
+        <p class="contact-label" style="margin-top:25px">Réseaux</p>
+        <div class="socials">
+          <a class="social-link" href="https://www.instagram.com/naimyousfi/" target="_blank" rel="noopener noreferrer">INSTAGRAM ↗</a>
+          <a class="social-link" href="mailto:naimyousfi.pro@gmail.com">E-MAIL ↗</a>
+        </div>
+        <p class="contact-small">FRANÇAIS · ARABE · KABYLE · ENGLISH</p>
+      </div>
     </div>
-  </footer>
+  </section>
+</main>
 
-  <script>
-    // Menu mobile
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
+<footer>
+  <div class="container footer-row">
+    <div class="footer-name">NAIM YOUSFI<span style="color:var(--orange)">.</span></div>
+    <div class="footer-info">INTERPRETER · FR / AR / KAB / EN</div>
+    <a class="back-top" href="#top">BACK TO TOP ↑</a>
+  </div>
+</footer>
 
-    function closeMenu() {
-      navLinks.classList.remove("open");
-      document.body.classList.remove("menu-open");
-      menuToggle.setAttribute("aria-expanded", "false");
-      menuToggle.setAttribute("aria-label", "Ouvrir le menu");
-      menuToggle.textContent = "☰";
+<script>
+  // Mobile navigation
+  const menuToggle = document.getElementById("menuToggle");
+  const navLinks = document.getElementById("navLinks");
+
+  function closeMenu() {
+    navLinks.classList.remove("open");
+    document.body.classList.remove("menu-open");
+    menuToggle.setAttribute("aria-expanded", "false");
+    menuToggle.setAttribute("aria-label", "Ouvrir le menu");
+    menuToggle.textContent = "☰";
+  }
+
+  menuToggle.addEventListener("click", () => {
+    const open = navLinks.classList.toggle("open");
+    document.body.classList.toggle("menu-open", open);
+    menuToggle.setAttribute("aria-expanded", String(open));
+    menuToggle.setAttribute("aria-label", open ? "Fermer le menu" : "Ouvrir le menu");
+    menuToggle.textContent = open ? "✕" : "☰";
+  });
+
+  navLinks.querySelectorAll("a").forEach(link => {
+    link.addEventListener("click", closeMenu);
+  });
+
+  window.addEventListener("resize", () => {
+    if (window.innerWidth > 850) closeMenu();
+  });
+
+  // Scroll reveal
+  const revealElements = document.querySelectorAll(".reveal");
+  if ("IntersectionObserver" in window) {
+    const observer = new IntersectionObserver(entries => {
+      entries.forEach(entry => {
+        if (entry.isIntersecting) {
+          entry.target.classList.add("visible");
+          observer.unobserve(entry.target);
+        }
+      });
+    }, { threshold: 0.12 });
+    revealElements.forEach(el => observer.observe(el));
+  } else {
+    revealElements.forEach(el => el.classList.add("visible"));
+  }
+
+  // Copy email address
+  const copyButton = document.getElementById("copyEmail");
+  const copyStatus = document.getElementById("copyStatus");
+  const email = "naimyousfi.pro@gmail.com";
+
+  copyButton.addEventListener("click", async () => {
+    try {
+      await navigator.clipboard.writeText(email);
+      copyButton.textContent = "COPIÉ ✓";
+      copyStatus.textContent = "Adresse e-mail copiée.";
+    } catch (error) {
+      copyStatus.textContent = "Copiez cette adresse : " + email;
     }
-
-    menuToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-      document.body.classList.toggle("menu-open", isOpen);
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.setAttribute("aria-label", isOpen ? "Fermer le menu" : "Ouvrir le menu");
-      menuToggle.textContent = isOpen ? "✕" : "☰";
-    });
-
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", closeMenu);
-    });
-
-    window.addEventListener("resize", () => {
-      if (window.innerWidth > 850) closeMenu();
-    });
-
-    // Apparition progressive des sections
-    const revealElements = document.querySelectorAll(".reveal");
-
-    if ("IntersectionObserver" in window) {
-      const observer = new IntersectionObserver((entries) => {
-        entries.forEach(entry => {
-          if (entry.isIntersecting) {
-            entry.target.classList.add("visible");
-            observer.unobserve(entry.target);
-          }
-        });
-      }, { threshold: 0.12 });
-
-      revealElements.forEach(element => observer.observe(element));
-    } else {
-      revealElements.forEach(element => element.classList.add("visible"));
-    }
-
-    // Copier l'adresse e-mail
-    const copyButton = document.getElementById("copyEmail");
-    const copyStatus = document.getElementById("copyStatus");
-    const email = "naimyousfi.pro@gmail.com";
-
-    copyButton.addEventListener("click", async () => {
-      try {
-        await navigator.clipboard.writeText(email);
-        copyButton.textContent = "COPIÉ ✓";
-        copyStatus.textContent = "Adresse e-mail copiée.";
-      } catch (error) {
-        copyStatus.textContent = "Copiez cette adresse : " + email;
-      }
-
-      window.setTimeout(() => {
-        copyButton.textContent = "COPIER ↗";
-      }, 2200);
-    });
-  </script>
+    window.setTimeout(() => {
+      copyButton.textContent = "COPIER ↗";
+    }, 2200);
+  });
+</script>
 </body>
 </html>
