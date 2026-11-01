@@ -5,12 +5,12 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <meta name="theme-color" content="#101210">
-  <meta name="description" content="Naim Yousfi, interprète professionnel en français, arabe, kabyle et anglais.">
+  <meta name="description" content="Naim Yousfi — Interprète professionnel en français, arabe, kabyle et anglais.">
   <title>Naim Yousfi — Interprète professionnel</title>
 
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 
   <style>
     :root {
@@ -19,10 +19,10 @@
       --text: #f0f0e9;
       --muted: #a3a69b;
       --sage: #c3d2b5;
-      --line: rgba(240, 240, 233, .15);
-      --mono: "DM Mono", monospace;
+      --line: rgba(240,240,233,.15);
       --sans: "Manrope", sans-serif;
       --serif: "Playfair Display", serif;
+      --mono: "DM Mono", monospace;
     }
 
     * { box-sizing: border-box; }
@@ -41,33 +41,30 @@
     }
 
     a { color: inherit; text-decoration: none; }
-    button { font: inherit; }
 
     .container {
       width: min(1200px, calc(100% - 64px));
-      margin-inline: auto;
+      margin: auto;
     }
 
     .mono {
       font-family: var(--mono);
+      font-size: 11px;
+      letter-spacing: .14em;
       text-transform: uppercase;
-      letter-spacing: .13em;
-      font-size: 12px;
     }
-
-    .muted { color: var(--muted); }
 
     header {
       position: sticky;
-      z-index: 20;
       top: 0;
-      background: rgba(16, 18, 16, .94);
+      z-index: 20;
+      background: rgba(16,18,16,.94);
       backdrop-filter: blur(16px);
       border-bottom: 1px solid var(--line);
     }
 
     .nav {
-      min-height: 100px;
+      min-height: 90px;
       display: flex;
       align-items: center;
       justify-content: space-between;
@@ -77,28 +74,27 @@
     .brand {
       display: flex;
       align-items: center;
-      gap: 18px;
+      gap: 14px;
     }
 
     .monogram {
-      width: 64px;
-      height: 64px;
+      width: 54px;
+      height: 54px;
       border: 1px solid var(--sage);
       color: var(--sage);
       display: grid;
       place-items: center;
-      font: 500 29px var(--serif);
+      font: 26px var(--serif);
     }
 
     .brand-name {
       font-weight: 800;
-      letter-spacing: .04em;
-      font-size: 18px;
+      letter-spacing: .06em;
     }
 
     .brand-role {
       color: var(--muted);
-      margin-top: 7px;
+      margin-top: 6px;
     }
 
     .nav-links {
@@ -112,25 +108,23 @@
 
     .menu-toggle {
       display: none;
-      width: 52px;
-      height: 52px;
+      background: none;
       border: 1px solid var(--line);
       color: var(--text);
-      background: transparent;
-      font-size: 25px;
+      padding: 10px 14px;
+      font-size: 22px;
       cursor: pointer;
     }
 
     .hero {
-      padding: 88px 0 0;
+      padding: 86px 0 0;
       overflow: hidden;
     }
 
     .eyebrow { color: var(--muted); }
 
     h1 {
-      max-width: 1050px;
-      margin: 42px 0 36px;
+      margin: 40px 0 34px;
       font-size: clamp(54px, 10vw, 120px);
       line-height: .99;
       letter-spacing: -.075em;
@@ -139,62 +133,63 @@
 
     h1 em {
       display: block;
-      color: var(--sage);
       font-family: var(--serif);
+      color: var(--sage);
       font-weight: 500;
-      letter-spacing: -.055em;
+      letter-spacing: -.05em;
     }
 
     .hero-bottom {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 48px;
       align-items: end;
-      padding: 42px 0 76px;
+      gap: 48px;
+      padding: 32px 0 65px;
     }
 
     .intro {
-      max-width: 590px;
-      font-size: clamp(17px, 2vw, 21px);
-      line-height: 1.9;
+      max-width: 560px;
       color: var(--muted);
+      font-size: 18px;
+      line-height: 1.9;
     }
 
     .actions {
       display: grid;
       grid-template-columns: 1fr 1fr;
-      gap: 14px;
+      gap: 12px;
     }
 
     .button {
-      min-height: 76px;
+      min-height: 70px;
+      padding: 18px 22px;
+      border: 1px solid var(--line);
       display: flex;
       align-items: center;
       justify-content: space-between;
-      gap: 16px;
-      padding: 20px 24px;
-      border: 1px solid var(--line);
+      gap: 14px;
+      font-size: 13px;
       font-weight: 800;
-      transition: background .2s, color .2s, border-color .2s;
+      transition: .2s ease;
     }
 
     .button-primary {
       background: var(--sage);
-      color: #171a16;
       border-color: var(--sage);
+      color: #171a16;
     }
 
-    .button-primary:hover {
-      background: #d8e3ce;
-    }
+    .button-primary:hover { background: #d8e3ce; }
 
     .button-secondary:hover {
       border-color: var(--sage);
       color: var(--sage);
     }
 
+    /* Flèche minimaliste */
     .arrow {
-      font-size: 27px;
+      font-family: var(--sans);
+      font-size: 24px;
       line-height: 1;
       font-weight: 400;
       flex-shrink: 0;
@@ -208,24 +203,84 @@
     }
 
     .language {
-      min-height: 78px;
-      padding: 24px;
       display: flex;
+      align-items: center;
       justify-content: space-between;
-      gap: 16px;
+      padding: 23px;
       border-right: 1px solid var(--line);
       border-bottom: 1px solid var(--line);
-      color: #d5d7ce;
     }
 
     .language-code {
       color: #73786e;
       font-family: var(--mono);
-      font-size: 13px;
+      font-size: 12px;
     }
 
-    section.content-section {
-      padding: 120px 0;
+    /* Bande de logos défilants conservée */
+    .logo-band {
+      overflow: hidden;
+      padding: 34px 0;
+      border-bottom: 1px solid var(--line);
+      background: #131512;
+    }
+
+    .logo-track {
+      display: flex;
+      align-items: center;
+      width: max-content;
+      animation: logo-scroll 32s linear infinite;
+    }
+
+    .logo-band:hover .logo-track {
+      animation-play-state: paused;
+    }
+
+    .logo-group {
+      display: flex;
+      align-items: center;
+      flex-shrink: 0;
+      gap: 76px;
+      padding-right: 76px;
+    }
+
+    .logo-item {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      min-width: 130px;
+      height: 58px;
+      opacity: .72;
+      filter: grayscale(1);
+      transition: opacity .2s ease;
+    }
+
+    .logo-item:hover { opacity: 1; }
+
+    .logo-item img {
+      display: block;
+      max-width: 145px;
+      max-height: 48px;
+      width: auto;
+      height: auto;
+      object-fit: contain;
+    }
+
+    .logo-word {
+      color: #e5e6df;
+      font-weight: 800;
+      font-size: 19px;
+      letter-spacing: -.04em;
+      white-space: nowrap;
+    }
+
+    @keyframes logo-scroll {
+      from { transform: translateX(0); }
+      to { transform: translateX(-50%); }
+    }
+
+    .content-section {
+      padding: 105px 0;
       border-bottom: 1px solid var(--line);
     }
 
@@ -233,14 +288,14 @@
 
     .section-grid {
       display: grid;
-      grid-template-columns: .7fr 1.3fr;
-      gap: 70px;
-      margin-top: 52px;
+      grid-template-columns: .8fr 1.2fr;
+      gap: 65px;
+      margin-top: 42px;
     }
 
     h2 {
       margin: 0;
-      font-size: clamp(38px, 6vw, 70px);
+      font-size: clamp(38px, 6vw, 68px);
       line-height: 1.12;
       letter-spacing: -.055em;
       font-weight: 600;
@@ -253,36 +308,35 @@
     }
 
     .section-copy {
-      font-size: 17px;
-      line-height: 1.95;
+      max-width: 650px;
       color: var(--muted);
-      max-width: 680px;
+      font-size: 16px;
+      line-height: 1.95;
     }
 
     .services {
-      margin-top: 52px;
+      margin-top: 48px;
       border-top: 1px solid var(--line);
     }
 
     .service {
       display: grid;
-      grid-template-columns: 70px 1fr 40px;
-      align-items: start;
-      gap: 22px;
-      padding: 30px 0;
+      grid-template-columns: 55px 1fr 30px;
+      gap: 20px;
+      padding: 29px 0;
       border-bottom: 1px solid var(--line);
     }
 
     .service-number {
+      padding-top: 5px;
       color: var(--sage);
       font-family: var(--mono);
-      font-size: 13px;
-      padding-top: 6px;
+      font-size: 12px;
     }
 
     .service h3 {
-      font-size: clamp(21px, 3vw, 30px);
       margin: 0 0 10px;
+      font-size: 25px;
       font-weight: 600;
     }
 
@@ -293,14 +347,14 @@
     }
 
     .service-symbol {
-      font-size: 25px;
       color: var(--sage);
+      font-size: 23px;
       text-align: right;
     }
 
     .contact-panel {
-      margin-top: 48px;
-      padding: clamp(28px, 6vw, 68px);
+      margin-top: 42px;
+      padding: clamp(28px, 6vw, 65px);
       border: 1px solid var(--line);
       background:
         radial-gradient(ellipse at top right, rgba(195,210,181,.09), transparent 55%),
@@ -310,20 +364,20 @@
     .contact-panel h2 { max-width: 760px; }
 
     .contact-panel p {
-      max-width: 580px;
+      max-width: 590px;
+      margin: 24px 0 30px;
       color: var(--muted);
       line-height: 1.9;
-      margin: 24px 0 32px;
     }
 
     .contact-links {
       display: flex;
       flex-wrap: wrap;
-      gap: 14px;
+      gap: 12px;
     }
 
     footer {
-      padding: 32px 0;
+      padding: 30px 0;
       color: var(--muted);
       font-size: 12px;
     }
@@ -331,33 +385,29 @@
     .footer-inner {
       display: flex;
       justify-content: space-between;
-      gap: 24px;
       flex-wrap: wrap;
+      gap: 18px;
     }
 
-    .footer-inner a:hover { color: var(--sage); }
+    footer a:hover { color: var(--sage); }
 
     @media (max-width: 760px) {
       .container { width: calc(100% - 40px); }
 
-      .nav { min-height: 88px; }
-      .monogram { width: 52px; height: 52px; font-size: 25px; }
-      .brand { gap: 12px; }
-      .brand-name { font-size: 15px; }
-      .brand-role { font-size: 10px; letter-spacing: .1em; }
+      .nav { min-height: 80px; }
+      .monogram { width: 48px; height: 48px; font-size: 23px; }
+      .brand-name { font-size: 14px; }
+      .brand-role { font-size: 9px; }
 
-      .menu-toggle {
-        display: block;
-        flex-shrink: 0;
-      }
+      .menu-toggle { display: block; }
 
       .nav-links {
         display: none;
         position: absolute;
-        top: 100%;
         left: 0;
         right: 0;
-        padding: 20px;
+        top: 100%;
+        padding: 12px 22px 20px;
         background: var(--bg);
         border-bottom: 1px solid var(--line);
         flex-direction: column;
@@ -366,52 +416,64 @@
       }
 
       .nav-links.open { display: flex; }
-      .nav-links a { padding: 16px 4px; border-bottom: 1px solid var(--line); }
 
-      .hero { padding-top: 65px; }
-      h1 { font-size: clamp(49px, 13vw, 84px); margin: 34px 0 26px; }
+      .nav-links a {
+        padding: 15px 0;
+        border-bottom: 1px solid var(--line);
+      }
+
+      .hero { padding-top: 62px; }
+      h1 { font-size: clamp(49px, 12.5vw, 82px); }
 
       .hero-bottom {
         grid-template-columns: 1fr;
-        gap: 26px;
-        padding: 20px 0 50px;
+        gap: 22px;
+        padding-bottom: 45px;
       }
 
-      .intro { font-size: 17px; }
+      .intro { font-size: 16px; }
 
-      .actions { grid-template-columns: 1fr 1fr; gap: 8px; }
+      .actions { gap: 8px; }
 
       .button {
-        min-height: 70px;
+        min-height: 64px;
         padding: 14px 12px;
-        font-size: 13px;
-        gap: 8px;
+        font-size: 12px;
       }
 
-      .arrow { font-size: 23px; }
+      .languages { grid-template-columns: 1fr 1fr; }
+      .language { padding: 18px 12px; font-size: 13px; }
 
-      .language { min-height: 66px; padding: 20px 12px; font-size: 14px; }
-      .language-code { font-size: 11px; }
+      .logo-group {
+        gap: 45px;
+        padding-right: 45px;
+      }
 
-      section.content-section { padding: 80px 0; }
-      .section-grid { grid-template-columns: 1fr; gap: 25px; margin-top: 36px; }
-      .section-copy { font-size: 16px; }
+      .logo-item { min-width: 110px; }
+      .logo-item img { max-width: 115px; max-height: 42px; }
+      .logo-word { font-size: 16px; }
 
-      .service { grid-template-columns: 35px 1fr 22px; gap: 12px; padding: 25px 0; }
+      .content-section { padding: 78px 0; }
+      .section-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 32px; }
+
+      .service {
+        grid-template-columns: 32px 1fr 20px;
+        gap: 12px;
+      }
+
+      .service h3 { font-size: 20px; }
       .service p { font-size: 14px; }
-      .service-symbol { font-size: 20px; }
-
       .contact-links { flex-direction: column; }
       .contact-links .button { width: 100%; }
     }
 
     @media (max-width: 390px) {
       .actions { grid-template-columns: 1fr; }
-      .button { min-height: 62px; }
     }
 
     @media (prefers-reduced-motion: reduce) {
       html { scroll-behavior: auto; }
+      .logo-track { animation: none; }
       *, *::before, *::after { transition: none !important; }
     }
   </style>
@@ -444,7 +506,7 @@
   <main>
     <section class="hero" id="accueil">
       <div class="container">
-        <div class="eyebrow mono">Naim Yousfi / 001</div>
+        <div class="eyebrow mono">Naim Yousfi / Interprétation</div>
 
         <h1>
           Les mots<br>
@@ -465,6 +527,7 @@
               <span>Discutons de votre mission</span>
               <span class="arrow" aria-hidden="true">↗</span>
             </a>
+
             <a class="button button-secondary" href="#approche">
               <span>Mon approche</span>
               <span class="arrow" aria-hidden="true">↓</span>
@@ -481,12 +544,65 @@
       </div>
     </section>
 
+    <!-- Bande défilante : logos conservés, sans texte institutionnel ni note -->
+    <section class="logo-band" aria-label="Bande de logos">
+      <div class="logo-track">
+
+        <div class="logo-group">
+          <a class="logo-item" href="https://www.justice.fr/" target="_blank" rel="noopener noreferrer" aria-label="Justice.fr">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Minist%C3%A8re_de_la_Justice.svg" alt="Logo Justice">
+          </a>
+
+          <a class="logo-item" href="https://www.gendarmerie.interieur.gouv.fr/" target="_blank" rel="noopener noreferrer" aria-label="Gendarmerie nationale">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gendarmerie_nationale_logo.svg" alt="Logo Gendarmerie nationale">
+          </a>
+
+          <a class="logo-item" href="https://www.aphp.fr/" target="_blank" rel="noopener noreferrer" aria-label="AP-HP">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/AP-HP_Logo.svg" alt="Logo AP-HP">
+          </a>
+
+          <a class="logo-item" href="https://www.service-public.fr/" target="_blank" rel="noopener noreferrer" aria-label="Service-Public.fr">
+            <span class="logo-word">service-public.fr</span>
+          </a>
+
+          <a class="logo-item" href="https://www.justice.fr/" target="_blank" rel="noopener noreferrer" aria-label="Justice.fr">
+            <span class="logo-word">justice.fr</span>
+          </a>
+        </div>
+
+        <!-- Copie pour assurer une animation continue -->
+        <div class="logo-group" aria-hidden="true">
+          <a class="logo-item" href="https://www.justice.fr/" tabindex="-1">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Minist%C3%A8re_de_la_Justice.svg" alt="">
+          </a>
+
+          <a class="logo-item" href="https://www.gendarmerie.interieur.gouv.fr/" tabindex="-1">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gendarmerie_nationale_logo.svg" alt="">
+          </a>
+
+          <a class="logo-item" href="https://www.aphp.fr/" tabindex="-1">
+            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/AP-HP_Logo.svg" alt="">
+          </a>
+
+          <a class="logo-item" href="https://www.service-public.fr/" tabindex="-1">
+            <span class="logo-word">service-public.fr</span>
+          </a>
+
+          <a class="logo-item" href="https://www.justice.fr/" tabindex="-1">
+            <span class="logo-word">justice.fr</span>
+          </a>
+        </div>
+
+      </div>
+    </section>
+
     <section class="content-section" id="approche">
       <div class="container">
         <div class="section-label mono">01 — Mon approche</div>
 
         <div class="section-grid">
-          <h2>« Faire passer le sens, <em>sans le déformer.</em> »</h2>
+          <h2>Faire passer le sens, <em>sans le déformer.</em></h2>
+
           <div class="section-copy">
             <p>
               Interpréter, c’est bien plus que traduire des mots.
@@ -508,9 +624,10 @@
 
         <div class="section-grid">
           <h2>Une interprétation <em>adaptée à votre contexte.</em></h2>
+
           <div class="section-copy">
-            Chaque mission nécessite une préparation adaptée au sujet,
-            aux interlocuteurs et au cadre de l'échange.
+            Chaque mission demande une préparation adaptée au sujet,
+            aux interlocuteurs et au cadre de l’échange.
           </div>
         </div>
 
@@ -551,6 +668,7 @@
 
         <div class="contact-panel">
           <h2>Parlons de votre <em>prochaine mission.</em></h2>
+
           <p>
             Vous recherchez un interprète en français, arabe, kabyle ou anglais ?
             Envoyez-moi les informations essentielles sur votre besoin afin que
@@ -563,6 +681,7 @@
               <span>naimyousfi.pro@gmail.com</span>
               <span class="arrow" aria-hidden="true">↗</span>
             </a>
+
             <a class="button button-secondary"
               href="https://www.instagram.com/naimyousfi/"
               target="_blank" rel="noopener noreferrer">
