@@ -2,730 +2,240 @@
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-  <meta charset="UTF-8">
-  <meta name="viewport" content="width=device-width, initial-scale=1">
-  <meta name="theme-color" content="#101210">
-  <meta name="description" content="Naim Yousfi — Interprète professionnel en français, arabe, kabyle et anglais.">
-  <title>Naim Yousfi — Interprète professionnel</title>
-
-  <link rel="preconnect" href="https://fonts.googleapis.com">
-  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
-
-  <style>
-    :root {
-      --bg: #101210;
-      --panel: #171a16;
-      --text: #f0f0e9;
-      --muted: #a3a69b;
-      --sage: #c3d2b5;
-      --line: rgba(240,240,233,.15);
-      --sans: "Manrope", sans-serif;
-      --serif: "Playfair Display", serif;
-      --mono: "DM Mono", monospace;
-    }
-
-    * { box-sizing: border-box; }
-
-    html {
-      scroll-behavior: smooth;
-      scroll-padding-top: 100px;
-    }
-
-    body {
-      margin: 0;
-      background: var(--bg);
-      color: var(--text);
-      font-family: var(--sans);
-      -webkit-font-smoothing: antialiased;
-    }
-
-    a { color: inherit; text-decoration: none; }
-
-    .container {
-      width: min(1200px, calc(100% - 64px));
-      margin: auto;
-    }
-
-    .mono {
-      font-family: var(--mono);
-      font-size: 11px;
-      letter-spacing: .14em;
-      text-transform: uppercase;
-    }
-
-    header {
-      position: sticky;
-      top: 0;
-      z-index: 20;
-      background: rgba(16,18,16,.94);
-      backdrop-filter: blur(16px);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .nav {
-      min-height: 90px;
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 24px;
-    }
-
-    .brand {
-      display: flex;
-      align-items: center;
-      gap: 14px;
-    }
-
-    .monogram {
-      width: 54px;
-      height: 54px;
-      border: 1px solid var(--sage);
-      color: var(--sage);
-      display: grid;
-      place-items: center;
-      font: 26px var(--serif);
-    }
-
-    .brand-name {
-      font-weight: 800;
-      letter-spacing: .06em;
-    }
-
-    .brand-role {
-      color: var(--muted);
-      margin-top: 6px;
-    }
-
-    .nav-links {
-      display: flex;
-      align-items: center;
-      gap: 30px;
-      font-size: 13px;
-    }
-
-    .nav-links a:hover { color: var(--sage); }
-
-    .menu-toggle {
-      display: none;
-      background: none;
-      border: 1px solid var(--line);
-      color: var(--text);
-      padding: 10px 14px;
-      font-size: 22px;
-      cursor: pointer;
-    }
-
-    .hero {
-      padding: 86px 0 0;
-      overflow: hidden;
-    }
-
-    .eyebrow { color: var(--muted); }
-
-    h1 {
-      margin: 40px 0 34px;
-      font-size: clamp(54px, 10vw, 120px);
-      line-height: .99;
-      letter-spacing: -.075em;
-      font-weight: 600;
-    }
-
-    h1 em {
-      display: block;
-      font-family: var(--serif);
-      color: var(--sage);
-      font-weight: 500;
-      letter-spacing: -.05em;
-    }
-
-    .hero-bottom {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      align-items: end;
-      gap: 48px;
-      padding: 32px 0 65px;
-    }
-
-    .intro {
-      max-width: 560px;
-      color: var(--muted);
-      font-size: 18px;
-      line-height: 1.9;
-    }
-
-    .actions {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      gap: 12px;
-    }
-
-    .button {
-      min-height: 70px;
-      padding: 18px 22px;
-      border: 1px solid var(--line);
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      gap: 14px;
-      font-size: 13px;
-      font-weight: 800;
-      transition: .2s ease;
-    }
-
-    .button-primary {
-      background: var(--sage);
-      border-color: var(--sage);
-      color: #171a16;
-    }
-
-    .button-primary:hover { background: #d8e3ce; }
-
-    .button-secondary:hover {
-      border-color: var(--sage);
-      color: var(--sage);
-    }
-
-    /* Flèche minimaliste */
-    .arrow {
-      font-family: var(--sans);
-      font-size: 24px;
-      line-height: 1;
-      font-weight: 400;
-      flex-shrink: 0;
-    }
-
-    .languages {
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      border-top: 1px solid var(--line);
-      border-left: 1px solid var(--line);
-    }
-
-    .language {
-      display: flex;
-      align-items: center;
-      justify-content: space-between;
-      padding: 23px;
-      border-right: 1px solid var(--line);
-      border-bottom: 1px solid var(--line);
-    }
-
-    .language-code {
-      color: #73786e;
-      font-family: var(--mono);
-      font-size: 12px;
-    }
-
-    /* Bande de logos défilants conservée */
-    .logo-band {
-      overflow: hidden;
-      padding: 34px 0;
-      border-bottom: 1px solid var(--line);
-      background: #131512;
-    }
-
-    .logo-track {
-      display: flex;
-      align-items: center;
-      width: max-content;
-      animation: logo-scroll 32s linear infinite;
-    }
-
-    .logo-band:hover .logo-track {
-      animation-play-state: paused;
-    }
-
-    .logo-group {
-      display: flex;
-      align-items: center;
-      flex-shrink: 0;
-      gap: 76px;
-      padding-right: 76px;
-    }
-
-    .logo-item {
-      display: flex;
-      align-items: center;
-      justify-content: center;
-      min-width: 130px;
-      height: 58px;
-      opacity: .72;
-      filter: grayscale(1);
-      transition: opacity .2s ease;
-    }
-
-    .logo-item:hover { opacity: 1; }
-
-    .logo-item img {
-      display: block;
-      max-width: 145px;
-      max-height: 48px;
-      width: auto;
-      height: auto;
-      object-fit: contain;
-    }
-
-    .logo-word {
-      color: #e5e6df;
-      font-weight: 800;
-      font-size: 19px;
-      letter-spacing: -.04em;
-      white-space: nowrap;
-    }
-
-    @keyframes logo-scroll {
-      from { transform: translateX(0); }
-      to { transform: translateX(-50%); }
-    }
-
-    .content-section {
-      padding: 105px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .section-label { color: var(--sage); }
-
-    .section-grid {
-      display: grid;
-      grid-template-columns: .8fr 1.2fr;
-      gap: 65px;
-      margin-top: 42px;
-    }
-
-    h2 {
-      margin: 0;
-      font-size: clamp(38px, 6vw, 68px);
-      line-height: 1.12;
-      letter-spacing: -.055em;
-      font-weight: 600;
-    }
-
-    h2 em {
-      font-family: var(--serif);
-      color: var(--sage);
-      font-weight: 500;
-    }
-
-    .section-copy {
-      max-width: 650px;
-      color: var(--muted);
-      font-size: 16px;
-      line-height: 1.95;
-    }
-
-    .services {
-      margin-top: 48px;
-      border-top: 1px solid var(--line);
-    }
-
-    .service {
-      display: grid;
-      grid-template-columns: 55px 1fr 30px;
-      gap: 20px;
-      padding: 29px 0;
-      border-bottom: 1px solid var(--line);
-    }
-
-    .service-number {
-      padding-top: 5px;
-      color: var(--sage);
-      font-family: var(--mono);
-      font-size: 12px;
-    }
-
-    .service h3 {
-      margin: 0 0 10px;
-      font-size: 25px;
-      font-weight: 600;
-    }
-
-    .service p {
-      margin: 0;
-      color: var(--muted);
-      line-height: 1.8;
-    }
-
-    .service-symbol {
-      color: var(--sage);
-      font-size: 23px;
-      text-align: right;
-    }
-
-    .contact-panel {
-      margin-top: 42px;
-      padding: clamp(28px, 6vw, 65px);
-      border: 1px solid var(--line);
-      background:
-        radial-gradient(ellipse at top right, rgba(195,210,181,.09), transparent 55%),
-        var(--panel);
-    }
-
-    .contact-panel h2 { max-width: 760px; }
-
-    .contact-panel p {
-      max-width: 590px;
-      margin: 24px 0 30px;
-      color: var(--muted);
-      line-height: 1.9;
-    }
-
-    .contact-links {
-      display: flex;
-      flex-wrap: wrap;
-      gap: 12px;
-    }
-
-    footer {
-      padding: 30px 0;
-      color: var(--muted);
-      font-size: 12px;
-    }
-
-    .footer-inner {
-      display: flex;
-      justify-content: space-between;
-      flex-wrap: wrap;
-      gap: 18px;
-    }
-
-    footer a:hover { color: var(--sage); }
-
-    @media (max-width: 760px) {
-      .container { width: calc(100% - 40px); }
-
-      .nav { min-height: 80px; }
-      .monogram { width: 48px; height: 48px; font-size: 23px; }
-      .brand-name { font-size: 14px; }
-      .brand-role { font-size: 9px; }
-
-      .menu-toggle { display: block; }
-
-      .nav-links {
-        display: none;
-        position: absolute;
-        left: 0;
-        right: 0;
-        top: 100%;
-        padding: 12px 22px 20px;
-        background: var(--bg);
-        border-bottom: 1px solid var(--line);
-        flex-direction: column;
-        align-items: stretch;
-        gap: 0;
-      }
-
-      .nav-links.open { display: flex; }
-
-      .nav-links a {
-        padding: 15px 0;
-        border-bottom: 1px solid var(--line);
-      }
-
-      .hero { padding-top: 62px; }
-      h1 { font-size: clamp(49px, 12.5vw, 82px); }
-
-      .hero-bottom {
-        grid-template-columns: 1fr;
-        gap: 22px;
-        padding-bottom: 45px;
-      }
-
-      .intro { font-size: 16px; }
-
-      .actions { gap: 8px; }
-
-      .button {
-        min-height: 64px;
-        padding: 14px 12px;
-        font-size: 12px;
-      }
-
-      .languages { grid-template-columns: 1fr 1fr; }
-      .language { padding: 18px 12px; font-size: 13px; }
-
-      .logo-group {
-        gap: 45px;
-        padding-right: 45px;
-      }
-
-      .logo-item { min-width: 110px; }
-      .logo-item img { max-width: 115px; max-height: 42px; }
-      .logo-word { font-size: 16px; }
-
-      .content-section { padding: 78px 0; }
-      .section-grid { grid-template-columns: 1fr; gap: 24px; margin-top: 32px; }
-
-      .service {
-        grid-template-columns: 32px 1fr 20px;
-        gap: 12px;
-      }
-
-      .service h3 { font-size: 20px; }
-      .service p { font-size: 14px; }
-      .contact-links { flex-direction: column; }
-      .contact-links .button { width: 100%; }
-    }
-
-    @media (max-width: 390px) {
-      .actions { grid-template-columns: 1fr; }
-    }
-
-    @media (prefers-reduced-motion: reduce) {
-      html { scroll-behavior: auto; }
-      .logo-track { animation: none; }
-      *, *::before, *::after { transition: none !important; }
-    }
-  </style>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<meta name="theme-color" content="#101210">
+<meta name="description" content="Naim Yousfi, interprète professionnel en français, arabe, kabyle et anglais.">
+<title>Naim Yousfi — Interprète professionnel</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+
+<style>
+:root{--bg:#101210;--panel:#171a16;--text:#f0f0e9;--muted:#a3a69b;--sage:#c3d2b5;--line:rgba(240,240,233,.15);--sans:"Manrope",sans-serif;--serif:"Playfair Display",serif;--mono:"DM Mono",monospace}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth;scroll-padding-top:100px}
+body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased}
+a{color:inherit;text-decoration:none}
+.container{width:min(1200px,calc(100% - 64px));margin:auto}
+.mono{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
+header{position:sticky;top:0;z-index:20;background:rgba(16,18,16,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
+.nav{min-height:90px;display:flex;align-items:center;justify-content:space-between;gap:24px}
+.brand{display:flex;align-items:center;gap:14px}
+.monogram{width:54px;height:54px;border:1px solid var(--sage);color:var(--sage);display:grid;place-items:center;font:26px var(--serif)}
+.brand-name{font-weight:800;letter-spacing:.06em}
+.brand-role{color:var(--muted);margin-top:6px}
+.nav-links{display:flex;align-items:center;gap:30px;font-size:13px}
+.nav-links a:hover,footer a:hover{color:var(--sage)}
+.menu-toggle{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:10px 14px;font-size:22px;cursor:pointer}
+.hero{padding:86px 0 0;overflow:hidden}
+.eyebrow{color:var(--muted)}
+h1{margin:40px 0 34px;font-size:clamp(54px,10vw,120px);line-height:.99;letter-spacing:-.075em;font-weight:600}
+h1 em{display:block;font-family:var(--serif);color:var(--sage);font-weight:500;letter-spacing:-.05em}
+.hero-bottom{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:48px;padding:32px 0 65px}
+.intro{max-width:560px;color:var(--muted);font-size:18px;line-height:1.9}
+.actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
+.button{min-height:70px;padding:18px 22px;border:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:13px;font-weight:800;transition:background .2s,color .2s,border-color .2s}
+.button-primary{background:var(--sage);border-color:var(--sage);color:#171a16}
+.button-primary:hover{background:#d8e3ce}
+.button-secondary:hover{border-color:var(--sage);color:var(--sage)}
+.arrow{font-size:24px;line-height:1;font-weight:400;flex-shrink:0}
+.languages{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}
+.language{display:flex;align-items:center;justify-content:space-between;padding:23px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
+.language-code{color:#73786e;font-family:var(--mono);font-size:12px}
+
+/* Bande de logos animée : aucune mention institutionnelle */
+.logo-band{overflow:hidden;padding:34px 0;border-bottom:1px solid var(--line);background:#131512}
+.logo-track{display:flex;align-items:center;width:max-content;animation:logo-scroll 32s linear infinite}
+.logo-band:hover .logo-track{animation-play-state:paused}
+.logo-group{display:flex;align-items:center;flex-shrink:0;gap:76px;padding-right:76px}
+.logo-item{display:flex;align-items:center;justify-content:center;min-width:130px;height:58px;opacity:.72;filter:grayscale(1);transition:opacity .2s}
+.logo-item:hover{opacity:1}
+.logo-item img{display:block;max-width:145px;max-height:48px;width:auto;height:auto;object-fit:contain}
+.logo-word{color:#e5e6df;font-weight:800;font-size:19px;letter-spacing:-.04em;white-space:nowrap}
+@keyframes logo-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+.content-section{padding:105px 0;border-bottom:1px solid var(--line)}
+.section-label{color:var(--sage)}
+.section-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:65px;margin-top:42px}
+h2{margin:0;font-size:clamp(38px,6vw,68px);line-height:1.12;letter-spacing:-.055em;font-weight:600}
+h2 em{font-family:var(--serif);color:var(--sage);font-weight:500}
+.section-copy{max-width:650px;color:var(--muted);font-size:16px;line-height:1.95}
+.services{margin-top:48px;border-top:1px solid var(--line)}
+.service{display:grid;grid-template-columns:55px 1fr 30px;gap:20px;padding:29px 0;border-bottom:1px solid var(--line)}
+.service-number{padding-top:5px;color:var(--sage);font-family:var(--mono);font-size:12px}
+.service h3{margin:0 0 10px;font-size:25px;font-weight:600}
+.service p{margin:0;color:var(--muted);line-height:1.8}
+.service-symbol{color:var(--sage);font-size:23px;text-align:right}
+.contact-panel{margin-top:42px;padding:clamp(28px,6vw,65px);border:1px solid var(--line);background:radial-gradient(ellipse at top right,rgba(195,210,181,.09),transparent 55%),var(--panel)}
+.contact-panel h2{max-width:760px}
+.contact-panel p{max-width:590px;margin:24px 0 30px;color:var(--muted);line-height:1.9}
+.contact-links{display:flex;flex-wrap:wrap;gap:12px}
+footer{padding:30px 0;color:var(--muted);font-size:12px}
+.footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px}
+
+@media(max-width:760px){
+.container{width:calc(100% - 40px)}
+.nav{min-height:80px}
+.monogram{width:48px;height:48px;font-size:23px}
+.brand-name{font-size:14px}
+.brand-role{font-size:9px}
+.menu-toggle{display:block}
+.nav-links{display:none;position:absolute;left:0;right:0;top:100%;padding:12px 22px 20px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}
+.nav-links.open{display:flex}
+.nav-links a{padding:15px 0;border-bottom:1px solid var(--line)}
+.hero{padding-top:62px}
+h1{font-size:clamp(49px,12.5vw,82px)}
+.hero-bottom{grid-template-columns:1fr;gap:22px;padding-bottom:45px}
+.intro{font-size:16px}
+.actions{gap:8px}
+.button{min-height:64px;padding:14px 12px;font-size:12px}
+.language{padding:18px 12px;font-size:13px}
+.logo-group{gap:45px;padding-right:45px}
+.logo-item{min-width:110px}
+.logo-item img{max-width:115px;max-height:42px}
+.logo-word{font-size:16px}
+.content-section{padding:78px 0}
+.section-grid{grid-template-columns:1fr;gap:24px;margin-top:32px}
+.service{grid-template-columns:32px 1fr 20px;gap:12px}
+.service h3{font-size:20px}
+.service p{font-size:14px}
+.contact-links{flex-direction:column}
+.contact-links .button{width:100%}
+}
+@media(max-width:390px){.actions{grid-template-columns:1fr}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.logo-track{animation:none}*,*::before,*::after{transition:none!important}}
+</style>
 </head>
 
 <body>
-  <header>
-    <div class="container nav">
-      <a class="brand" href="#accueil" aria-label="Naim Yousfi, accueil">
-        <span class="monogram">NY</span>
-        <span>
-          <span class="brand-name">NAIM YOUSFI</span>
-          <span class="brand-role mono" style="display:block">Interprète professionnel</span>
-        </span>
-      </a>
+<header>
+  <div class="container nav">
+    <a class="brand" href="#accueil" aria-label="Naim Yousfi, accueil">
+      <span class="monogram">NY</span>
+      <span><span class="brand-name">NAIM YOUSFI</span><span class="brand-role mono" style="display:block">Interprète professionnel</span></span>
+    </a>
+    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">☰</button>
+    <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
+      <a href="#approche">Mon approche</a>
+      <a href="#services">Services</a>
+      <a href="#langues">Langues</a>
+      <a href="#contact">Contact</a>
+    </nav>
+  </div>
+</header>
 
-      <button class="menu-toggle" id="menuToggle"
-        aria-label="Ouvrir le menu" aria-expanded="false"
-        aria-controls="navLinks">☰</button>
-
-      <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
-        <a href="#approche">Mon approche</a>
-        <a href="#services">Services</a>
-        <a href="#langues">Langues</a>
-        <a href="#contact">Contact</a>
-      </nav>
+<main>
+<section class="hero" id="accueil">
+  <div class="container">
+    <div class="eyebrow mono">Naim Yousfi / Interprétation</div>
+    <h1>Les mots<br>traversent les<em>frontières.</em></h1>
+    <div class="hero-bottom">
+      <p class="intro">Interprète professionnel en français, arabe, kabyle et anglais. Je facilite la compréhension entre les personnes, avec précision, neutralité et respect du sens.</p>
+      <div class="actions">
+        <a class="button button-primary" href="mailto:naimyousfi.pro@gmail.com?subject=Demande%20de%20mission">
+          <span>Discutons de votre mission</span><span class="arrow" aria-hidden="true">↗</span>
+        </a>
+        <a class="button button-secondary" href="#approche">
+          <span>Mon approche</span><span class="arrow" aria-hidden="true">↓</span>
+        </a>
+      </div>
     </div>
-  </header>
-
-  <main>
-    <section class="hero" id="accueil">
-      <div class="container">
-        <div class="eyebrow mono">Naim Yousfi / Interprétation</div>
-
-        <h1>
-          Les mots<br>
-          traversent les
-          <em>frontières.</em>
-        </h1>
-
-        <div class="hero-bottom">
-          <p class="intro">
-            Interprète professionnel en français, arabe, kabyle et anglais.
-            Je facilite la compréhension entre les personnes, avec précision,
-            neutralité et respect du sens.
-          </p>
-
-          <div class="actions">
-            <a class="button button-primary"
-              href="mailto:naimyousfi.pro@gmail.com?subject=Demande%20de%20mission">
-              <span>Discutons de votre mission</span>
-              <span class="arrow" aria-hidden="true">↗</span>
-            </a>
-
-            <a class="button button-secondary" href="#approche">
-              <span>Mon approche</span>
-              <span class="arrow" aria-hidden="true">↓</span>
-            </a>
-          </div>
-        </div>
-
-        <div class="languages" id="langues" aria-label="Langues de travail">
-          <div class="language"><span>Français</span><span class="language-code">FR</span></div>
-          <div class="language"><span>Arabe · العربية</span><span class="language-code">AR</span></div>
-          <div class="language"><span>Kabyle</span><span class="language-code">KAB</span></div>
-          <div class="language"><span>English</span><span class="language-code">EN</span></div>
-        </div>
-      </div>
-    </section>
-
-    <!-- Bande défilante : logos conservés, sans texte institutionnel ni note -->
-    <section class="logo-band" aria-label="Bande de logos">
-      <div class="logo-track">
-
-        <div class="logo-group">
-          <a class="logo-item" href="https://www.justice.fr/" target="_blank" rel="noopener noreferrer" aria-label="Justice.fr">
-            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Minist%C3%A8re_de_la_Justice.svg" alt="Logo Justice">
-          </a>
-
-          <a class="logo-item" href="https://www.gendarmerie.interieur.gouv.fr/" target="_blank" rel="noopener noreferrer" aria-label="Gendarmerie nationale">
-            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gendarmerie_nationale_logo.svg" alt="Logo Gendarmerie nationale">
-          </a>
-
-          <a class="logo-item" href="https://www.aphp.fr/" target="_blank" rel="noopener noreferrer" aria-label="AP-HP">
-            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/AP-HP_Logo.svg" alt="Logo AP-HP">
-          </a>
-
-          <a class="logo-item" href="https://www.service-public.fr/" target="_blank" rel="noopener noreferrer" aria-label="Service-Public.fr">
-            <span class="logo-word">service-public.fr</span>
-          </a>
-
-          <a class="logo-item" href="https://www.justice.fr/" target="_blank" rel="noopener noreferrer" aria-label="Justice.fr">
-            <span class="logo-word">justice.fr</span>
-          </a>
-        </div>
-
-        <!-- Copie pour assurer une animation continue -->
-        <div class="logo-group" aria-hidden="true">
-          <a class="logo-item" href="https://www.justice.fr/" tabindex="-1">
-            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Minist%C3%A8re_de_la_Justice.svg" alt="">
-          </a>
-
-          <a class="logo-item" href="https://www.gendarmerie.interieur.gouv.fr/" tabindex="-1">
-            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gendarmerie_nationale_logo.svg" alt="">
-          </a>
-
-          <a class="logo-item" href="https://www.aphp.fr/" tabindex="-1">
-            <img src="https://commons.wikimedia.org/wiki/Special:FilePath/AP-HP_Logo.svg" alt="">
-          </a>
-
-          <a class="logo-item" href="https://www.service-public.fr/" tabindex="-1">
-            <span class="logo-word">service-public.fr</span>
-          </a>
-
-          <a class="logo-item" href="https://www.justice.fr/" tabindex="-1">
-            <span class="logo-word">justice.fr</span>
-          </a>
-        </div>
-
-      </div>
-    </section>
-
-    <section class="content-section" id="approche">
-      <div class="container">
-        <div class="section-label mono">01 — Mon approche</div>
-
-        <div class="section-grid">
-          <h2>Faire passer le sens, <em>sans le déformer.</em></h2>
-
-          <div class="section-copy">
-            <p>
-              Interpréter, c’est bien plus que traduire des mots.
-              C’est transmettre fidèlement un message, tenir compte du contexte
-              et permettre à chaque personne de s’exprimer et d’être comprise.
-            </p>
-            <p>
-              Mon approche repose sur l’écoute, la précision linguistique,
-              la neutralité et le respect de la confidentialité.
-            </p>
-          </div>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section" id="services">
-      <div class="container">
-        <div class="section-label mono">02 — Services</div>
-
-        <div class="section-grid">
-          <h2>Une interprétation <em>adaptée à votre contexte.</em></h2>
-
-          <div class="section-copy">
-            Chaque mission demande une préparation adaptée au sujet,
-            aux interlocuteurs et au cadre de l’échange.
-          </div>
-        </div>
-
-        <div class="services">
-          <article class="service">
-            <div class="service-number">01</div>
-            <div>
-              <h3>Interprétation en présentiel</h3>
-              <p>Faciliter les échanges directs entre personnes de langues différentes.</p>
-            </div>
-            <div class="service-symbol" aria-hidden="true">↗</div>
-          </article>
-
-          <article class="service">
-            <div class="service-number">02</div>
-            <div>
-              <h3>Interprétation à distance</h3>
-              <p>Accompagner les échanges par téléphone ou visioconférence, selon les modalités de la mission.</p>
-            </div>
-            <div class="service-symbol" aria-hidden="true">↗</div>
-          </article>
-
-          <article class="service">
-            <div class="service-number">03</div>
-            <div>
-              <h3>Échanges professionnels</h3>
-              <p>Assurer une communication claire et fidèle dans un cadre professionnel ou administratif.</p>
-            </div>
-            <div class="service-symbol" aria-hidden="true">↗</div>
-          </article>
-        </div>
-      </div>
-    </section>
-
-    <section class="content-section" id="contact">
-      <div class="container">
-        <div class="section-label mono">03 — Contact</div>
-
-        <div class="contact-panel">
-          <h2>Parlons de votre <em>prochaine mission.</em></h2>
-
-          <p>
-            Vous recherchez un interprète en français, arabe, kabyle ou anglais ?
-            Envoyez-moi les informations essentielles sur votre besoin afin que
-            nous puissions échanger sur les modalités de la mission.
-          </p>
-
-          <div class="contact-links">
-            <a class="button button-primary"
-              href="mailto:naimyousfi.pro@gmail.com?subject=Demande%20de%20mission">
-              <span>naimyousfi.pro@gmail.com</span>
-              <span class="arrow" aria-hidden="true">↗</span>
-            </a>
-
-            <a class="button button-secondary"
-              href="https://www.instagram.com/naimyousfi/"
-              target="_blank" rel="noopener noreferrer">
-              <span>Instagram</span>
-              <span class="arrow" aria-hidden="true">↗</span>
-            </a>
-          </div>
-        </div>
-      </div>
-    </section>
-  </main>
-
-  <footer>
-    <div class="container footer-inner">
-      <span>© <span id="year"></span> Naim Yousfi</span>
-      <span>Interprète professionnel · FR / AR / KAB / EN</span>
-      <a href="#accueil">Retour en haut ↑</a>
+    <div class="languages" id="langues" aria-label="Langues de travail">
+      <div class="language"><span>Français</span><span class="language-code">FR</span></div>
+      <div class="language"><span>Arabe · العربية</span><span class="language-code">AR</span></div>
+      <div class="language"><span>Kabyle</span><span class="language-code">KAB</span></div>
+      <div class="language"><span>English</span><span class="language-code">EN</span></div>
     </div>
-  </footer>
+  </div>
+</section>
 
-  <script>
-    const menuToggle = document.getElementById("menuToggle");
-    const navLinks = document.getElementById("navLinks");
+<section class="logo-band" aria-label="Logos défilants">
+  <div class="logo-track">
+    <div class="logo-group">
+      <a class="logo-item" href="https://www.justice.fr/" target="_blank" rel="noopener noreferrer" aria-label="Justice.fr"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Minist%C3%A8re_de_la_Justice.svg" alt="Logo Justice"></a>
+      <a class="logo-item" href="https://www.gendarmerie.interieur.gouv.fr/" target="_blank" rel="noopener noreferrer" aria-label="Gendarmerie nationale"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gendarmerie_nationale_logo.svg" alt="Logo Gendarmerie nationale"></a>
+      <a class="logo-item" href="https://www.aphp.fr/" target="_blank" rel="noopener noreferrer" aria-label="AP-HP"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/AP-HP_Logo.svg" alt="Logo AP-HP"></a>
+      <a class="logo-item" href="https://www.service-public.fr/" target="_blank" rel="noopener noreferrer" aria-label="Service-Public.fr"><span class="logo-word">service-public.fr</span></a>
+      <a class="logo-item" href="https://www.justice.fr/" target="_blank" rel="noopener noreferrer" aria-label="Justice.fr"><span class="logo-word">justice.fr</span></a>
+    </div>
+    <div class="logo-group" aria-hidden="true">
+      <span class="logo-item"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Minist%C3%A8re_de_la_Justice.svg" alt=""></span>
+      <span class="logo-item"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gendarmerie_nationale_logo.svg" alt=""></span>
+      <span class="logo-item"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/AP-HP_Logo.svg" alt=""></span>
+      <span class="logo-item"><span class="logo-word">service-public.fr</span></span>
+      <span class="logo-item"><span class="logo-word">justice.fr</span></span>
+    </div>
+  </div>
+</section>
 
-    menuToggle.addEventListener("click", () => {
-      const isOpen = navLinks.classList.toggle("open");
-      menuToggle.setAttribute("aria-expanded", String(isOpen));
-      menuToggle.setAttribute(
-        "aria-label",
-        isOpen ? "Fermer le menu" : "Ouvrir le menu"
-      );
-      menuToggle.textContent = isOpen ? "×" : "☰";
-    });
+<section class="content-section" id="approche">
+  <div class="container">
+    <div class="section-label mono">01 — Mon approche</div>
+    <div class="section-grid">
+      <h2>Faire passer le sens, <em>sans le déformer.</em></h2>
+      <div class="section-copy">
+        <p>Interpréter, c’est bien plus que traduire des mots. C’est transmettre fidèlement un message, tenir compte du contexte et permettre à chaque personne de s’exprimer et d’être comprise.</p>
+        <p>Mon approche repose sur l’écoute, la précision linguistique, la neutralité et le respect de la confidentialité.</p>
+      </div>
+    </div>
+  </div>
+</section>
 
-    navLinks.querySelectorAll("a").forEach(link => {
-      link.addEventListener("click", () => {
-        navLinks.classList.remove("open");
-        menuToggle.setAttribute("aria-expanded", "false");
-        menuToggle.setAttribute("aria-label", "Ouvrir le menu");
-        menuToggle.textContent = "☰";
-      });
-    });
+<section class="content-section" id="services">
+  <div class="container">
+    <div class="section-label mono">02 — Services</div>
+    <div class="section-grid">
+      <h2>Une interprétation <em>adaptée à votre contexte.</em></h2>
+      <div class="section-copy">Chaque mission demande une préparation adaptée au sujet, aux interlocuteurs et au cadre de l’échange.</div>
+    </div>
+    <div class="services">
+      <article class="service"><div class="service-number">01</div><div><h3>Interprétation en présentiel</h3><p>Faciliter les échanges directs entre personnes de langues différentes.</p></div><div class="service-symbol">↗</div></article>
+      <article class="service"><div class="service-number">02</div><div><h3>Interprétation à distance</h3><p>Accompagner les échanges par téléphone ou visioconférence, selon les modalités de la mission.</p></div><div class="service-symbol">↗</div></article>
+      <article class="service"><div class="service-number">03</div><div><h3>Échanges professionnels</h3><p>Assurer une communication claire et fidèle dans un cadre professionnel ou administratif.</p></div><div class="service-symbol">↗</div></article>
+    </div>
+  </div>
+</section>
 
-    document.getElementById("year").textContent = new Date().getFullYear();
-  </script>
+<section class="content-section" id="contact">
+  <div class="container">
+    <div class="section-label mono">03 — Contact</div>
+    <div class="contact-panel">
+      <h2>Parlons de votre <em>prochaine mission.</em></h2>
+      <p>Vous recherchez un interprète en français, arabe, kabyle ou anglais ? Envoyez-moi les informations essentielles sur votre besoin afin que nous puissions échanger sur les modalités de la mission.</p>
+      <div class="contact-links">
+        <a class="button button-primary" href="mailto:naimyousfi.pro@gmail.com?subject=Demande%20de%20mission"><span>naimyousfi.pro@gmail.com</span><span class="arrow" aria-hidden="true">↗</span></a>
+        <a class="button button-secondary" href="https://www.instagram.com/naimyousfi/" target="_blank" rel="noopener noreferrer"><span>Instagram</span><span class="arrow" aria-hidden="true">↗</span></a>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="container footer-inner">
+    <span>© <span id="year"></span> Naim Yousfi</span>
+    <span>Interprète professionnel · FR / AR / KAB / EN</span>
+    <a href="#accueil">Retour en haut ↑</a>
+  </div>
+</footer>
+
+<script>
+const menuToggle=document.getElementById("menuToggle");
+const navLinks=document.getElementById("navLinks");
+menuToggle.addEventListener("click",()=>{
+  const open=navLinks.classList.toggle("open");
+  menuToggle.setAttribute("aria-expanded",String(open));
+  menuToggle.setAttribute("aria-label",open?"Fermer le menu":"Ouvrir le menu");
+  menuToggle.textContent=open?"×":"☰";
+});
+navLinks.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{
+  navLinks.classList.remove("open");
+  menuToggle.setAttribute("aria-expanded","false");
+  menuToggle.setAttribute("aria-label","Ouvrir le menu");
+  menuToggle.textContent="☰";
+}));
+document.getElementById("year").textContent=new Date().getFullYear();
+</script>
 </body>
 </html>
