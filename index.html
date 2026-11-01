@@ -1,211 +1,1059 @@
-
 <!DOCTYPE html>
 <html lang="fr">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
 <meta name="theme-color" content="#101210">
-<meta name="description" content="Naim Yousfi, interprète professionnel en français, arabe, kabyle et anglais.">
-<title>Naim Yousfi — Interprète professionnel</title>
+<meta name="description" content="Naim Yousfi, interprète en français, arabe, kabyle et anglais. Interprétation juridique, sanitaire et administrative.">
+<title>Naim Yousfi — Interprète</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
 
 <style>
-:root{--bg:#101210;--panel:#171a16;--text:#f0f0e9;--muted:#a3a69b;--sage:#c3d2b5;--line:rgba(240,240,233,.15);--sans:"Manrope",sans-serif;--serif:"Playfair Display",serif;--mono:"DM Mono",monospace}
-*{box-sizing:border-box}
-html{scroll-behavior:smooth;scroll-padding-top:100px}
-body{margin:0;background:var(--bg);color:var(--text);font-family:var(--sans);-webkit-font-smoothing:antialiased}
-a{color:inherit;text-decoration:none}
-.container{width:min(1200px,calc(100% - 64px));margin:auto}
-.mono{font-family:var(--mono);font-size:11px;letter-spacing:.14em;text-transform:uppercase}
-header{position:sticky;top:0;z-index:20;background:rgba(16,18,16,.94);backdrop-filter:blur(16px);border-bottom:1px solid var(--line)}
-.nav{min-height:90px;display:flex;align-items:center;justify-content:space-between;gap:24px}
-.brand{display:flex;align-items:center;gap:14px}
-.monogram{width:54px;height:54px;border:1px solid var(--sage);color:var(--sage);display:grid;place-items:center;font:26px var(--serif)}
-.brand-name{font-weight:800;letter-spacing:.06em}
-.brand-role{color:var(--muted);margin-top:6px}
-.nav-links{display:flex;align-items:center;gap:30px;font-size:13px}
-.nav-links a:hover,footer a:hover{color:var(--sage)}
-.menu-toggle{display:none;background:none;border:1px solid var(--line);color:var(--text);padding:10px 14px;font-size:22px;cursor:pointer}
-.hero{padding:86px 0 0;overflow:hidden}
-.eyebrow{color:var(--muted)}
-h1{margin:40px 0 34px;font-size:clamp(54px,10vw,120px);line-height:.99;letter-spacing:-.075em;font-weight:600}
-h1 em{display:block;font-family:var(--serif);color:var(--sage);font-weight:500;letter-spacing:-.05em}
-.hero-bottom{display:grid;grid-template-columns:1fr 1fr;align-items:end;gap:48px;padding:32px 0 65px}
-.intro{max-width:560px;color:var(--muted);font-size:18px;line-height:1.9}
-.actions{display:grid;grid-template-columns:1fr 1fr;gap:12px}
-.button{min-height:70px;padding:18px 22px;border:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;gap:14px;font-size:13px;font-weight:800;transition:background .2s,color .2s,border-color .2s}
-.button-primary{background:var(--sage);border-color:var(--sage);color:#171a16}
-.button-primary:hover{background:#d8e3ce}
-.button-secondary:hover{border-color:var(--sage);color:var(--sage)}
-.arrow{font-size:24px;line-height:1;font-weight:400;flex-shrink:0}
-.languages{display:grid;grid-template-columns:1fr 1fr;border-top:1px solid var(--line);border-left:1px solid var(--line)}
-.language{display:flex;align-items:center;justify-content:space-between;padding:23px;border-right:1px solid var(--line);border-bottom:1px solid var(--line)}
-.language-code{color:#73786e;font-family:var(--mono);font-size:12px}
-
-/* Bande de logos animée : aucune mention institutionnelle */
-.logo-band{overflow:hidden;padding:34px 0;border-bottom:1px solid var(--line);background:#131512}
-.logo-track{display:flex;align-items:center;width:max-content;animation:logo-scroll 32s linear infinite}
-.logo-band:hover .logo-track{animation-play-state:paused}
-.logo-group{display:flex;align-items:center;flex-shrink:0;gap:76px;padding-right:76px}
-.logo-item{display:flex;align-items:center;justify-content:center;min-width:130px;height:58px;opacity:.72;filter:grayscale(1);transition:opacity .2s}
-.logo-item:hover{opacity:1}
-.logo-item img{display:block;max-width:145px;max-height:48px;width:auto;height:auto;object-fit:contain}
-.logo-word{color:#e5e6df;font-weight:800;font-size:19px;letter-spacing:-.04em;white-space:nowrap}
-@keyframes logo-scroll{from{transform:translateX(0)}to{transform:translateX(-50%)}}
-
-.content-section{padding:105px 0;border-bottom:1px solid var(--line)}
-.section-label{color:var(--sage)}
-.section-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:65px;margin-top:42px}
-h2{margin:0;font-size:clamp(38px,6vw,68px);line-height:1.12;letter-spacing:-.055em;font-weight:600}
-h2 em{font-family:var(--serif);color:var(--sage);font-weight:500}
-.section-copy{max-width:650px;color:var(--muted);font-size:16px;line-height:1.95}
-.services{margin-top:48px;border-top:1px solid var(--line)}
-.service{display:grid;grid-template-columns:55px 1fr 30px;gap:20px;padding:29px 0;border-bottom:1px solid var(--line)}
-.service-number{padding-top:5px;color:var(--sage);font-family:var(--mono);font-size:12px}
-.service h3{margin:0 0 10px;font-size:25px;font-weight:600}
-.service p{margin:0;color:var(--muted);line-height:1.8}
-.service-symbol{color:var(--sage);font-size:23px;text-align:right}
-.contact-panel{margin-top:42px;padding:clamp(28px,6vw,65px);border:1px solid var(--line);background:radial-gradient(ellipse at top right,rgba(195,210,181,.09),transparent 55%),var(--panel)}
-.contact-panel h2{max-width:760px}
-.contact-panel p{max-width:590px;margin:24px 0 30px;color:var(--muted);line-height:1.9}
-.contact-links{display:flex;flex-wrap:wrap;gap:12px}
-footer{padding:30px 0;color:var(--muted);font-size:12px}
-.footer-inner{display:flex;justify-content:space-between;flex-wrap:wrap;gap:18px}
-
-@media(max-width:760px){
-.container{width:calc(100% - 40px)}
-.nav{min-height:80px}
-.monogram{width:48px;height:48px;font-size:23px}
-.brand-name{font-size:14px}
-.brand-role{font-size:9px}
-.menu-toggle{display:block}
-.nav-links{display:none;position:absolute;left:0;right:0;top:100%;padding:12px 22px 20px;background:var(--bg);border-bottom:1px solid var(--line);flex-direction:column;align-items:stretch;gap:0}
-.nav-links.open{display:flex}
-.nav-links a{padding:15px 0;border-bottom:1px solid var(--line)}
-.hero{padding-top:62px}
-h1{font-size:clamp(49px,12.5vw,82px)}
-.hero-bottom{grid-template-columns:1fr;gap:22px;padding-bottom:45px}
-.intro{font-size:16px}
-.actions{gap:8px}
-.button{min-height:64px;padding:14px 12px;font-size:12px}
-.language{padding:18px 12px;font-size:13px}
-.logo-group{gap:45px;padding-right:45px}
-.logo-item{min-width:110px}
-.logo-item img{max-width:115px;max-height:42px}
-.logo-word{font-size:16px}
-.content-section{padding:78px 0}
-.section-grid{grid-template-columns:1fr;gap:24px;margin-top:32px}
-.service{grid-template-columns:32px 1fr 20px;gap:12px}
-.service h3{font-size:20px}
-.service p{font-size:14px}
-.contact-links{flex-direction:column}
-.contact-links .button{width:100%}
+:root {
+  --bg: #101210;
+  --panel: #171a16;
+  --text: #f1f0e9;
+  --muted: #a5aaa0;
+  --sage: #c3d2b5;
+  --line: rgba(241,240,233,.15);
+  --mono: 'DM Mono', monospace;
+  --sans: 'Manrope', sans-serif;
+  --serif: 'Playfair Display', serif;
 }
-@media(max-width:390px){.actions{grid-template-columns:1fr}}
-@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.logo-track{animation:none}*,*::before,*::after{transition:none!important}}
+
+* { box-sizing: border-box; }
+
+html {
+  scroll-behavior: smooth;
+  scroll-padding-top: 90px;
+}
+
+body {
+  margin: 0;
+  background: var(--bg);
+  color: var(--text);
+  font-family: var(--sans);
+  -webkit-font-smoothing: antialiased;
+}
+
+a { color: inherit; text-decoration: none; }
+button { font: inherit; }
+
+.wrap {
+  width: min(1160px, calc(100% - 48px));
+  margin: auto;
+}
+
+.eyebrow {
+  font: 11px var(--mono);
+  letter-spacing: .16em;
+  text-transform: uppercase;
+  color: var(--sage);
+}
+
+.topline {
+  height: 4px;
+  background: var(--sage);
+}
+
+header {
+  position: sticky;
+  top: 0;
+  z-index: 20;
+  background: rgba(16,18,16,.88);
+  backdrop-filter: blur(18px);
+  border-bottom: 1px solid var(--line);
+}
+
+.nav {
+  height: 78px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 24px;
+}
+
+.brand {
+  font-weight: 800;
+  letter-spacing: -.06em;
+  font-size: 20px;
+}
+
+.brand span { color: var(--sage); }
+
+.navlinks {
+  display: flex;
+  align-items: center;
+  gap: 30px;
+  font-size: 12px;
+  color: #d0d2ca;
+}
+
+.navlinks a:hover { color: var(--sage); }
+
+.navcta {
+  border: 1px solid var(--sage);
+  padding: 12px 16px;
+  color: var(--sage);
+  font-size: 12px;
+  transition: .2s;
+}
+
+.navcta:hover {
+  background: var(--sage);
+  color: var(--bg);
+}
+
+.menu {
+  display: none;
+  background: none;
+  border: 1px solid var(--line);
+  color: var(--text);
+  padding: 9px 12px;
+}
+
+/* HERO */
+
+.hero {
+  min-height: 690px;
+  display: flex;
+  align-items: center;
+  padding: 100px 0 90px;
+  position: relative;
+  overflow: hidden;
+}
+
+.hero:after {
+  content: "";
+  position: absolute;
+  width: 440px;
+  height: 440px;
+  border: 1px solid rgba(195,210,181,.12);
+  border-radius: 50%;
+  right: -80px;
+  top: 80px;
+  box-shadow:
+    0 0 0 60px rgba(195,210,181,.025),
+    0 0 0 120px rgba(195,210,181,.018);
+  pointer-events: none;
+}
+
+.hero-inner {
+  max-width: 940px;
+  position: relative;
+  z-index: 1;
+}
+
+.hero-kicker {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  margin-bottom: 30px;
+}
+
+.dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  background: var(--sage);
+  box-shadow: 0 0 14px rgba(195,210,181,.5);
+}
+
+h1 {
+  font-size: clamp(54px, 8.4vw, 112px);
+  line-height: .98;
+  letter-spacing: -.075em;
+  font-weight: 600;
+  margin: 0;
+  max-width: 1000px;
+}
+
+h1 em {
+  font-family: var(--serif);
+  font-weight: 500;
+  color: var(--sage);
+  letter-spacing: -.055em;
+}
+
+.hero-bottom {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 32px;
+  margin-top: 44px;
+  max-width: 850px;
+}
+
+.hero-copy {
+  max-width: 480px;
+  color: #b9bdb4;
+  font-size: 15px;
+  line-height: 1.9;
+}
+
+.button {
+  display: inline-flex;
+  align-items: center;
+  gap: 26px;
+  padding: 16px 19px;
+  background: var(--sage);
+  color: #11150f;
+  font-size: 12px;
+  font-weight: 700;
+  white-space: nowrap;
+  transition: transform .2s, background .2s;
+}
+
+.button:hover {
+  transform: translateY(-3px);
+  background: #d5e0cb;
+}
+
+.button .arrow {
+  font-size: 18px;
+  font-weight: 400;
+}
+
+.hero-meta {
+  display: flex;
+  gap: 28px;
+  margin-top: 62px;
+  padding-top: 22px;
+  border-top: 1px solid var(--line);
+  max-width: 850px;
+}
+
+.meta-item {
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.meta-item strong {
+  font-size: 12px;
+  font-weight: 600;
+}
+
+.meta-item span {
+  font: 10px var(--mono);
+  letter-spacing: .06em;
+  color: var(--muted);
+}
+
+/* BANDEAU DÉFILANT */
+
+.marquee {
+  border-block: 1px solid var(--line);
+  overflow: hidden;
+  padding: 21px 0;
+  background: #131512;
+}
+
+.marquee-track {
+  display: flex;
+  width: max-content;
+  animation: scroll 32s linear infinite;
+}
+
+.marquee:hover .marquee-track {
+  animation-play-state: paused;
+}
+
+.marquee-group {
+  display: flex;
+  align-items: center;
+  gap: 58px;
+  padding-right: 58px;
+}
+
+.wordmark {
+  font-size: 13px;
+  font-weight: 800;
+  letter-spacing: -.03em;
+  color: #858b80;
+  white-space: nowrap;
+}
+
+.star {
+  color: var(--sage);
+  font-size: 15px;
+}
+
+@keyframes scroll {
+  to { transform: translateX(-50%); }
+}
+
+/* SECTIONS */
+
+section { padding: 115px 0; }
+
+.section-head {
+  display: grid;
+  grid-template-columns: 1fr 2fr;
+  gap: 40px;
+  margin-bottom: 58px;
+}
+
+.section-index {
+  font: 11px var(--mono);
+  color: var(--sage);
+  letter-spacing: .1em;
+}
+
+.section-title {
+  font-size: clamp(36px, 5vw, 64px);
+  letter-spacing: -.065em;
+  line-height: 1.05;
+  margin: 0;
+  font-weight: 600;
+}
+
+.section-title em {
+  font-family: var(--serif);
+  color: var(--sage);
+  font-weight: 500;
+}
+
+/* PROFIL */
+
+.about-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 70px;
+}
+
+.about-copy {
+  font-size: 17px;
+  line-height: 1.9;
+  color: #c1c5bc;
+}
+
+.about-copy p { margin: 0 0 20px; }
+
+.pullquote {
+  border-left: 1px solid var(--sage);
+  padding: 8px 0 8px 28px;
+  font-family: var(--serif);
+  font-size: clamp(24px, 3vw, 35px);
+  line-height: 1.4;
+  color: var(--text);
+}
+
+.pullquote em { color: var(--sage); }
+
+/* SERVICES */
+
+.services,
+.experience {
+  background: #151713;
+}
+
+.service-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  border-top: 1px solid var(--line);
+  border-left: 1px solid var(--line);
+}
+
+.service {
+  padding: 30px;
+  min-height: 255px;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  transition: background .2s;
+}
+
+.service:hover { background: #1b1f19; }
+
+.service-num {
+  font: 11px var(--mono);
+  color: var(--sage);
+}
+
+.service h3 {
+  font-size: 22px;
+  letter-spacing: -.04em;
+  margin: 42px 0 12px;
+}
+
+.service p {
+  font-size: 13px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin: 0;
+}
+
+/* LANGUES */
+
+.languages-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 12px;
+}
+
+.language {
+  padding: 26px 20px;
+  border: 1px solid var(--line);
+  min-height: 150px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.language .native {
+  font-family: var(--serif);
+  font-size: 34px;
+  color: var(--sage);
+}
+
+.language strong { font-size: 15px; }
+
+.language span {
+  font: 10px var(--mono);
+  color: var(--muted);
+  text-transform: uppercase;
+  letter-spacing: .1em;
+}
+
+.lang-note {
+  font-size: 12px;
+  line-height: 1.8;
+  color: var(--muted);
+  margin-top: 20px;
+}
+
+/* PARCOURS */
+
+.timeline { border-top: 1px solid var(--line); }
+
+.timeline-item {
+  display: grid;
+  grid-template-columns: 180px 1fr;
+  gap: 35px;
+  padding: 28px 0;
+  border-bottom: 1px solid var(--line);
+}
+
+.timeline-date {
+  font: 11px var(--mono);
+  color: var(--sage);
+  line-height: 1.8;
+}
+
+.timeline h3 {
+  margin: 0 0 6px;
+  font-size: 19px;
+  letter-spacing: -.03em;
+}
+
+.timeline .place {
+  font-size: 12px;
+  color: var(--muted);
+}
+
+.timeline p {
+  max-width: 690px;
+  font-size: 13px;
+  color: #b8bdb3;
+  line-height: 1.85;
+  margin: 14px 0 0;
+}
+
+/* FORMATION */
+
+.education-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 14px;
+}
+
+.education {
+  padding: 24px;
+  border: 1px solid var(--line);
+}
+
+.education .year {
+  font: 11px var(--mono);
+  color: var(--sage);
+}
+
+.education h3 {
+  font-size: 17px;
+  margin: 15px 0 6px;
+}
+
+.education p {
+  font-size: 12px;
+  color: var(--muted);
+  margin: 0;
+  line-height: 1.7;
+}
+
+/* CONTACT */
+
+.contact {
+  padding: 110px 0 90px;
+  border-top: 1px solid var(--line);
+}
+
+.contact-layout {
+  display: grid;
+  grid-template-columns: 1.4fr 1fr;
+  gap: 60px;
+  align-items: end;
+}
+
+.contact h2 {
+  font-size: clamp(48px, 7vw, 88px);
+  line-height: 1;
+  letter-spacing: -.075em;
+  margin: 22px 0 28px;
+}
+
+.contact h2 em {
+  font-family: var(--serif);
+  font-weight: 500;
+  color: var(--sage);
+}
+
+.contact-copy {
+  color: var(--muted);
+  font-size: 14px;
+  line-height: 1.8;
+  max-width: 470px;
+}
+
+.contact-details { border-top: 1px solid var(--line); }
+
+.contact-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 18px;
+  padding: 17px 0;
+  border-bottom: 1px solid var(--line);
+  font-size: 12px;
+}
+
+.contact-row span { color: var(--muted); }
+.contact-row a:hover { color: var(--sage); }
+
+/* FOOTER */
+
+footer {
+  border-top: 1px solid var(--line);
+  padding: 24px 0;
+}
+
+.footer-inner {
+  display: flex;
+  justify-content: space-between;
+  gap: 20px;
+  align-items: center;
+  font: 10px var(--mono);
+  color: var(--muted);
+}
+
+.footer-brand {
+  font: 700 15px var(--sans);
+  color: var(--text);
+  letter-spacing: -.04em;
+}
+
+/* ANIMATIONS */
+
+.reveal {
+  opacity: 0;
+  transform: translateY(18px);
+  transition: opacity .7s ease, transform .7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* MOBILE */
+
+@media(max-width:760px) {
+  .wrap { width: min(100% - 36px, 600px); }
+
+  .nav { height: 68px; }
+
+  .navlinks {
+    display: none;
+    position: absolute;
+    top: 68px;
+    left: 0;
+    right: 0;
+    padding: 22px 24px 26px;
+    background: #101210;
+    border-bottom: 1px solid var(--line);
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 22px;
+  }
+
+  .navlinks.open { display: flex; }
+  .navcta { display: none; }
+  .menu { display: block; }
+
+  .hero {
+    min-height: auto;
+    padding: 95px 0 70px;
+  }
+
+  .hero:after {
+    width: 260px;
+    height: 260px;
+    right: -160px;
+    top: 70px;
+  }
+
+  .hero-bottom {
+    align-items: flex-start;
+    flex-direction: column;
+    margin-top: 30px;
+  }
+
+  .hero-copy { font-size: 14px; }
+
+  .hero-meta {
+    gap: 22px;
+    flex-wrap: wrap;
+    margin-top: 45px;
+  }
+
+  .hero-meta .meta-item { min-width: 120px; }
+
+  section { padding: 78px 0; }
+
+  .section-head {
+    grid-template-columns: 1fr;
+    gap: 18px;
+    margin-bottom: 36px;
+  }
+
+  .about-grid {
+    grid-template-columns: 1fr;
+    gap: 32px;
+  }
+
+  .service-grid { grid-template-columns: 1fr; }
+  .service { min-height: 210px; padding: 25px; }
+  .service h3 { margin-top: 28px; }
+
+  .languages-grid { grid-template-columns: repeat(2, 1fr); }
+  .language { min-height: 135px; }
+
+  .timeline-item {
+    grid-template-columns: 1fr;
+    gap: 8px;
+    padding: 23px 0;
+  }
+
+  .education-grid { grid-template-columns: 1fr; }
+  .contact-layout { grid-template-columns: 1fr; gap: 40px; }
+  .contact { padding: 80px 0 65px; }
+
+  .footer-inner {
+    align-items: flex-start;
+    flex-direction: column;
+    gap: 12px;
+  }
+}
+
+@media(prefers-reduced-motion:reduce) {
+  html { scroll-behavior: auto; }
+  .marquee-track { animation: none; }
+  .reveal { opacity: 1; transform: none; transition: none; }
+}
 </style>
 </head>
 
 <body>
+<div class="topline"></div>
+
 <header>
-  <div class="container nav">
-    <a class="brand" href="#accueil" aria-label="Naim Yousfi, accueil">
-      <span class="monogram">NY</span>
-      <span><span class="brand-name">NAIM YOUSFI</span><span class="brand-role mono" style="display:block">Interprète professionnel</span></span>
-    </a>
-    <button class="menu-toggle" id="menuToggle" aria-label="Ouvrir le menu" aria-expanded="false" aria-controls="navLinks">☰</button>
-    <nav class="nav-links" id="navLinks" aria-label="Navigation principale">
-      <a href="#approche">Mon approche</a>
-      <a href="#services">Services</a>
+  <div class="wrap nav">
+    <a class="brand" href="#accueil">NAIM<span>.</span>YOUSFI</a>
+
+    <nav class="navlinks" id="navlinks" aria-label="Navigation principale">
+      <a href="#profil">Profil</a>
+      <a href="#services">Domaines</a>
       <a href="#langues">Langues</a>
+      <a href="#parcours">Parcours</a>
       <a href="#contact">Contact</a>
     </nav>
+
+    <a class="navcta" href="#contact">
+      Parlons de votre mission <span aria-hidden="true">↗</span>
+    </a>
+
+    <button class="menu" id="menu" aria-label="Ouvrir le menu" aria-expanded="false">
+      Menu
+    </button>
   </div>
 </header>
 
 <main>
 <section class="hero" id="accueil">
-  <div class="container">
-    <div class="eyebrow mono">Naim Yousfi / Interprétation</div>
-    <h1>Les mots<br>traversent les<em>frontières.</em></h1>
+  <div class="wrap hero-inner">
+    <div class="hero-kicker eyebrow">
+      <span class="dot"></span>
+      Interprétation professionnelle · France
+    </div>
+
+    <h1>Les mots traversent<br>les <em>frontières.</em></h1>
+
     <div class="hero-bottom">
-      <p class="intro">Interprète professionnel en français, arabe, kabyle et anglais. Je facilite la compréhension entre les personnes, avec précision, neutralité et respect du sens.</p>
-      <div class="actions">
-        <a class="button button-primary" href="mailto:naimyousfi.pro@gmail.com?subject=Demande%20de%20mission">
-          <span>Discutons de votre mission</span><span class="arrow" aria-hidden="true">↗</span>
-        </a>
-        <a class="button button-secondary" href="#approche">
-          <span>Mon approche</span><span class="arrow" aria-hidden="true">↓</span>
-        </a>
+      <p class="hero-copy">
+        J’accompagne les échanges entre professionnels et usagers en français,
+        arabe, kabyle et anglais. Une interprétation précise, confidentielle et
+        adaptée aux contextes juridique, sanitaire et administratif.
+      </p>
+
+      <a class="button" href="#contact">
+        Discutons de votre mission
+        <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+    <div class="hero-meta">
+      <div class="meta-item">
+        <strong>Interprétation</strong>
+        <span>SIMULTANÉE & CONSÉCUTIVE</span>
       </div>
-    </div>
-    <div class="languages" id="langues" aria-label="Langues de travail">
-      <div class="language"><span>Français</span><span class="language-code">FR</span></div>
-      <div class="language"><span>Arabe · العربية</span><span class="language-code">AR</span></div>
-      <div class="language"><span>Kabyle</span><span class="language-code">KAB</span></div>
-      <div class="language"><span>English</span><span class="language-code">EN</span></div>
-    </div>
-  </div>
-</section>
 
-<section class="logo-band" aria-label="Logos défilants">
-  <div class="logo-track">
-    <div class="logo-group">
-      <a class="logo-item" href="https://www.justice.fr/" target="_blank" rel="noopener noreferrer" aria-label="Justice.fr"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Minist%C3%A8re_de_la_Justice.svg" alt="Logo Justice"></a>
-      <a class="logo-item" href="https://www.gendarmerie.interieur.gouv.fr/" target="_blank" rel="noopener noreferrer" aria-label="Gendarmerie nationale"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gendarmerie_nationale_logo.svg" alt="Logo Gendarmerie nationale"></a>
-      <a class="logo-item" href="https://www.aphp.fr/" target="_blank" rel="noopener noreferrer" aria-label="AP-HP"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/AP-HP_Logo.svg" alt="Logo AP-HP"></a>
-      <a class="logo-item" href="https://www.service-public.fr/" target="_blank" rel="noopener noreferrer" aria-label="Service-Public.fr"><span class="logo-word">service-public.fr</span></a>
-      <a class="logo-item" href="https://www.justice.fr/" target="_blank" rel="noopener noreferrer" aria-label="Justice.fr"><span class="logo-word">justice.fr</span></a>
-    </div>
-    <div class="logo-group" aria-hidden="true">
-      <span class="logo-item"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Minist%C3%A8re_de_la_Justice.svg" alt=""></span>
-      <span class="logo-item"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/Gendarmerie_nationale_logo.svg" alt=""></span>
-      <span class="logo-item"><img src="https://commons.wikimedia.org/wiki/Special:FilePath/AP-HP_Logo.svg" alt=""></span>
-      <span class="logo-item"><span class="logo-word">service-public.fr</span></span>
-      <span class="logo-item"><span class="logo-word">justice.fr</span></span>
-    </div>
-  </div>
-</section>
+      <div class="meta-item">
+        <strong>Domaines spécialisés</strong>
+        <span>JURIDIQUE · SANITAIRE · ADMINISTRATIF</span>
+      </div>
 
-<section class="content-section" id="approche">
-  <div class="container">
-    <div class="section-label mono">01 — Mon approche</div>
-    <div class="section-grid">
-      <h2>Faire passer le sens, <em>sans le déformer.</em></h2>
-      <div class="section-copy">
-        <p>Interpréter, c’est bien plus que traduire des mots. C’est transmettre fidèlement un message, tenir compte du contexte et permettre à chaque personne de s’exprimer et d’être comprise.</p>
-        <p>Mon approche repose sur l’écoute, la précision linguistique, la neutralité et le respect de la confidentialité.</p>
+      <div class="meta-item">
+        <strong>Langues</strong>
+        <span>FR · AR · KAB · EN</span>
       </div>
     </div>
   </div>
 </section>
 
-<section class="content-section" id="services">
-  <div class="container">
-    <div class="section-label mono">02 — Services</div>
-    <div class="section-grid">
-      <h2>Une interprétation <em>adaptée à votre contexte.</em></h2>
-      <div class="section-copy">Chaque mission demande une préparation adaptée au sujet, aux interlocuteurs et au cadre de l’échange.</div>
+<!-- Bandeau défilant reprenant les expériences du CV -->
+<div class="marquee" aria-label="Expériences et parcours professionnels">
+  <div class="marquee-track">
+    <div class="marquee-group">
+      <span class="wordmark">OFII</span>
+      <span class="star">✳</span>
+      <span class="wordmark">ACCEOTADEO</span>
+      <span class="star">✳</span>
+      <span class="wordmark">SPINA BIFIDA</span>
+      <span class="star">✳</span>
+      <span class="wordmark">DECATHLON</span>
+      <span class="star">✳</span>
+      <span class="wordmark">INTERPRÉTATION</span>
+      <span class="star">✳</span>
+      <span class="wordmark">QUALITÉ & FORMATION</span>
+      <span class="star">✳</span>
     </div>
-    <div class="services">
-      <article class="service"><div class="service-number">01</div><div><h3>Interprétation en présentiel</h3><p>Faciliter les échanges directs entre personnes de langues différentes.</p></div><div class="service-symbol">↗</div></article>
-      <article class="service"><div class="service-number">02</div><div><h3>Interprétation à distance</h3><p>Accompagner les échanges par téléphone ou visioconférence, selon les modalités de la mission.</p></div><div class="service-symbol">↗</div></article>
-      <article class="service"><div class="service-number">03</div><div><h3>Échanges professionnels</h3><p>Assurer une communication claire et fidèle dans un cadre professionnel ou administratif.</p></div><div class="service-symbol">↗</div></article>
+
+    <div class="marquee-group" aria-hidden="true">
+      <span class="wordmark">OFII</span>
+      <span class="star">✳</span>
+      <span class="wordmark">ACCEOTADEO</span>
+      <span class="star">✳</span>
+      <span class="wordmark">SPINA BIFIDA</span>
+      <span class="star">✳</span>
+      <span class="wordmark">DECATHLON</span>
+      <span class="star">✳</span>
+      <span class="wordmark">INTERPRÉTATION</span>
+      <span class="star">✳</span>
+      <span class="wordmark">QUALITÉ & FORMATION</span>
+      <span class="star">✳</span>
+    </div>
+  </div>
+</div>
+
+<section id="profil">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-index">01 / PROFIL</div>
+      <h2 class="section-title">
+        Créer les conditions<br>d’une <em>compréhension juste.</em>
+      </h2>
+    </div>
+
+    <div class="about-grid reveal">
+      <div class="about-copy">
+        <p>
+          Interprète trilingue, j’interviens dans des contextes où chaque nuance
+          compte. Mon rôle est de transmettre fidèlement le sens, le ton et
+          l’intention de chaque interlocuteur, tout en respectant la confidentialité
+          et le cadre de l’échange.
+        </p>
+
+        <p>
+          Mon expérience auprès de l’OFII, ainsi que mes missions en qualité et
+          en formation chez AcceoTadeo, m’a appris à conjuguer rigueur linguistique,
+          posture professionnelle et attention aux personnes.
+        </p>
+      </div>
+
+      <div class="pullquote">
+        « Faciliter le dialogue, c’est permettre à chacun d’être
+        <em>entendu et compris.</em> »
+      </div>
     </div>
   </div>
 </section>
 
-<section class="content-section" id="contact">
-  <div class="container">
-    <div class="section-label mono">03 — Contact</div>
-    <div class="contact-panel">
-      <h2>Parlons de votre <em>prochaine mission.</em></h2>
-      <p>Vous recherchez un interprète en français, arabe, kabyle ou anglais ? Envoyez-moi les informations essentielles sur votre besoin afin que nous puissions échanger sur les modalités de la mission.</p>
-      <div class="contact-links">
-        <a class="button button-primary" href="mailto:naimyousfi.pro@gmail.com?subject=Demande%20de%20mission"><span>naimyousfi.pro@gmail.com</span><span class="arrow" aria-hidden="true">↗</span></a>
-        <a class="button button-secondary" href="https://www.instagram.com/naimyousfi/" target="_blank" rel="noopener noreferrer"><span>Instagram</span><span class="arrow" aria-hidden="true">↗</span></a>
+<section class="services" id="services">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-index">02 / DOMAINES</div>
+      <h2 class="section-title">
+        Une présence adaptée<br>à chaque <em>contexte.</em>
+      </h2>
+    </div>
+
+    <div class="service-grid reveal">
+      <article class="service">
+        <div class="service-num">01 —</div>
+        <h3>Juridique</h3>
+        <p>
+          Interprétation attentive au cadre de l’échange, à la terminologie
+          et à la restitution fidèle des propos.
+        </p>
+      </article>
+
+      <article class="service">
+        <div class="service-num">02 —</div>
+        <h3>Sanitaire</h3>
+        <p>
+          Faciliter le dialogue entre patients, familles et professionnels
+          de santé avec clarté et discrétion.
+        </p>
+      </article>
+
+      <article class="service">
+        <div class="service-num">03 —</div>
+        <h3>Administratif</h3>
+        <p>
+          Accompagner les échanges entre institutions, agents et usagers
+          dans un cadre respectueux.
+        </p>
+      </article>
+
+      <article class="service">
+        <div class="service-num">04 —</div>
+        <h3>Interprétation simultanée</h3>
+        <p>
+          Restituer le message en temps réel en préservant le sens
+          et la fluidité de la communication.
+        </p>
+      </article>
+
+      <article class="service">
+        <div class="service-num">05 —</div>
+        <h3>Interprétation consécutive</h3>
+        <p>
+          Transmettre les propos par séquences avec précision,
+          méthode et attention au détail.
+        </p>
+      </article>
+
+      <article class="service">
+        <div class="service-num">06 —</div>
+        <h3>Qualité & formation</h3>
+        <p>
+          Expérience en contrôle qualité, accompagnement d’interprètes
+          et amélioration des pratiques professionnelles.
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="langues">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-index">03 / LANGUES</div>
+      <h2 class="section-title">
+        La précision au-delà<br>des <em>mots.</em>
+      </h2>
+    </div>
+
+    <div class="languages-grid reveal">
+      <div class="language">
+        <span>Langue maternelle</span>
+        <div class="native">ⵣ</div>
+        <strong>Kabyle</strong>
+      </div>
+
+      <div class="language">
+        <span>Niveau C2 indiqué au CV</span>
+        <div class="native">ع</div>
+        <strong>Arabe</strong>
+      </div>
+
+      <div class="language">
+        <span>Compréhension orale C2</span>
+        <div class="native">Fr</div>
+        <strong>Français</strong>
+        <span>Expression orale C1 · interaction C2</span>
+      </div>
+
+      <div class="language">
+        <span>Compréhension orale C2</span>
+        <div class="native">En</div>
+        <strong>Anglais</strong>
+        <span>Expression orale C2 · interaction C1</span>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="experience" id="parcours">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-index">04 / PARCOURS</div>
+      <h2 class="section-title">
+        Expérience de terrain,<br>exigence de <em>qualité.</em>
+      </h2>
+    </div>
+
+    <div class="timeline reveal">
+      <article class="timeline-item">
+        <div class="timeline-date">Depuis fév. 2023</div>
+        <div>
+          <h3>Interprète indépendant</h3>
+          <div class="place">
+            OFII — Office français de l’immigration et de l’intégration · Île-de-France
+          </div>
+          <p>
+            Interprétation simultanée en français, arabe et berbère lors de sessions
+            de formation civique ; facilitation des échanges entre formateurs
+            et participants.
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-date">Nov. 2024 — mai 2025</div>
+        <div>
+          <h3>Interprète trilingue · Pilotage qualité & formation</h3>
+          <div class="place">Delta Production — AcceoTadeo</div>
+          <p>
+            Interprétation simultanée et consécutive en arabe, berbère et anglais ;
+            contrôle qualité, accompagnement et formation des interprètes,
+            procédures qualité et rapports d’activité.
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-date">Nov. 2023 — mai 2024</div>
+        <div>
+          <h3>Chargé de marketing — Stage</h3>
+          <div class="place">Decathlon · Paris</div>
+          <p>
+            Suivi des performances avec Google Analytics et SEMrush,
+            et participation à des campagnes marketing omnicanales.
+          </p>
+        </div>
+      </article>
+
+      <article class="timeline-item">
+        <div class="timeline-date">2017 — 2020</div>
+        <div>
+          <h3>Interprète bénévole</h3>
+          <div class="place">Association Spina Bifida · Béjaïa, Algérie</div>
+          <p>
+            Interprétation en kabyle et en arabe pour faciliter les échanges
+            entre patients, familles et personnel médical.
+          </p>
+        </div>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section id="formation">
+  <div class="wrap">
+    <div class="section-head reveal">
+      <div class="section-index">05 / FORMATION</div>
+      <h2 class="section-title">
+        Un parcours entre<br>langues et <em>communication.</em>
+      </h2>
+    </div>
+
+    <div class="education-grid reveal">
+      <article class="education">
+        <div class="year">2021 — 2023</div>
+        <h3>Bachelor marketing et communication</h3>
+        <p>ESG · Paris</p>
+      </article>
+
+      <article class="education">
+        <div class="year">2020 — 2023</div>
+        <h3>L3 — Langues étrangères appliquées</h3>
+        <p>Parcours anglais-allemand · Université Vincennes Saint-Denis</p>
+      </article>
+
+      <article class="education">
+        <div class="year">2017 — 2020</div>
+        <h3>Licence de littérature anglaise</h3>
+        <p>Université Abderrahmane Mira · Béjaïa, Algérie</p>
+      </article>
+
+      <article class="education">
+        <div class="year">2017 — 2020</div>
+        <h3>Communication associative</h3>
+        <p>
+          Association Spina Bifida · Création de contenu web,
+          rédaction et relations presse
+        </p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="contact" id="contact">
+  <div class="wrap contact-layout">
+    <div class="reveal">
+      <div class="eyebrow">06 / CONTACT</div>
+      <h2>Parlons de votre<br><em>mission.</em></h2>
+      <p class="contact-copy">
+        Vous recherchez un interprète pour une mission ou souhaitez échanger
+        sur un besoin linguistique ? Contactez-moi pour discuter du contexte
+        et des modalités.
+      </p>
+
+      <a class="button" href="mailto:naimyousfi76@gmail.com">
+        Me contacter <span class="arrow" aria-hidden="true">↗</span>
+      </a>
+    </div>
+
+    <div class="contact-details reveal">
+      <div class="contact-row">
+        <span>Email</span>
+        <a href="mailto:naimyousfi76@gmail.com">naimyousfi76@gmail.com ↗</a>
+      </div>
+
+      <div class="contact-row">
+        <span>Téléphone</span>
+        <a href="tel:+33765258156">+33 7 65 25 81 56 ↗</a>
+      </div>
+
+      <div class="contact-row">
+        <span>Instagram</span>
+        <a href="https://www.instagram.com/naimyousfi/"
+           target="_blank" rel="noopener noreferrer">@naimyousfi ↗</a>
+      </div>
+
+      <div class="contact-row">
+        <span>Localisation</span>
+        <span>Île-de-France · France</span>
       </div>
     </div>
   </div>
@@ -213,29 +1061,47 @@ h1{font-size:clamp(49px,12.5vw,82px)}
 </main>
 
 <footer>
-  <div class="container footer-inner">
+  <div class="wrap footer-inner">
+    <a class="footer-brand" href="#accueil">
+      NAIM<span style="color:var(--sage)">.</span>YOUSFI
+    </a>
+    <span>INTERPRÉTATION · LANGUES · DIALOGUE</span>
     <span>© <span id="year"></span> Naim Yousfi</span>
-    <span>Interprète professionnel · FR / AR / KAB / EN</span>
-    <a href="#accueil">Retour en haut ↑</a>
   </div>
 </footer>
 
 <script>
-const menuToggle=document.getElementById("menuToggle");
-const navLinks=document.getElementById("navLinks");
-menuToggle.addEventListener("click",()=>{
-  const open=navLinks.classList.toggle("open");
-  menuToggle.setAttribute("aria-expanded",String(open));
-  menuToggle.setAttribute("aria-label",open?"Fermer le menu":"Ouvrir le menu");
-  menuToggle.textContent=open?"×":"☰";
+const menu = document.getElementById('menu');
+const nav = document.getElementById('navlinks');
+
+menu.addEventListener('click', () => {
+  const open = nav.classList.toggle('open');
+  menu.setAttribute('aria-expanded', String(open));
+  menu.textContent = open ? 'Fermer' : 'Menu';
 });
-navLinks.querySelectorAll("a").forEach(link=>link.addEventListener("click",()=>{
-  navLinks.classList.remove("open");
-  menuToggle.setAttribute("aria-expanded","false");
-  menuToggle.setAttribute("aria-label","Ouvrir le menu");
-  menuToggle.textContent="☰";
-}));
-document.getElementById("year").textContent=new Date().getFullYear();
+
+nav.querySelectorAll('a').forEach(link => {
+  link.addEventListener('click', () => {
+    nav.classList.remove('open');
+    menu.setAttribute('aria-expanded', 'false');
+    menu.textContent = 'Menu';
+  });
+});
+
+document.getElementById('year').textContent = new Date().getFullYear();
+
+const observer = new IntersectionObserver(entries => {
+  entries.forEach(entry => {
+    if (entry.isIntersecting) {
+      entry.target.classList.add('visible');
+      observer.unobserve(entry.target);
+    }
+  });
+}, { threshold: .12 });
+
+document.querySelectorAll('.reveal').forEach(element => {
+  observer.observe(element);
+});
 </script>
 </body>
 </html>
