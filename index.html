@@ -1,1107 +1,146 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="fr">
 <head>
-<meta charset="utf-8">
-<meta name="viewport" content="width=device-width, initial-scale=1">
-<meta name="theme-color" content="#101210">
-<meta name="description" content="Naim Yousfi, interprète en français, arabe, kabyle et anglais. Interprétation juridique, sanitaire et administrative.">
-<title>Naim Yousfi — Interprète</title>
-<link rel="preconnect" href="https://fonts.googleapis.com">
-<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500;1,600&display=swap" rel="stylesheet">
-
+<meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#101b2b">
+<meta name="description" content="YUSLIA — agence d’interprétation et de traduction. Des échanges plus clairs, des langues qui rapprochent.">
+<title>YUSLIA — Interprétation & Traduction</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Manrope:wght@400;500;600;700;800&family=Playfair+Display:ital,wght@0,500;0,600;1,500&display=swap" rel="stylesheet">
 <style>
-:root {
-  --bg: #101210;
-  --panel: #171a16;
-  --text: #f1f0e9;
-  --muted: #a5aaa0;
-  --sage: #c3d2b5;
-  --line: rgba(241,240,233,.15);
-  --mono: 'DM Mono', monospace;
-  --sans: 'Manrope', sans-serif;
-  --serif: 'Playfair Display', serif;
-}
-
-* { box-sizing: border-box; }
-
-html {
-  scroll-behavior: smooth;
-  scroll-padding-top: 90px;
-}
-
-body {
-  margin: 0;
-  background: var(--bg);
-  color: var(--text);
-  font-family: var(--sans);
-  -webkit-font-smoothing: antialiased;
-}
-
-a { color: inherit; text-decoration: none; }
-button { font: inherit; }
-
-.wrap {
-  width: min(1160px, calc(100% - 48px));
-  margin: auto;
-}
-
-.eyebrow {
-  font: 11px var(--mono);
-  letter-spacing: .16em;
-  text-transform: uppercase;
-  color: var(--sage);
-}
-
-.topline {
-  height: 4px;
-  background: var(--sage);
-}
-
-header {
-  position: sticky;
-  top: 0;
-  z-index: 20;
-  background: rgba(16,18,16,.88);
-  backdrop-filter: blur(18px);
-  border-bottom: 1px solid var(--line);
-}
-
-.nav {
-  height: 78px;
-  display: flex;
-  align-items: center;
-  justify-content: space-between;
-  gap: 24px;
-}
-
-.brand {
-  font-weight: 800;
-  letter-spacing: -.06em;
-  font-size: 20px;
-}
-
-.brand span { color: var(--sage); }
-
-.navlinks {
-  display: flex;
-  align-items: center;
-  gap: 30px;
-  font-size: 12px;
-  color: #d0d2ca;
-}
-
-.navlinks a:hover { color: var(--sage); }
-
-.navcta {
-  border: 1px solid var(--sage);
-  padding: 12px 16px;
-  color: var(--sage);
-  font-size: 12px;
-  transition: .2s;
-}
-
-.navcta:hover {
-  background: var(--sage);
-  color: var(--bg);
-}
-
-.menu {
-  display: none;
-  background: none;
-  border: 1px solid var(--line);
-  color: var(--text);
-  padding: 9px 12px;
-}
-
-/* HERO */
-
-.hero {
-  min-height: 690px;
-  display: flex;
-  align-items: center;
-  padding: 100px 0 90px;
-  position: relative;
-  overflow: hidden;
-}
-
-.hero:after {
-  content: "";
-  position: absolute;
-  width: 440px;
-  height: 440px;
-  border: 1px solid rgba(195,210,181,.12);
-  border-radius: 50%;
-  right: -80px;
-  top: 80px;
-  box-shadow:
-    0 0 0 60px rgba(195,210,181,.025),
-    0 0 0 120px rgba(195,210,181,.018);
-  pointer-events: none;
-}
-
-.hero-inner {
-  max-width: 940px;
-  position: relative;
-  z-index: 1;
-}
-
-.hero-kicker {
-  display: flex;
-  align-items: center;
-  gap: 12px;
-  margin-bottom: 30px;
-}
-
-.dot {
-  width: 7px;
-  height: 7px;
-  border-radius: 50%;
-  background: var(--sage);
-  box-shadow: 0 0 14px rgba(195,210,181,.5);
-}
-
-h1 {
-  font-size: clamp(54px, 8.4vw, 112px);
-  line-height: .98;
-  letter-spacing: -.075em;
-  font-weight: 600;
-  margin: 0;
-  max-width: 1000px;
-}
-
-h1 em {
-  font-family: var(--serif);
-  font-weight: 500;
-  color: var(--sage);
-  letter-spacing: -.055em;
-}
-
-.hero-bottom {
-  display: flex;
-  justify-content: space-between;
-  align-items: flex-end;
-  gap: 32px;
-  margin-top: 44px;
-  max-width: 850px;
-}
-
-.hero-copy {
-  max-width: 480px;
-  color: #b9bdb4;
-  font-size: 15px;
-  line-height: 1.9;
-}
-
-.button {
-  display: inline-flex;
-  align-items: center;
-  gap: 26px;
-  padding: 16px 19px;
-  background: var(--sage);
-  color: #11150f;
-  font-size: 12px;
-  font-weight: 700;
-  white-space: nowrap;
-  transition: transform .2s, background .2s;
-}
-
-.button:hover {
-  transform: translateY(-3px);
-  background: #d5e0cb;
-}
-
-.button .arrow {
-  font-size: 18px;
-  font-weight: 400;
-}
-
-.hero-meta {
-  display: flex;
-  gap: 28px;
-  margin-top: 62px;
-  padding-top: 22px;
-  border-top: 1px solid var(--line);
-  max-width: 850px;
-}
-
-.meta-item {
-  display: flex;
-  flex-direction: column;
-  gap: 8px;
-}
-
-.meta-item strong {
-  font-size: 12px;
-  font-weight: 600;
-}
-
-.meta-item span {
-  font: 10px var(--mono);
-  letter-spacing: .06em;
-  color: var(--muted);
-}
-
-/* BANDEAU DÉFILANT */
-
-.marquee {
-  border-block: 1px solid var(--line);
-  overflow: hidden;
-  padding: 21px 0;
-  background: #131512;
-}
-
-.marquee-track {
-  display: flex;
-  width: max-content;
-  animation: scroll 32s linear infinite;
-}
-
-.marquee:hover .marquee-track {
-  animation-play-state: paused;
-}
-
-.marquee-group {
-  display: flex;
-  align-items: center;
-  gap: 58px;
-  padding-right: 58px;
-}
-
-.wordmark {
-  font-size: 13px;
-  font-weight: 800;
-  letter-spacing: -.03em;
-  color: #858b80;
-  white-space: nowrap;
-}
-
-.star {
-  color: var(--sage);
-  font-size: 15px;
-}
-
-@keyframes scroll {
-  to { transform: translateX(-50%); }
-}
-
-/* SECTIONS */
-
-section { padding: 115px 0; }
-
-.section-head {
-  display: grid;
-  grid-template-columns: 1fr 2fr;
-  gap: 40px;
-  margin-bottom: 58px;
-}
-
-.section-index {
-  font: 11px var(--mono);
-  color: var(--sage);
-  letter-spacing: .1em;
-}
-
-.section-title {
-  font-size: clamp(36px, 5vw, 64px);
-  letter-spacing: -.065em;
-  line-height: 1.05;
-  margin: 0;
-  font-weight: 600;
-}
-
-.section-title em {
-  font-family: var(--serif);
-  color: var(--sage);
-  font-weight: 500;
-}
-
-/* PROFIL */
-
-.about-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 70px;
-}
-
-.about-copy {
-  font-size: 17px;
-  line-height: 1.9;
-  color: #c1c5bc;
-}
-
-.about-copy p { margin: 0 0 20px; }
-
-.pullquote {
-  border-left: 1px solid var(--sage);
-  padding: 8px 0 8px 28px;
-  font-family: var(--serif);
-  font-size: clamp(24px, 3vw, 35px);
-  line-height: 1.4;
-  color: var(--text);
-}
-
-.pullquote em { color: var(--sage); }
-
-/* SERVICES */
-
-.services,
-.experience {
-  background: #151713;
-}
-
-.service-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  border-top: 1px solid var(--line);
-  border-left: 1px solid var(--line);
-}
-
-.service {
-  padding: 30px;
-  min-height: 255px;
-  border-right: 1px solid var(--line);
-  border-bottom: 1px solid var(--line);
-  transition: background .2s;
-}
-
-.service:hover { background: #1b1f19; }
-
-.service-num {
-  font: 11px var(--mono);
-  color: var(--sage);
-}
-
-.service h3 {
-  font-size: 22px;
-  letter-spacing: -.04em;
-  margin: 42px 0 12px;
-}
-
-.service p {
-  font-size: 13px;
-  line-height: 1.8;
-  color: var(--muted);
-  margin: 0;
-}
-
-/* LANGUES */
-
-.languages-grid {
-  display: grid;
-  grid-template-columns: repeat(4, 1fr);
-  gap: 12px;
-}
-
-.language {
-  padding: 26px 20px;
-  border: 1px solid var(--line);
-  min-height: 150px;
-  display: flex;
-  flex-direction: column;
-  justify-content: space-between;
-}
-
-.language .native {
-  font-family: var(--serif);
-  font-size: 34px;
-  color: var(--sage);
-}
-
-.language strong { font-size: 15px; }
-
-.language span {
-  font: 10px var(--mono);
-  color: var(--muted);
-  text-transform: uppercase;
-  letter-spacing: .1em;
-}
-
-.lang-note {
-  font-size: 12px;
-  line-height: 1.8;
-  color: var(--muted);
-  margin-top: 20px;
-}
-
-/* PARCOURS */
-
-.timeline { border-top: 1px solid var(--line); }
-
-.timeline-item {
-  display: grid;
-  grid-template-columns: 180px 1fr;
-  gap: 35px;
-  padding: 28px 0;
-  border-bottom: 1px solid var(--line);
-}
-
-.timeline-date {
-  font: 11px var(--mono);
-  color: var(--sage);
-  line-height: 1.8;
-}
-
-.timeline h3 {
-  margin: 0 0 6px;
-  font-size: 19px;
-  letter-spacing: -.03em;
-}
-
-.timeline .place {
-  font-size: 12px;
-  color: var(--muted);
-}
-
-.timeline p {
-  max-width: 690px;
-  font-size: 13px;
-  color: #b8bdb3;
-  line-height: 1.85;
-  margin: 14px 0 0;
-}
-
-/* FORMATION */
-
-.education-grid {
-  display: grid;
-  grid-template-columns: 1fr 1fr;
-  gap: 14px;
-}
-
-.education {
-  padding: 24px;
-  border: 1px solid var(--line);
-}
-
-.education .year {
-  font: 11px var(--mono);
-  color: var(--sage);
-}
-
-.education h3 {
-  font-size: 17px;
-  margin: 15px 0 6px;
-}
-
-.education p {
-  font-size: 12px;
-  color: var(--muted);
-  margin: 0;
-  line-height: 1.7;
-}
-
-/* CONTACT */
-
-.contact {
-  padding: 110px 0 90px;
-  border-top: 1px solid var(--line);
-}
-
-.contact-layout {
-  display: grid;
-  grid-template-columns: 1.4fr 1fr;
-  gap: 60px;
-  align-items: end;
-}
-
-.contact h2 {
-  font-size: clamp(48px, 7vw, 88px);
-  line-height: 1;
-  letter-spacing: -.075em;
-  margin: 22px 0 28px;
-}
-
-.contact h2 em {
-  font-family: var(--serif);
-  font-weight: 500;
-  color: var(--sage);
-}
-
-.contact-copy {
-  color: var(--muted);
-  font-size: 14px;
-  line-height: 1.8;
-  max-width: 470px;
-}
-
-.contact-details { border-top: 1px solid var(--line); }
-
-.contact-row {
-  display: flex;
-  justify-content: space-between;
-  gap: 18px;
-  padding: 17px 0;
-  border-bottom: 1px solid var(--line);
-  font-size: 12px;
-}
-
-.contact-row span { color: var(--muted); }
-.contact-row a:hover { color: var(--sage); }
-
-/* FOOTER */
-
-footer {
-  border-top: 1px solid var(--line);
-  padding: 24px 0;
-}
-
-.footer-inner {
-  display: flex;
-  justify-content: space-between;
-  gap: 20px;
-  align-items: center;
-  font: 10px var(--mono);
-  color: var(--muted);
-}
-
-.footer-brand {
-  font: 700 15px var(--sans);
-  color: var(--text);
-  letter-spacing: -.04em;
-}
-
-/* ANIMATIONS */
-
-.reveal {
-  opacity: 0;
-  transform: translateY(18px);
-  transition: opacity .7s ease, transform .7s ease;
-}
-
-.reveal.visible {
-  opacity: 1;
-  transform: translateY(0);
-}
-
-/* MOBILE */
-
-@media(max-width:760px) {
-  .wrap { width: min(100% - 36px, 600px); }
-
-  .nav { height: 68px; }
-
-  .navlinks {
-    display: none;
-    position: absolute;
-    top: 68px;
-    left: 0;
-    right: 0;
-    padding: 22px 24px 26px;
-    background: #101210;
-    border-bottom: 1px solid var(--line);
-    flex-direction: column;
-    align-items: flex-start;
-    gap: 22px;
-  }
-
-  .navlinks.open { display: flex; }
-  .navcta { display: none; }
-  .menu { display: block; }
-
-  .hero {
-    min-height: auto;
-    padding: 95px 0 70px;
-  }
-
-  .hero:after {
-    width: 260px;
-    height: 260px;
-    right: -160px;
-    top: 70px;
-  }
-
-  .hero-bottom {
-    align-items: flex-start;
-    flex-direction: column;
-    margin-top: 30px;
-  }
-
-  .hero-copy { font-size: 14px; }
-
-  .hero-meta {
-    gap: 22px;
-    flex-wrap: wrap;
-    margin-top: 45px;
-  }
-
-  .hero-meta .meta-item { min-width: 120px; }
-
-  section { padding: 78px 0; }
-
-  .section-head {
-    grid-template-columns: 1fr;
-    gap: 18px;
-    margin-bottom: 36px;
-  }
-
-  .about-grid {
-    grid-template-columns: 1fr;
-    gap: 32px;
-  }
-
-  .service-grid { grid-template-columns: 1fr; }
-  .service { min-height: 210px; padding: 25px; }
-  .service h3 { margin-top: 28px; }
-
-  .languages-grid { grid-template-columns: repeat(2, 1fr); }
-  .language { min-height: 135px; }
-
-  .timeline-item {
-    grid-template-columns: 1fr;
-    gap: 8px;
-    padding: 23px 0;
-  }
-
-  .education-grid { grid-template-columns: 1fr; }
-  .contact-layout { grid-template-columns: 1fr; gap: 40px; }
-  .contact { padding: 80px 0 65px; }
-
-  .footer-inner {
-    align-items: flex-start;
-    flex-direction: column;
-    gap: 12px;
-  }
-}
-
-@media(prefers-reduced-motion:reduce) {
-  html { scroll-behavior: auto; }
-  .marquee-track { animation: none; }
-  .reveal { opacity: 1; transform: none; transition: none; }
-}
+:root{--ink:#101b2b;--ink2:#182b40;--paper:#f3f4ee;--white:#fffefa;--lime:#d0ef75;--blue:#8eafff;--muted:#aab6c2;--line:rgba(255,255,255,.15);--darkline:rgba(16,27,43,.14);--sans:'Manrope',sans-serif;--serif:'Playfair Display',serif;--mono:'DM Mono',monospace}
+*{box-sizing:border-box}html{scroll-behavior:smooth;scroll-padding-top:90px}body{margin:0;background:var(--paper);color:var(--ink);font-family:var(--sans);-webkit-font-smoothing:antialiased}a{color:inherit;text-decoration:none}button,input,select,textarea{font:inherit}button,a{-webkit-tap-highlight-color:transparent}.container{width:min(1180px,calc(100% - 48px));margin:auto}.eyebrow{font:10px var(--mono);letter-spacing:.16em;text-transform:uppercase}.serif{font-family:var(--serif);font-style:italic;font-weight:500}.section{padding:106px 0}.section-label{color:#718094;margin-bottom:16px}.section-title{font-size:clamp(37px,5.4vw,68px);line-height:.99;letter-spacing:-.065em;font-weight:600;margin:0}.section-title em{color:#617ca9}.intro{max-width:550px;color:#697789;font-size:14px;line-height:1.9;margin:20px 0 0}.btn{display:inline-flex;align-items:center;justify-content:center;gap:22px;min-height:51px;padding:0 19px;background:var(--lime);color:var(--ink);font-size:11px;font-weight:800;border:1px solid transparent;transition:.22s;cursor:pointer}.btn:hover{transform:translateY(-3px);background:#e2ff91;box-shadow:0 12px 28px #0002}.btn .arr{font-size:18px;font-weight:400}.btn-outline{background:transparent;border-color:#ffffff55;color:var(--white)}.btn-outline:hover{background:var(--white);color:var(--ink)}.btn-dark{background:var(--ink);color:white}.btn-dark:hover{background:#2c4562;color:white}
+/* navigation */
+header{position:sticky;top:0;z-index:30;background:#101b2bf2;color:white;backdrop-filter:blur(16px);border-bottom:1px solid #ffffff16}.nav{height:76px;display:flex;align-items:center;justify-content:space-between;gap:22px}.brand{display:flex;align-items:center;gap:11px;font-size:18px;font-weight:800;letter-spacing:.16em}.brandmark{width:33px;height:33px;border:1px solid #d0ef7599;color:var(--lime);display:grid;place-items:center;font:18px var(--serif);transform:rotate(-8deg)}.brand small{display:block;font:8px var(--mono);letter-spacing:.2em;color:#9eacbc;margin-top:3px}.links{display:flex;align-items:center;gap:24px}.links a{color:#c2ccd6;font-size:10px;transition:.2s}.links a:hover{color:var(--lime)}.nav-right{display:flex;align-items:center;gap:10px}.nav-right .btn{min-height:42px;padding:0 14px;font-size:10px}.toggle{display:none;padding:10px 12px;background:transparent;color:white;border:1px solid #ffffff44}
+/* hero */
+.hero{background:var(--ink);color:white;position:relative;overflow:hidden;padding:86px 0 63px}.hero:before{content:"";position:absolute;width:530px;height:530px;border:1px solid #d0ef7530;border-radius:50%;right:-100px;top:40px;box-shadow:0 0 0 65px #d0ef7508,0 0 0 130px #d0ef7506}.hero:after{content:"";position:absolute;width:350px;height:350px;right:15%;bottom:-220px;background:radial-gradient(circle,#8eafff32,transparent 68%)}.hero-grid{position:relative;z-index:1;display:grid;grid-template-columns:1fr 320px;gap:50px;align-items:center}.kicker{display:flex;align-items:center;gap:10px;color:var(--lime);margin-bottom:26px}.kicker:before{content:"";width:7px;height:7px;border-radius:50%;background:var(--lime);box-shadow:0 0 0 5px #d0ef751a}h1{font-size:clamp(55px,8.2vw,110px);line-height:.91;letter-spacing:-.085em;font-weight:600;margin:0}h1 em{color:var(--lime)}.hero p{max-width:600px;color:#b9c4cf;font-size:14px;line-height:1.95;margin:30px 0 26px}.hero-actions{display:flex;gap:12px;flex-wrap:wrap}.hero-card{background:#1b2c40;border:1px solid #ffffff20;padding:26px;min-height:280px;position:relative;box-shadow:0 30px 75px #0003}.hero-card:before{content:'ⵣ';position:absolute;right:20px;top:5px;font:140px var(--serif);color:#d0ef751c}.hero-card .eyebrow{color:var(--lime)}.hero-card blockquote{position:relative;margin:54px 0 28px;font:27px/1.4 var(--serif)}.hero-card footer{display:flex;justify-content:space-between;border-top:1px solid var(--line);padding-top:17px;color:#aab6c2;font:8px var(--mono);letter-spacing:.1em}.stats{position:relative;z-index:1;display:flex;justify-content:space-between;gap:18px;border-top:1px solid var(--line);margin-top:58px;padding-top:22px}.stat{display:flex;align-items:center;gap:12px}.stat b{font-size:21px;color:var(--lime);letter-spacing:-.05em}.stat span{color:#aab6c2;font:8px/1.6 var(--mono);letter-spacing:.08em;text-transform:uppercase}
+/* logo belt */
+.references{background:var(--white);padding:24px 0 17px;overflow:hidden}.refhead{display:flex;justify-content:space-between;gap:15px;align-items:baseline;margin-bottom:18px}.refhead p{margin:0;color:#8a95a0;font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase}.marquee{overflow:hidden;mask-image:linear-gradient(90deg,transparent,#000 7%,#000 93%,transparent)}.track{display:flex;width:max-content;animation:roll 32s linear infinite}.marquee:hover .track{animation-play-state:paused}.logo-group{display:flex;gap:18px;padding-right:18px}.logo-tile{height:72px;min-width:170px;background:#f7f8f4;border:1px solid #e5e8e0;display:flex;align-items:center;justify-content:center;padding:12px 20px}.logo-tile img{max-height:45px;max-width:115px;object-fit:contain}.logo-tile img.ofii{max-width:110px}.logo-tile img.acceo{max-width:90px;max-height:48px}.wordmark{font-size:15px;font-weight:800;color:#26374a;letter-spacing:-.04em;text-align:center}.wordmark small{display:block;font:8px var(--mono);letter-spacing:.08em;color:#7d8994;margin-top:4px}.caption{text-align:center;color:#969fa7;font-size:9px;line-height:1.6;margin:13px auto 0}@keyframes roll{to{transform:translateX(-50%)}}
+/* about */
+.header-row{display:flex;justify-content:space-between;align-items:end;gap:40px;margin-bottom:48px}.header-row .intro{max-width:380px;margin:0}.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:75px;align-items:start}.about-text{color:#5f6d7e;font-size:14px;line-height:1.95}.about-text p{margin:0 0 17px}.quote{background:var(--ink);color:white;padding:37px;min-height:285px;display:flex;flex-direction:column;justify-content:space-between}.quote .symbol{color:var(--lime);font:65px var(--serif);line-height:.5}.quote blockquote{font:28px/1.4 var(--serif);margin:27px 0}.quote small{color:#aab6c2;font:9px var(--mono);letter-spacing:.1em}
+/* service */
+.services{background:var(--ink);color:white}.services .section-label,.team .section-label,.contact .section-label{color:var(--lime)}.services .section-title,.team .section-title,.contact .section-title{color:white}.services .section-title em,.team .section-title em,.contact .section-title em{color:var(--lime)}.services .intro,.team .intro{color:#aab6c2}.cards{display:grid;grid-template-columns:repeat(3,1fr);border-top:1px solid var(--line);border-left:1px solid var(--line)}.service{padding:27px;min-height:245px;border-right:1px solid var(--line);border-bottom:1px solid var(--line);transition:background .2s;position:relative}.service:hover{background:#1c3047}.service .num{font:9px var(--mono);letter-spacing:.1em;color:var(--lime)}.service .icon{position:absolute;right:25px;top:20px;color:#637b99;font-size:24px}.service h3{font-size:21px;letter-spacing:-.04em;margin:45px 0 10px}.service p{color:#aab6c2;font-size:11px;line-height:1.85;margin:0;max-width:290px}.tag{display:inline-block;border:1px solid #ffffff2b;color:#d8e0e8;font:8px var(--mono);letter-spacing:.08em;padding:7px 9px;margin-top:18px}
+/* sectors */
+.sectors{background:#e9ece5}.sector-grid{display:grid;grid-template-columns:1fr 1fr;gap:65px}.sector-list{border-top:1px solid var(--darkline)}.sector-list div{padding:19px 0;border-bottom:1px solid var(--darkline);display:flex;justify-content:space-between;gap:12px;font-size:16px;font-weight:700;letter-spacing:-.03em}.sector-list span{font:10px var(--mono);color:#83909c}.sector-note{background:var(--white);border:1px solid #e0e5dc;padding:28px;align-self:start}.sector-note .eyebrow{color:#72839a}.sector-note h3{font:30px/1.25 var(--serif);margin:19px 0 12px}.sector-note p{color:#6b7888;font-size:12px;line-height:1.9;margin-bottom:22px}
+/* languages */
+.languages{background:var(--white)}.language-grid{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:38px}.language{border:1px solid #e3e8e0;padding:22px;min-height:160px;display:flex;flex-direction:column;justify-content:space-between}.language .native{font:42px var(--serif);color:#607ba6}.language strong{font-size:15px}.language span{font:8px/1.6 var(--mono);color:#87929d;text-transform:uppercase;letter-spacing:.09em}.note{font-size:10px;line-height:1.7;color:#8d98a3;margin-top:15px}
+/* process */
+.process{background:#e9ece5}.steps{display:grid;grid-template-columns:repeat(4,1fr);gap:12px;margin-top:40px}.step{background:#ffffff80;border-top:2px solid var(--ink);padding:20px}.step span{font:9px var(--mono);color:#7889a2}.step h3{font-size:17px;margin:27px 0 8px}.step p{font-size:10px;line-height:1.85;color:#687688;margin:0}
+/* team */
+.team{background:var(--ink);color:white}.founder{display:grid;grid-template-columns:270px 1fr;gap:42px;padding:30px;background:#172b40;border:1px solid #ffffff1d;align-items:center}.portrait{min-height:295px;background:radial-gradient(circle at 70% 25%,#d0ef7530,transparent 33%),linear-gradient(145deg,#294663,#111e30);display:flex;align-items:end;padding:15px;position:relative;overflow:hidden}.portrait:before{content:'NY';position:absolute;top:16px;left:21px;font:120px var(--serif);letter-spacing:-.1em;color:#d0ef752d}.portrait span{z-index:1;background:#101b2be8;color:var(--lime);padding:12px;width:100%;font:9px var(--mono);letter-spacing:.1em}.founder-copy .eyebrow{color:var(--lime)}.founder-copy h3{font-size:clamp(31px,4vw,47px);letter-spacing:-.07em;margin:14px 0 4px}.role{color:#b9c4cf;font:9px var(--mono);letter-spacing:.1em;text-transform:uppercase}.founder-copy p{font-size:12px;line-height:1.9;color:#bac5cf;max-width:700px}.chips{display:flex;gap:8px;flex-wrap:wrap;margin-top:20px}.chips span{border:1px solid #ffffff2a;padding:8px 10px;font:8px var(--mono);color:#e5e9ed}.teamnote{font-size:9px;line-height:1.7;color:#8495a6;margin-top:17px}
+/* commitments */
+.promise{background:var(--paper)}.promise-grid{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin-top:38px}.promise-card{border:1px solid #dce2d8;padding:25px;min-height:175px;background:#ffffff80}.promise-card .picon{color:#637fa8;font-size:22px}.promise-card h3{font-size:16px;margin:23px 0 8px}.promise-card p{font-size:10px;line-height:1.85;color:#6b7888;margin:0}
+/* faq */
+.faq{background:var(--white)}.faq-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:65px}.faq-list{border-top:1px solid var(--darkline)}.faq-item{border-bottom:1px solid var(--darkline)}.question{width:100%;display:flex;justify-content:space-between;gap:15px;text-align:left;background:none;border:0;padding:20px 0;color:var(--ink);font-weight:700;font-size:12px;cursor:pointer}.question .plus{font-size:21px;color:#7186a4;transition:.2s}.answer{display:none;color:#687688;font-size:11px;line-height:1.85;padding:0 28px 18px 0}.faq-item.open .answer{display:block}.faq-item.open .plus{transform:rotate(45deg)}
+/* contact */
+.contact{background:var(--ink);color:white;padding:100px 0}.contact-grid{display:grid;grid-template-columns:.8fr 1.2fr;gap:60px;align-items:start}.contact-copy{font-size:12px;line-height:1.9;color:#aab6c2;margin:20px 0 25px;max-width:410px}.contact-details{border-top:1px solid var(--line);margin-top:30px}.contact-row{padding:14px 0;border-bottom:1px solid var(--line);display:flex;justify-content:space-between;gap:12px;font-size:10px}.contact-row span{color:#91a1b1}.contact-row a:hover{color:var(--lime)}.form{background:#172b40;border:1px solid #ffffff1d;padding:27px}.form h3{font-size:20px;margin:0 0 20px}.fields{display:grid;grid-template-columns:1fr 1fr;gap:13px}.field{display:flex;flex-direction:column;gap:7px}.field.full{grid-column:1/-1}.field label{font:8px var(--mono);letter-spacing:.1em;text-transform:uppercase;color:#b8c4cf}.field input,.field select,.field textarea{width:100%;background:#102034;border:1px solid #ffffff27;color:white;padding:12px 13px;outline:none;border-radius:0;font-size:11px}.field input:focus,.field select:focus,.field textarea:focus{border-color:var(--lime)}.field textarea{min-height:105px;resize:vertical}.field option{background:#102034}.form-bottom{display:flex;align-items:center;gap:13px;flex-wrap:wrap;margin-top:16px}.form-hint{font-size:8px;line-height:1.6;color:#91a2b1;max-width:270px}.status{display:none;color:var(--lime);font-size:10px;line-height:1.6;margin-top:12px}
+footer{background:#0b1421;color:#8f9eac;padding:23px 0}.foot{display:flex;align-items:center;justify-content:space-between;gap:20px}.footbrand{font-size:14px;font-weight:800;letter-spacing:.16em;color:white}.foot small{font:8px var(--mono);letter-spacing:.08em;text-transform:uppercase}.footlinks{display:flex;gap:17px;font-size:9px}.footlinks a:hover{color:var(--lime)}.float{position:fixed;right:20px;bottom:20px;z-index:20;width:51px;height:51px;border-radius:50%;display:grid;place-items:center;background:var(--lime);color:var(--ink);font-size:20px;box-shadow:0 10px 25px #0003;transition:.2s}.float:hover{transform:translateY(-4px)}.reveal{opacity:0;transform:translateY(18px);transition:opacity .7s,transform .7s}.reveal.visible{opacity:1;transform:none}
+@media(max-width:980px){.links{gap:13px}.links a{font-size:9px}.hero-grid{grid-template-columns:1fr 275px;gap:28px}.founder{grid-template-columns:230px 1fr;gap:25px}}
+@media(max-width:760px){.container{width:min(100% - 36px,620px)}.nav{height:68px}.brand{font-size:16px}.toggle{display:block}.nav-right .btn{display:none}.links{display:none;position:fixed;top:68px;left:0;right:0;z-index:40;background:var(--ink);padding:24px;flex-direction:column;align-items:flex-start;gap:22px;border-bottom:1px solid #ffffff22}.links.open{display:flex}.links a{font-size:13px}.hero{padding:72px 0 50px}.hero-grid{grid-template-columns:1fr;gap:30px}.hero-card{min-height:225px}.hero-card blockquote{font-size:25px;margin-top:38px}.stats{margin-top:38px;display:grid;grid-template-columns:1fr 1fr;gap:16px}.section{padding:76px 0}.header-row{display:block;margin-bottom:35px}.header-row .intro{margin-top:18px}.about-grid,.sector-grid,.faq-grid,.contact-grid{grid-template-columns:1fr;gap:30px}.quote{min-height:230px;padding:28px}.cards{grid-template-columns:1fr}.service{min-height:200px}.service h3{margin-top:31px}.language-grid{grid-template-columns:1fr 1fr}.steps{grid-template-columns:1fr 1fr}.founder{grid-template-columns:1fr;padding:18px;gap:22px}.portrait{min-height:220px}.promise-grid{grid-template-columns:1fr}.form{padding:20px 16px}.fields{grid-template-columns:1fr}.field.full{grid-column:auto}.foot{align-items:flex-start;flex-direction:column}.footlinks{flex-wrap:wrap}.float{right:13px;bottom:13px;width:47px;height:47px}}
+@media(max-width:390px){.language-grid,.steps{grid-template-columns:1fr}h1{font-size:51px}.stats{gap:13px}.stat{align-items:flex-start}}
+@media(prefers-reduced-motion:reduce){html{scroll-behavior:auto}.track{animation:none}.reveal{opacity:1;transform:none;transition:none}*,*::before,*::after{transition-duration:.01ms!important}}
 </style>
 </head>
-
 <body>
-<div class="topline"></div>
-
-<header>
-  <div class="wrap nav">
-    <a class="brand" href="#accueil">NAIM<span>.</span>YOUSFI</a>
-
-    <nav class="navlinks" id="navlinks" aria-label="Navigation principale">
-      <a href="#profil">Profil</a>
-      <a href="#services">Domaines</a>
-      <a href="#langues">Langues</a>
-      <a href="#parcours">Parcours</a>
-      <a href="#contact">Contact</a>
-    </nav>
-
-    <a class="navcta" href="#contact">
-      Parlons de votre mission <span aria-hidden="true">↗</span>
-    </a>
-
-    <button class="menu" id="menu" aria-label="Ouvrir le menu" aria-expanded="false">
-      Menu
-    </button>
-  </div>
-</header>
-
-<main>
-<section class="hero" id="accueil">
-  <div class="wrap hero-inner">
-    <div class="hero-kicker eyebrow">
-      <span class="dot"></span>
-      Interprétation professionnelle · France
-    </div>
-
-    <h1>Les mots traversent<br>les <em>frontières.</em></h1>
-
-    <div class="hero-bottom">
-      <p class="hero-copy">
-        J’accompagne les échanges entre professionnels et usagers en français,
-        arabe, kabyle et anglais. Une interprétation précise, confidentielle et
-        adaptée aux contextes juridique, sanitaire et administratif.
-      </p>
-
-      <a class="button" href="#contact">
-        Discutons de votre mission
-        <span class="arrow" aria-hidden="true">↗</span>
-      </a>
-    </div>
-
-    <div class="hero-meta">
-      <div class="meta-item">
-        <strong>Interprétation</strong>
-        <span>SIMULTANÉE & CONSÉCUTIVE</span>
-      </div>
-
-      <div class="meta-item">
-        <strong>Domaines spécialisés</strong>
-        <span>JURIDIQUE · SANITAIRE · ADMINISTRATIF</span>
-      </div>
-
-      <div class="meta-item">
-        <strong>Langues</strong>
-        <span>FR · AR · KAB · EN</span>
-      </div>
-    </div>
-  </div>
+<header><div class="container nav">
+  <a class="brand" href="#accueil"><span class="brandmark">Y</span><span>YUSLIA<small>LANGUES & COMMUNICATION</small></span></a>
+  <nav class="links" id="navLinks" aria-label="Navigation"><a href="#services">Services</a><a href="#secteurs">Secteurs</a><a href="#langues">Langues</a><a href="#apropos">À propos</a><a href="#equipe">Notre équipe</a><a href="#contact">Contact</a></nav>
+  <div class="nav-right"><a class="btn" href="#contact">Demander un devis <span class="arr">↗</span></a><button class="toggle" id="toggle" aria-expanded="false" aria-controls="navLinks">Menu</button></div>
+</div></header>
+<main id="accueil">
+<section class="hero"><div class="container">
+  <div class="hero-grid"><div><div class="eyebrow kicker">Agence d’interprétation & de traduction</div><h1>Les langues<br>rapprochent.<br><em class="serif">YUSLIA les relie.</em></h1>
+    <p>Nous facilitons les échanges entre les personnes, les institutions et les organisations. Interprétation sur site ou à distance, traduction écrite et accompagnement linguistique : chaque mission commence par l’écoute de votre besoin.</p>
+    <div class="hero-actions"><a class="btn" href="#contact">Parler de votre projet <span class="arr">↗</span></a><a class="btn btn-outline" href="#services">Découvrir nos services</a></div>
+  </div><aside class="hero-card"><div class="eyebrow">Notre conviction</div><blockquote>« Bien interpréter, c’est transmettre le sens — pas seulement les mots. »</blockquote><footer><span>PRÉCISION</span><span>CONFIDENTIALITÉ</span><span>HUMAIN</span></footer></aside></div>
+  <div class="stats"><div class="stat"><b>04</b><span>Langues au cœur<br>du parcours fondateur</span></div><div class="stat"><b>03</b><span>Domaines clés<br>d’intervention</span></div><div class="stat"><b>360°</b><span>Approche orale<br>et écrite</span></div><div class="stat"><b>FR</b><span>Île-de-France<br>& distance</span></div></div>
+</div></section>
+<section class="references"><div class="container refhead"><p>Un parcours construit au contact de structures variées</p><p>Références du parcours du fondateur</p></div>
+  <div class="marquee"><div class="track"><div class="logo-group">
+    <div class="logo-tile"><img class="ofii" src="https://static.tildacdn.net/tild3834-3261-4466-a633-626263623936/ofii-logo-annuaire.jpg" alt="Logo OFII" loading="lazy"></div>
+    <div class="logo-tile"><img class="acceo" src="https://www.acceo-tadeo.fr/medias/site/logos/acceo-tadeo-logo-vertical.png" alt="Logo Acceo-Tadeo" loading="lazy"></div>
+    <div class="logo-tile"><img src="https://cdn.simpleicons.org/decathlon/0082C3" alt="Logo Decathlon" loading="lazy"></div>
+    <div class="logo-tile"><span class="wordmark">SPINA BIFIDA<small>ASSOCIATION · BÉJAÏA</small></span></div>
+  </div><div class="logo-group" aria-hidden="true">
+    <div class="logo-tile"><img class="ofii" src="https://static.tildacdn.net/tild3834-3261-4466-a633-626263623936/ofii-logo-annuaire.jpg" alt="" loading="lazy"></div>
+    <div class="logo-tile"><img class="acceo" src="https://www.acceo-tadeo.fr/medias/site/logos/acceo-tadeo-logo-vertical.png" alt="" loading="lazy"></div>
+    <div class="logo-tile"><img src="https://cdn.simpleicons.org/decathlon/0082C3" alt="" loading="lazy"></div>
+    <div class="logo-tile"><span class="wordmark">SPINA BIFIDA<small>ASSOCIATION · BÉJAÏA</small></span></div>
+  </div></div></div>
+  <p class="container caption">Ces logos et noms évoquent les expériences professionnelles et associatives du fondateur. Ils ne signifient pas que ces structures sont clientes, partenaires ou commanditaires de YUSLIA.</p>
 </section>
-
-<!-- Bandeau défilant reprenant les expériences du CV -->
-<div class="marquee" aria-label="Expériences et parcours professionnels">
-  <div class="marquee-track">
-    <div class="marquee-group">
-      <span class="wordmark">OFII</span>
-      <span class="star">✳</span>
-      <span class="wordmark">ACCEOTADEO</span>
-      <span class="star">✳</span>
-      <span class="wordmark">SPINA BIFIDA</span>
-      <span class="star">✳</span>
-      <span class="wordmark">DECATHLON</span>
-      <span class="star">✳</span>
-      <span class="wordmark">INTERPRÉTATION</span>
-      <span class="star">✳</span>
-      <span class="wordmark">QUALITÉ & FORMATION</span>
-      <span class="star">✳</span>
-    </div>
-
-    <div class="marquee-group" aria-hidden="true">
-      <span class="wordmark">OFII</span>
-      <span class="star">✳</span>
-      <span class="wordmark">ACCEOTADEO</span>
-      <span class="star">✳</span>
-      <span class="wordmark">SPINA BIFIDA</span>
-      <span class="star">✳</span>
-      <span class="wordmark">DECATHLON</span>
-      <span class="star">✳</span>
-      <span class="wordmark">INTERPRÉTATION</span>
-      <span class="star">✳</span>
-      <span class="wordmark">QUALITÉ & FORMATION</span>
-      <span class="star">✳</span>
-    </div>
-  </div>
+<section class="section" id="apropos"><div class="container">
+  <div class="header-row reveal"><div><div class="eyebrow section-label">01 / À PROPOS D’YUSLIA</div><h2 class="section-title">La langue est un lien.<br><em class="serif">La compréhension, notre métier.</em></h2></div><p class="intro">YUSLIA accompagne les échanges qui demandent justesse, neutralité et attention au contexte. Notre ambition : rendre la communication plus accessible, sans perdre les nuances.</p></div>
+  <div class="about-grid reveal"><div class="about-text"><p>YUSLIA est un projet d’agence de services linguistiques pensé pour les entreprises, les professionnels, les associations et les acteurs institutionnels. Nous réunissons interprétation, traduction et accompagnement linguistique autour d’une méthode simple : comprendre le contexte avant de choisir les bons mots.</p><p>Du rendez-vous administratif à l’échange médical, d’un entretien professionnel à la traduction d’un document, chaque demande est étudiée selon sa finalité, son niveau de technicité, ses délais et la combinaison linguistique recherchée.</p><p>Notre approche repose sur la préparation, la confidentialité, la fidélité du message et une communication claire avec le donneur d’ordre.</p></div><div class="quote"><span class="symbol">“</span><blockquote>La précision linguistique commence par la compréhension des personnes et de leur contexte.</blockquote><small>LA SIGNATURE YUSLIA</small></div></div>
+</div></section>
+<section class="section services" id="services"><div class="container">
+  <div class="header-row reveal"><div><div class="eyebrow section-label">02 / NOS SERVICES</div><h2 class="section-title">Des solutions linguistiques<br><em class="serif">pensées pour le terrain.</em></h2></div><p class="intro">Une prestation adaptée à la situation : en face-à-face, par téléphone, en visioconférence ou à travers vos documents.</p></div>
+  <div class="cards reveal">
+    <article class="service"><div class="num">01 — ORAL</div><span class="icon">↗</span><h3>Interprétation de liaison</h3><p>Entretiens, rendez-vous et échanges individuels ou en petit groupe. Une restitution naturelle, précise et adaptée au rythme des interlocuteurs.</p><span class="tag">Présentiel · Visio</span></article>
+    <article class="service"><div class="num">02 — ORAL</div><span class="icon">⌁</span><h3>Interprétation consécutive</h3><p>Réunions, auditions et entretiens structurés, avec restitution par séquences et attention portée à la terminologie.</p><span class="tag">Réunions · Entretiens</span></article>
+    <article class="service"><div class="num">03 — ORAL</div><span class="icon">◎</span><h3>Interprétation simultanée</h3><p>Transmission en temps réel pour formations, prises de parole et événements, selon le format et les moyens techniques requis.</p><span class="tag">Formations · Événements</span></article>
+    <article class="service"><div class="num">04 — ÉCRIT</div><span class="icon">Aa</span><h3>Traduction de documents</h3><p>Documents administratifs, courriers, supports professionnels et contenus destinés à des publics multilingues.</p><span class="tag">Documents · Supports</span></article>
+    <article class="service"><div class="num">05 — ÉCRIT</div><span class="icon">✳</span><h3>Révision & relecture</h3><p>Correction linguistique, cohérence terminologique et amélioration de la clarté de vos textes avant diffusion.</p><span class="tag">Qualité éditoriale</span></article>
+    <article class="service"><div class="num">06 — SUPPORT</div><span class="icon">⌘</span><h3>Transcription & sous-titrage</h3><p>Transformation de contenus audio ou vidéo en textes structurés, avec étude préalable du format et du niveau de restitution attendu.</p><span class="tag">Audio · Vidéo</span></article>
+  </div><p class="teamnote">Les missions sont confirmées après vérification de la combinaison linguistique, de la spécialité, des délais et des disponibilités.</p>
+</div></section>
+<section class="section sectors" id="secteurs"><div class="container">
+  <div class="header-row reveal"><div><div class="eyebrow section-label">03 / NOS SECTEURS</div><h2 class="section-title">Les bons mots,<br><em class="serif">au bon endroit.</em></h2></div><p class="intro">Nous adaptons la préparation et le vocabulaire au milieu professionnel, aux interlocuteurs et aux enjeux de chaque intervention.</p></div>
+  <div class="sector-grid reveal"><div class="sector-list"><div>Juridique & droit <span>01</span></div><div>Santé & médico-social <span>02</span></div><div>Administrations & services publics <span>03</span></div><div>Associations & accompagnement social <span>04</span></div><div>Entreprises & ressources humaines <span>05</span></div><div>Formation & événements <span>06</span></div></div>
+  <div class="sector-note"><div class="eyebrow">NOTRE MÉTHODE</div><h3>Le contexte avant la traduction.</h3><p>Une même expression peut prendre un sens différent selon le cadre juridique, médical, administratif ou professionnel. Avant chaque mission, nous clarifions le sujet, les interlocuteurs, le format, la terminologie utile et les éventuelles contraintes de confidentialité.</p><a class="btn btn-dark" href="#contact">Présenter une mission <span class="arr">↗</span></a></div></div>
+</div></section>
+<section class="section languages" id="langues"><div class="container"><div class="eyebrow section-label">04 / LANGUES</div><h2 class="section-title reveal">Une expertise linguistique<br><em class="serif">ancrée dans les cultures.</em></h2><p class="intro reveal">Le parcours du fondateur s’articule autour de quatre langues. Pour toute autre combinaison, la faisabilité est étudiée au cas par cas.</p>
+  <div class="language-grid reveal"><div class="language"><span>Langue maternelle du fondateur</span><div class="native">ⵣ</div><strong>Kabyle</strong><span>Interprétation · Compréhension culturelle</span></div><div class="language"><span>Niveau C2 indiqué au CV</span><div class="native">ع</div><strong>Arabe</strong><span>Oral · Écrit</span></div><div class="language"><span>Niveaux C1–C2 indiqués au CV</span><div class="native">Fr</div><strong>Français</strong><span>Oral · Écrit</span></div><div class="language"><span>Niveaux C1–C2 indiqués au CV</span><div class="native">En</div><strong>Anglais</strong><span>Oral · Écrit</span></div></div>
+  <p class="note">Les niveaux personnels mentionnés reprennent les indications du CV Europass du fondateur. La disponibilité d’une prestation dépend de la combinaison demandée et du professionnel mobilisé.</p>
+</div></section>
+<section class="section process"><div class="container"><div class="eyebrow section-label">05 / COMMENT ÇA MARCHE</div><h2 class="section-title reveal">Un processus clair,<br><em class="serif">du premier contact à la mission.</em></h2>
+  <div class="steps reveal"><article class="step"><span>ÉTAPE 01</span><h3>Votre demande</h3><p>Vous précisez le contexte, les langues, le lieu ou le format, la date et le volume estimé.</p></article><article class="step"><span>ÉTAPE 02</span><h3>Étude & devis</h3><p>Nous vérifions la faisabilité, les contraintes et les disponibilités avant de vous transmettre une proposition.</p></article><article class="step"><span>ÉTAPE 03</span><h3>Préparation</h3><p>Les informations utiles et la terminologie sont recueillies dans le respect de la confidentialité.</p></article><article class="step"><span>ÉTAPE 04</span><h3>Réalisation</h3><p>La prestation est réalisée selon les modalités convenues, puis un suivi est assuré si nécessaire.</p></article></div>
+</div></section>
+<section class="section team" id="equipe"><div class="container">
+  <div class="header-row reveal"><div><div class="eyebrow section-label">06 / NOTRE ÉQUIPE</div><h2 class="section-title">Une vision humaine.<br><em class="serif">Une exigence professionnelle.</em></h2></div><p class="intro">YUSLIA est portée par un fondateur issu du terrain de l’interprétation, de la qualité et de l’accompagnement linguistique.</p></div>
+  <article class="founder reveal"><div class="portrait" aria-label="Monogramme du fondateur, portrait à ajouter"><span>FONDATEUR · YUSLIA</span></div><div class="founder-copy"><div class="eyebrow">FONDATEUR & DIRECTEUR</div><h3>Naim Yousfi</h3><div class="role">Interprète · Pilotage qualité · Formation</div>
+    <p>Interprète en français, arabe, kabyle et anglais, Naim Yousfi intervient auprès de l’OFII depuis 2023 dans le cadre de formations civiques. Il a également exercé chez Delta Production – AcceoTadeo comme interprète trilingue et responsable du pilotage qualité et de la formation, avec des missions de contrôle qualité, d’accompagnement d’interprètes et de mise en place de procédures.</p>
+    <p>Son parcours comprend aussi une expérience bénévole d’interprétation en milieu sanitaire auprès de l’association Spina Bifida à Béjaïa. Il souhaite mettre cette expérience de terrain au service d’une agence où la qualité linguistique, l’écoute et la responsabilité occupent une place centrale.</p>
+    <div class="chips"><span>OFII · DEPUIS 2023</span><span>ACCEOTADEO · QUALITÉ & FORMATION</span><span>AR · KAB · FR · EN</span></div></div></article>
+  <p class="teamnote">L’équipe opérationnelle et les intervenants externes sont à renseigner au fur et à mesure de la constitution du réseau professionnel de YUSLIA. Aucun collaborateur n’est nommé ici sans confirmation.</p>
+</div></section>
+<section class="section promise"><div class="container"><div class="eyebrow section-label">07 / NOS ENGAGEMENTS</div><h2 class="section-title reveal">La confiance se construit<br><em class="serif">dans chaque détail.</em></h2>
+  <div class="promise-grid reveal"><article class="promise-card"><div class="picon">◎</div><h3>Confidentialité</h3><p>Les informations confiées sont traitées avec discrétion. Les modalités de transmission et de conservation sont définies selon la mission.</p></article><article class="promise-card"><div class="picon">⌁</div><h3>Fidélité du message</h3><p>Le sens, le registre et les nuances sont au cœur du travail d’interprétation et de traduction.</p></article><article class="promise-card"><div class="picon">↗</div><h3>Préparation & qualité</h3><p>Le contexte, la terminologie et les contraintes pratiques sont étudiés avant chaque intervention confirmée.</p></article></div>
+</div></section>
+<section class="section faq"><div class="container faq-grid"><div class="reveal"><div class="eyebrow section-label">08 / FAQ</div><h2 class="section-title">Vos questions,<br><em class="serif">nos réponses.</em></h2><p class="intro">Vous avez un besoin particulier ? Écrivez-nous pour étudier la faisabilité de votre demande.</p></div>
+  <div class="faq-list reveal">
+    <div class="faq-item"><button class="question" aria-expanded="false">Dans quels formats intervenez-vous ? <span class="plus">+</span></button><div class="answer">Selon la mission et les disponibilités : en présentiel, par téléphone ou en visioconférence. Le format est confirmé avec le devis.</div></div>
+    <div class="faq-item"><button class="question" aria-expanded="false">Proposez-vous des traductions assermentées ? <span class="plus">+</span></button><div class="answer">Une traduction assermentée doit être réalisée et signée par un traducteur expert inscrit auprès d’une cour d’appel. YUSLIA ne présente pas ses propres traductions comme assermentées : la possibilité d’orienter la demande vers un professionnel habilité doit être vérifiée au cas par cas.</div></div>
+    <div class="faq-item"><button class="question" aria-expanded="false">Quelles informations fournir pour un devis ? <span class="plus">+</span></button><div class="answer">Indiquez le type de prestation, les langues, le sujet, la date, le lieu ou le format à distance, la durée ou le volume de documents et toute contrainte de délai.</div></div>
+    <div class="faq-item"><button class="question" aria-expanded="false">Intervenez-vous en dehors de l’Île-de-France ? <span class="plus">+</span></button><div class="answer">Les demandes à distance peuvent être étudiées partout en France. Les déplacements sont examinés selon la localisation, la durée et les disponibilités.</div></div>
+    <div class="faq-item"><button class="question" aria-expanded="false">Comment sont fixés les tarifs ? <span class="plus">+</span></button><div class="answer">Le tarif dépend notamment du type de prestation, de la combinaison linguistique, de la durée, du niveau de spécialisation, du délai et des éventuels frais de déplacement. Un devis est établi avant confirmation.</div></div>
+  </div></div>
+</section>
+<section class="contact" id="contact"><div class="container contact-grid"><div class="reveal"><div class="eyebrow section-label">09 / CONTACT</div><h2 class="section-title">Votre prochain échange<br><em class="serif">commence ici.</em></h2><p class="contact-copy">Décrivez votre besoin en quelques lignes. Nous pourrons examiner le contexte, les langues, le format et les délais nécessaires avant de vous répondre.</p><a class="btn" href="mailto:naimyousfi76@gmail.com">Écrire directement <span class="arr">↗</span></a>
+  <div class="contact-details"><div class="contact-row"><span>E-mail</span><a href="mailto:naimyousfi76@gmail.com">naimyousfi76@gmail.com</a></div><div class="contact-row"><span>Téléphone</span><a href="tel:+33765258156">+33 7 65 25 81 56</a></div><div class="contact-row"><span>Instagram</span><a href="https://www.instagram.com/naimyousfi/" target="_blank" rel="noopener">@naimyousfi ↗</a></div><div class="contact-row"><span>Zone principale</span><span>Île-de-France · France</span></div></div>
 </div>
-
-<section id="profil">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-index">01 / PROFIL</div>
-      <h2 class="section-title">
-        Créer les conditions<br>d’une <em>compréhension juste.</em>
-      </h2>
-    </div>
-
-    <div class="about-grid reveal">
-      <div class="about-copy">
-        <p>
-          Interprète trilingue, j’interviens dans des contextes où chaque nuance
-          compte. Mon rôle est de transmettre fidèlement le sens, le ton et
-          l’intention de chaque interlocuteur, tout en respectant la confidentialité
-          et le cadre de l’échange.
-        </p>
-
-        <p>
-          Mon expérience auprès de l’OFII, ainsi que mes missions en qualité et
-          en formation chez AcceoTadeo, m’a appris à conjuguer rigueur linguistique,
-          posture professionnelle et attention aux personnes.
-        </p>
-      </div>
-
-      <div class="pullquote">
-        « Faciliter le dialogue, c’est permettre à chacun d’être
-        <em>entendu et compris.</em> »
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="services" id="services">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-index">02 / DOMAINES</div>
-      <h2 class="section-title">
-        Une présence adaptée<br>à chaque <em>contexte.</em>
-      </h2>
-    </div>
-
-    <div class="service-grid reveal">
-      <article class="service">
-        <div class="service-num">01 —</div>
-        <h3>Juridique</h3>
-        <p>
-          Interprétation attentive au cadre de l’échange, à la terminologie
-          et à la restitution fidèle des propos.
-        </p>
-      </article>
-
-      <article class="service">
-        <div class="service-num">02 —</div>
-        <h3>Sanitaire</h3>
-        <p>
-          Faciliter le dialogue entre patients, familles et professionnels
-          de santé avec clarté et discrétion.
-        </p>
-      </article>
-
-      <article class="service">
-        <div class="service-num">03 —</div>
-        <h3>Administratif</h3>
-        <p>
-          Accompagner les échanges entre institutions, agents et usagers
-          dans un cadre respectueux.
-        </p>
-      </article>
-
-      <article class="service">
-        <div class="service-num">04 —</div>
-        <h3>Interprétation simultanée</h3>
-        <p>
-          Restituer le message en temps réel en préservant le sens
-          et la fluidité de la communication.
-        </p>
-      </article>
-
-      <article class="service">
-        <div class="service-num">05 —</div>
-        <h3>Interprétation consécutive</h3>
-        <p>
-          Transmettre les propos par séquences avec précision,
-          méthode et attention au détail.
-        </p>
-      </article>
-
-      <article class="service">
-        <div class="service-num">06 —</div>
-        <h3>Qualité & formation</h3>
-        <p>
-          Expérience en contrôle qualité, accompagnement d’interprètes
-          et amélioration des pratiques professionnelles.
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="langues">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-index">03 / LANGUES</div>
-      <h2 class="section-title">
-        La précision au-delà<br>des <em>mots.</em>
-      </h2>
-    </div>
-
-    <div class="languages-grid reveal">
-      <div class="language">
-        <span>Langue maternelle</span>
-        <div class="native">ⵣ</div>
-        <strong>Kabyle</strong>
-      </div>
-
-      <div class="language">
-        <span>Niveau C2 indiqué au CV</span>
-        <div class="native">ع</div>
-        <strong>Arabe</strong>
-      </div>
-
-      <div class="language">
-        <span>Compréhension orale C2</span>
-        <div class="native">Fr</div>
-        <strong>Français</strong>
-        <span>Expression orale C1 · interaction C2</span>
-      </div>
-
-      <div class="language">
-        <span>Compréhension orale C2</span>
-        <div class="native">En</div>
-        <strong>Anglais</strong>
-        <span>Expression orale C2 · interaction C1</span>
-      </div>
-    </div>
-  </div>
-</section>
-
-<section class="experience" id="parcours">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-index">04 / PARCOURS</div>
-      <h2 class="section-title">
-        Expérience de terrain,<br>exigence de <em>qualité.</em>
-      </h2>
-    </div>
-
-    <div class="timeline reveal">
-      <article class="timeline-item">
-        <div class="timeline-date">Depuis fév. 2023</div>
-        <div>
-          <h3>Interprète indépendant</h3>
-          <div class="place">
-            OFII — Office français de l’immigration et de l’intégration · Île-de-France
-          </div>
-          <p>
-            Interprétation simultanée en français, arabe et berbère lors de sessions
-            de formation civique ; facilitation des échanges entre formateurs
-            et participants.
-          </p>
-        </div>
-      </article>
-
-      <article class="timeline-item">
-        <div class="timeline-date">Nov. 2024 — mai 2025</div>
-        <div>
-          <h3>Interprète trilingue · Pilotage qualité & formation</h3>
-          <div class="place">Delta Production — AcceoTadeo</div>
-          <p>
-            Interprétation simultanée et consécutive en arabe, berbère et anglais ;
-            contrôle qualité, accompagnement et formation des interprètes,
-            procédures qualité et rapports d’activité.
-          </p>
-        </div>
-      </article>
-
-      <article class="timeline-item">
-        <div class="timeline-date">Nov. 2023 — mai 2024</div>
-        <div>
-          <h3>Chargé de marketing — Stage</h3>
-          <div class="place">Decathlon · Paris</div>
-          <p>
-            Suivi des performances avec Google Analytics et SEMrush,
-            et participation à des campagnes marketing omnicanales.
-          </p>
-        </div>
-      </article>
-
-      <article class="timeline-item">
-        <div class="timeline-date">2017 — 2020</div>
-        <div>
-          <h3>Interprète bénévole</h3>
-          <div class="place">Association Spina Bifida · Béjaïa, Algérie</div>
-          <p>
-            Interprétation en kabyle et en arabe pour faciliter les échanges
-            entre patients, familles et personnel médical.
-          </p>
-        </div>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section id="formation">
-  <div class="wrap">
-    <div class="section-head reveal">
-      <div class="section-index">05 / FORMATION</div>
-      <h2 class="section-title">
-        Un parcours entre<br>langues et <em>communication.</em>
-      </h2>
-    </div>
-
-    <div class="education-grid reveal">
-      <article class="education">
-        <div class="year">2021 — 2023</div>
-        <h3>Bachelor marketing et communication</h3>
-        <p>ESG · Paris</p>
-      </article>
-
-      <article class="education">
-        <div class="year">2020 — 2023</div>
-        <h3>L3 — Langues étrangères appliquées</h3>
-        <p>Parcours anglais-allemand · Université Vincennes Saint-Denis</p>
-      </article>
-
-      <article class="education">
-        <div class="year">2017 — 2020</div>
-        <h3>Licence de littérature anglaise</h3>
-        <p>Université Abderrahmane Mira · Béjaïa, Algérie</p>
-      </article>
-
-      <article class="education">
-        <div class="year">2017 — 2020</div>
-        <h3>Communication associative</h3>
-        <p>
-          Association Spina Bifida · Création de contenu web,
-          rédaction et relations presse
-        </p>
-      </article>
-    </div>
-  </div>
-</section>
-
-<section class="contact" id="contact">
-  <div class="wrap contact-layout">
-    <div class="reveal">
-      <div class="eyebrow">06 / CONTACT</div>
-      <h2>Parlons de votre<br><em>mission.</em></h2>
-      <p class="contact-copy">
-        Vous recherchez un interprète pour une mission ou souhaitez échanger
-        sur un besoin linguistique ? Contactez-moi pour discuter du contexte
-        et des modalités.
-      </p>
-
-      <a class="button" href="mailto:naimyousfi76@gmail.com">
-        Me contacter <span class="arrow" aria-hidden="true">↗</span>
-      </a>
-    </div>
-
-    <div class="contact-details reveal">
-      <div class="contact-row">
-        <span>Email</span>
-        <a href="mailto:naimyousfi76@gmail.com">naimyousfi76@gmail.com ↗</a>
-      </div>
-
-      <div class="contact-row">
-        <span>Téléphone</span>
-        <a href="tel:+33765258156">+33 7 65 25 81 56 ↗</a>
-      </div>
-
-      <div class="contact-row">
-        <span>Instagram</span>
-        <a href="https://www.instagram.com/naimyousfi/"
-           target="_blank" rel="noopener noreferrer">@naimyousfi ↗</a>
-      </div>
-
-      <div class="contact-row">
-        <span>Localisation</span>
-        <span>Île-de-France · France</span>
-      </div>
-    </div>
-  </div>
-</section>
+<form class="form reveal" id="quoteForm"><h3>Demander un devis</h3><div class="fields">
+  <div class="field"><label for="name">Nom & prénom *</label><input id="name" name="name" autocomplete="name" required placeholder="Votre nom"></div>
+  <div class="field"><label for="company">Organisation</label><input id="company" name="company" autocomplete="organization" placeholder="Entreprise / institution"></div>
+  <div class="field"><label for="email">E-mail *</label><input id="email" name="email" type="email" autocomplete="email" required placeholder="vous@exemple.fr"></div>
+  <div class="field"><label for="phone">Téléphone</label><input id="phone" name="phone" type="tel" autocomplete="tel" placeholder="+33"></div>
+  <div class="field"><label for="service">Prestation *</label><select id="service" name="service" required><option value="">Choisir une prestation</option><option>Interprétation sur site</option><option>Interprétation par téléphone / visio</option><option>Interprétation simultanée</option><option>Traduction écrite</option><option>Relecture / révision</option><option>Transcription / sous-titrage</option><option>Autre demande</option></select></div>
+  <div class="field"><label for="languages">Langues concernées</label><input id="languages" name="languages" placeholder="Ex. arabe ↔ français"></div>
+  <div class="field"><label for="date">Date souhaitée</label><input id="date" name="date" type="date"></div>
+  <div class="field"><label for="format">Format / lieu</label><input id="format" name="format" placeholder="Présentiel, téléphone, visio…"></div>
+  <div class="field full"><label for="details">Décrivez votre besoin *</label><textarea id="details" name="details" required placeholder="Contexte, durée, volume de documents, délai, contraintes particulières…"></textarea></div>
+</div><div class="form-bottom"><button class="btn" type="submit">Préparer ma demande <span class="arr">↗</span></button><div class="form-hint">Le bouton prépare un e-mail dans votre messagerie. Aucun message n’est envoyé automatiquement depuis cette page.</div></div><div class="status" id="formStatus" role="status" aria-live="polite"></div></form>
+</div></section>
 </main>
-
-<footer>
-  <div class="wrap footer-inner">
-    <a class="footer-brand" href="#accueil">
-      NAIM<span style="color:var(--sage)">.</span>YOUSFI
-    </a>
-    <span>INTERPRÉTATION · LANGUES · DIALOGUE</span>
-    <span>© <span id="year"></span> Naim Yousfi</span>
-  </div>
-</footer>
-
+<footer><div class="container foot"><a class="footbrand" href="#accueil">YUSLIA</a><small>Interprétation · Traduction · Dialogue</small><div class="footlinks"><a href="#apropos">À propos</a><a href="#services">Services</a><a href="#contact">Contact</a><a href="https://www.instagram.com/naimyousfi/" target="_blank" rel="noopener">Instagram ↗</a></div><small>© <span id="year"></span> YUSLIA</small></div></footer>
+<a class="float" href="#contact" aria-label="Contacter YUSLIA">↗</a>
 <script>
-const menu = document.getElementById('menu');
-const nav = document.getElementById('navlinks');
-
-menu.addEventListener('click', () => {
-  const open = nav.classList.toggle('open');
-  menu.setAttribute('aria-expanded', String(open));
-  menu.textContent = open ? 'Fermer' : 'Menu';
-});
-
-nav.querySelectorAll('a').forEach(link => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('open');
-    menu.setAttribute('aria-expanded', 'false');
-    menu.textContent = 'Menu';
-  });
-});
-
-document.getElementById('year').textContent = new Date().getFullYear();
-
-const observer = new IntersectionObserver(entries => {
-  entries.forEach(entry => {
-    if (entry.isIntersecting) {
-      entry.target.classList.add('visible');
-      observer.unobserve(entry.target);
-    }
-  });
-}, { threshold: .12 });
-
-document.querySelectorAll('.reveal').forEach(element => {
-  observer.observe(element);
-});
+document.querySelectorAll('.logo-tile img').forEach(img=>{img.addEventListener('error',()=>{const fallback=document.createElement('span');fallback.className='wordmark';fallback.textContent=img.alt.replace(/^Logo /,'')||'Référence';img.replaceWith(fallback);},{once:true});});
+const toggle=document.getElementById('toggle'),nav=document.getElementById('navLinks');
+toggle.addEventListener('click',()=>{const open=toggle.getAttribute('aria-expanded')==='true';toggle.setAttribute('aria-expanded',String(!open));nav.classList.toggle('open',!open);toggle.textContent=open?'Menu':'Fermer';});
+nav.querySelectorAll('a').forEach(a=>a.addEventListener('click',()=>{nav.classList.remove('open');toggle.setAttribute('aria-expanded','false');toggle.textContent='Menu';}));
+document.getElementById('year').textContent=new Date().getFullYear();
+if('IntersectionObserver'in window){const obs=new IntersectionObserver(entries=>entries.forEach(e=>{if(e.isIntersecting){e.target.classList.add('visible');obs.unobserve(e.target);}}),{threshold:.12});document.querySelectorAll('.reveal').forEach(el=>obs.observe(el));}else{document.querySelectorAll('.reveal').forEach(el=>el.classList.add('visible'));}
+document.querySelectorAll('.question').forEach(btn=>btn.addEventListener('click',()=>{const item=btn.closest('.faq-item');const open=item.classList.toggle('open');btn.setAttribute('aria-expanded',String(open));}));
+document.getElementById('quoteForm').addEventListener('submit',e=>{e.preventDefault();const form=e.currentTarget;if(!form.reportValidity())return;const d=new FormData(form);const rows=[['Nom',d.get('name')],['Organisation',d.get('company')],['E-mail',d.get('email')],['Téléphone',d.get('phone')],['Prestation',d.get('service')],['Langues',d.get('languages')],['Date',d.get('date')],['Format / lieu',d.get('format')],['Détails',d.get('details')]];const body=rows.map(([k,v])=>k+' : '+(v||'Non précisé')).join('\n');document.getElementById('formStatus').style.display='block';document.getElementById('formStatus').textContent='Votre messagerie va s’ouvrir avec les informations saisies. Vérifiez le message puis envoyez-le.';location.href='mailto:naimyousfi76@gmail.com?subject='+encodeURIComponent('Demande de devis — YUSLIA')+'&body='+encodeURIComponent(body);});
 </script>
-</body>
-</html>
+</body></html>
